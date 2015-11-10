@@ -1,0 +1,33 @@
+craft/config/local/*
+
+# Craft runtime and backups folders
+# ----------------------------------------------------------------------
+craft/storage/runtime/*
+craft/storage/backups/*
+craft/storage/userphotos/
+
+# Uploaded files
+# ----------------------------------------------------------------------
+public/assets/uploads/*
+
+# Other
+# ----------------------------------------------------------------------
+public/otrisdmashohomcngfngf
+
+# Misc files
+# ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-workspace
+*.sublime-project
+*.komodoproject
+.komodotools
+_notes
+dwsync.xml
+logs/*i
