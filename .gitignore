@@ -1,4 +1,7 @@
-craft/config/local/*
+/craft/config/local/*
+/craft/config/license.key
+!/craft/config/local/db.example.php
+!/craft/config/local/general.example.php
 
 # Craft runtime and backups folders
 # ----------------------------------------------------------------------
@@ -31,3 +34,4 @@ nbproject
 _notes
 dwsync.xml
 logs/*i
+*.swp
