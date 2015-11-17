@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,IAAK;EACH,WAAW,EAAE,IAAI",
+"sources": ["sitewide.scss"],
+"names": [],
+"file": "sitewide.css"
+}
