@@ -13191,6 +13191,7 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 	$ccCvcInput: null,
 	submittingPurchase: false,
 
+	stripePublicKey: null,
 	editions: null,
 	edition: null,
 
@@ -13210,6 +13211,7 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 			{
 				if (response.success)
 				{
+					this.stripePublicKey = response.stripePublicKey;
 					this.editions = response.editions;
 
 					this.$container.append(response.modalHtml);
@@ -13404,7 +13406,7 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 			this.$checkoutSubmitBtn.addClass('active');
 			this.$checkoutSpinner.removeClass('hidden');
 
-			Stripe.setPublishableKey(Craft.UpgradeModal.stripeApiKey);
+			Stripe.setPublishableKey(this.stripePublicKey);
 			Stripe.createToken(ccData, $.proxy(function(status, response)
 			{
 				if (!response.error)
@@ -13532,7 +13534,6 @@ Craft.UpgradeModal = Garnish.Modal.extend(
 	}
 },
 {
-	stripeApiKey: 'pk_J2nJpozDxit0V6wYuT8xSvCKArONs',
 	clearCheckoutFormTimeoutDuration: 30000 // 1000 x 60 x 5
 });
 

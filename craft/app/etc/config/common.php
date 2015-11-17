@@ -304,6 +304,7 @@ $configArray = array(
 		'app.models.TagModel',
 		'app.models.TaskModel',
 		'app.models.UpdateModel',
+		'app.models.UpgradeInfoModel',
 		'app.models.UpgradePurchaseModel',
 		'app.models.UrlModel',
 		'app.models.UserGroupModel',

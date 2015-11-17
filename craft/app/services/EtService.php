@@ -19,7 +19,7 @@ class EtService extends BaseApplicationComponent
 	const Ping              = 'https://elliott.buildwithcraft.com/actions/elliott/app/ping';
 	const CheckForUpdates   = 'https://elliott.buildwithcraft.com/actions/elliott/app/checkForUpdates';
 	const TransferLicense   = 'https://elliott.buildwithcraft.com/actions/elliott/app/transferLicenseToCurrentDomain';
-	const GetEditionInfo    = 'https://elliott.buildwithcraft.com/actions/elliott/app/getEditionInfo';
+	const GetUpgradeInfo    = 'https://elliott.buildwithcraft.com/actions/elliott/app/getUpgradeInfo';
 	const PurchaseUpgrade   = 'https://elliott.buildwithcraft.com/actions/elliott/app/purchaseUpgrade';
 	const GetUpdateFileInfo = 'https://elliott.buildwithcraft.com/actions/elliott/app/getUpdateFileInfo';
 
@@ -176,10 +176,13 @@ class EtService extends BaseApplicationComponent
 	 *
 	 * @return EtModel|null
 	 */
-	public function fetchEditionInfo()
+	public function fetchUpgradeInfo()
 	{
-		$et = new Et(static::GetEditionInfo);
+		$et = new Et(static::GetUpgradeInfo);
 		$etResponse = $et->phoneHome();
+
+		$etResponse->data = new UpgradeInfoModel($etResponse->data);
+
 		return $etResponse;
 	}
 
