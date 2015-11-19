@@ -1,0 +1,61 @@
+{% extends "_layout" %}
+
+{% block head %}
+  <style>
+    .events_grid { padding-top: 40px; }
+    .events_grid_item { width: 20%; height: 100px; background-color: #2d8cea; margin-right: 20px; margin-bottom: 20px; padding: 15px;}
+    .is-checked {background-color: #2d8cea;}
+    a { color: white }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>Events</h1>
+
+<h2>Filter</h2>
+<div id="datefilter" class="button-group">
+</div>
+<div id="filters">
+  <div class="dates-group">  
+    <h3>Dates</h3>
+    <button class="button is-checked" data-filter="*">all dates</button>
+    <button class="button" data-filter=".Jun11">June 11</button>
+    <button class="button" data-filter=".Jun12">June 12</button>
+    <button class="button" data-filter=".Jun13">June 13</button>
+    <button class="button" data-filter=".Jun14">June 14</button>
+    <button class="button" data-filter=".Jun15">June 15</button>
+    <button class="button" data-filter=".Jun16">June 16</button>
+    <button class="button" data-filter=".Jun17">June 17</button>
+    <button class="button" data-filter=".Jun18">June 18</button>
+  </div>
+  <div class="tracks">
+  <h4>Tracks</h4>
+    <input type="checkbox" name="track-filter" value=".ride">ride
+    <input type="checkbox" name="track-filter" value=".advocacy">advocacy
+    <input type="checkbox" name="track-filter" value=".party">party
+    <input type="checkbox" name="track-filter" value=".tech">tech
+    <input type="checkbox" name="track-filter" value=".art">art
+  </div>
+  <div class="difficulty">
+    <h5>Difficulty</h5>
+    <input type="checkbox" name="difficulty-filter" value=".easy">Easy
+    <input type="checkbox" name="difficulty-filter" value=".medium">Intermediate
+    <input type="checkbox" name="difficulty-filter" value=".difficult">Advanced
+  </div>
+</div>
+
+<div class="events_grid"> 
+{% for entry in craft.entries.section('events') %}
+<div class="events_grid_item {% for track in entry.track %}{{track}} {% endfor %} {{entry.startDateTime | date('Mj')}} {{ entry.rideDifficulty }}"><a href="{{ entry.url }}">{{ entry.title }}</a>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+  <script src="/assets/js/events.js"></script>
+{% endblock %}
+

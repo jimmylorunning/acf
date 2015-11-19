@@ -37,6 +37,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li {% if craft.request.firstSegment == '' %}class="active"{% endif %}><a href="/">Home</a></li>
             <li {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}><a href="{{ url('about') }}">About</a></li>
+            <li {% if craft.request.firstSegment == 'events' %}class="active"{% endif %}><a href="{{ url('events') }}">Events</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>

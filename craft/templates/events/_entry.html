@@ -1,0 +1,38 @@
+{% extends "_layout" %}
+
+{% block content %}
+  <h1>Events</h1>
+  <h2>{{ entry.title }}</h2>
+  <div id="startdatetime">
+    {{ entry.startDateTime | date("l, F jS, g:ia") }}
+  </div>
+  <div id="eventimage">
+    {% for image in entry.photo %}
+      <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.title }}">
+    {% endfor %}
+  </div>
+  <div id="eventinfo">
+    <div id="type">
+      {% for etrack in entry.track %}
+        {{ etrack }}
+      {% endfor %}
+    </div>
+    <div id="meetat">
+    </div>
+    <div id="difficulty">
+      {{ entry.rideDifficulty }}
+    </div>
+  </div>
+  <div id="description">
+    {{ entry.description }}
+  </div>
+  <div id="map">
+    {% set options = {
+      id: 'eventMap', 
+      width: '400px', 
+      height: '300px'
+    } %}
+    {{ craft.googleMaps.map(options) }}
+    {{ craft.googleMaps.data('eventMap', entry.address) }}
+  </div>
+{% endblock %}
