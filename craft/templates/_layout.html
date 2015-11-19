@@ -43,13 +43,16 @@
       </div>
     </nav>
     <div class="container">
-
-      <div class="starter-template">
-	{% block content %}
+	{% block submenu %}
 	{% endblock %}
-      </div>
-
     </div><!-- /.container -->
+
+    <div class="section {% block contentclass %}{% endblock %}">
+    <div class="container">
+      {% block content %}
+      {% endblock %}  
+    </div>
+    </div>
 
     {% block blocks %}
     {% endblock %}

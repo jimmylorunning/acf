@@ -1,4 +1,19 @@
 body {
   padding-top: 5rem; }
 
+.orange {
+  background-color: #FDA879; }
+
+.gray {
+  background-color: #ededed; }
+
+.green {
+  background-color: #8EEB81; }
+
+.white {
+  background-color: #ffffff; }
+
+.blue {
+  background-color: #338EE7; }
+
 /*# sourceMappingURL=sitewide.css.map */

@@ -1,6 +1,6 @@
 {% extends "_layout" %}
 
-{% block content %}
+{% block submenu %}
   <h1>{{ entry.title }}</h1>
   <ul>
     <li><a href="#goal">goal</a></li>
@@ -11,7 +11,8 @@
 
 {% block blocks %}
   {% for block in entry.blocks %}
-    <div class="container {{ block.style }} {{block.position}}">
+  <div class="section {{ block.style }}">
+    <div class="container {{block.position}}">
       {% if block.anchor %}
         <a name="{{ block.anchor }}"></a>
       {% endif %}
@@ -20,5 +21,6 @@
       {% endif %}
       {{ block.text }}
     </div>
+  </div>
   {% endfor %}
 {% endblock %}
