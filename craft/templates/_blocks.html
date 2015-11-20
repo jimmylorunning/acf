@@ -1,0 +1,13 @@
+  {% for block in entry.blocks %}
+  <div class="section {{ block.style }}">
+    <div class="container {{block.position}}">
+      {% if block.anchor %}
+        <a name="{{ block.anchor }}"></a>
+      {% endif %}
+      {% if block.heading %}
+        <h2>{{ block.heading }}</h2>
+      {% endif %}
+      {{ block.text }}
+    </div>
+  </div>
+  {% endfor %}
