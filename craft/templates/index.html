@@ -11,3 +11,33 @@ June 11, 12, 13, 14, 15, 16, 17
   <h1>{{ entry.title }}</h1>
   {{ entry.body }}
 {% endblock %}
+
+{% block blocks %}
+  <div class="section blue">
+    <div class="container">
+      <a name="signup"></a>
+      <h2>Signup</h2>
+      <form>
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" class="form-control" name="fname" id="fname">
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" class="form-control" name="lname" id="lname">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="email">
+      </div>
+      <div class="form-group">
+        <label for="name">Comment</label>
+        <input type="textarea" class="form-control" name="comment" id="comment">
+      </div>
+      <div class="form-group">
+        <input type="submit" class="form-control">
+      </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
