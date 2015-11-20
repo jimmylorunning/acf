@@ -26,3 +26,37 @@
     </div>
   {% endfor %}
 {% endblock %}
+
+{% block blocks %}
+  <div class="section green">
+    <div class="container">
+      <a name="signup"></a>
+      <h2>Fill the form</h2>
+      <form>
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" class="form-control" name="fname" id="fname">
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" class="form-control" name="lname" id="lname">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="email">
+      </div>
+      <div class="form-group">
+        <label for="level">Which level do you want to learn more about?</label>
+        <select name="level" id="level" class="form-control">
+          {% for level in entry.sponsorshipLevels %}
+          <option value="{{ level.levelName }}">{{ level.levelName }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="form-control">
+      </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
