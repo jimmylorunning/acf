@@ -1,0 +1,28 @@
+{% extends "_layout" %}
+
+{% block submenu %}
+  <ul>
+    <li><a href="/sponsors/">sponsors</a></li>
+    <li>sponsor the festival</li>
+  </ul>
+{% endblock %}
+
+{% block contentclass %}gray{% endblock %}
+{% block content %}
+  {{ entry.body }}
+  {% for level in entry.sponsorshipLevels %}
+    <div class="sponsorLevel">
+      <h3>{{ level.levelName }}</h3>
+      <div class="amount">$
+        {% if level.sponsorshipAmount > 0 %}
+          {{ level.sponsorshipAmount }}
+        {% else %}
+          TBD
+        {% endif %}
+      </div>
+      <div class="benefits">
+        {{ level.benefits }}
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
