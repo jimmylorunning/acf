@@ -13,6 +13,4 @@ Work in progress.
 ### Craft Plugins:
 - [GoogleMaps](https://github.com/objectivehtml/Google-Maps-for-Craft)
 - [Instablog](https://github.com/70kft/craft-instablog)
-
-
-
+- [ElementAPI](https://github.com/pixelandtonic/ElementAPI)
