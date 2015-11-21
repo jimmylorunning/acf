@@ -1,0 +1,9 @@
+  <li>
+    {% if sponsor.sponsorURL %}
+      <a href="{{ sponsor.sponsorURL }}">
+    {% endif %}
+    {{ sponsor.sponsorName }}
+    {% if sponsor.sponsorURL %}
+      </a>
+    {% endif %}
+  </li>
