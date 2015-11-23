@@ -37,6 +37,7 @@ $customConfig = array(
 	'siteUrl'  => SITE_URL,
 	'basePath' => BASEPATH
   	),
+	'defaultImageQuality' => 85,
 
     // Triggers
     // 'cpTrigger'       => 'admin',

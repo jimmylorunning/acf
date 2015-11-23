@@ -2,7 +2,7 @@
     {% if sponsor.sponsorURL %}
       <a href="{{ sponsor.sponsorURL }}">
     {% endif %}
-    {{ sponsor.sponsorName }}
+    <img src="{{ sponsor.sponsorLogo.first.getUrl(fit300) }}" width="{{ sponsor.sponsorLogo.first.getWidth(fit300) }}" height="{{ sponsor.sponsorLogo.first.getHeight(fit300) }} alt="{{ sponsor.sponsorName }}">
     {% if sponsor.sponsorURL %}
       </a>
     {% endif %}
