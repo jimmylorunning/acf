@@ -24,3 +24,43 @@ body {
 .blue {
   background-color: $blue;
 }  
+
+/********************************/
+/********** NAV BAR *************/
+/********************************/
+
+.navbar {
+  background-color: $gray;
+  height: 5rem;
+  min-height: 5rem;
+  border-radius: 0px; 
+  border-bottom: none;
+}
+
+.navbar-inverse {
+  .navbar-nav {
+    font-size: 1.1rem;
+    margin-top: 0px;
+    background-color: $gray;
+    > li > a {
+      text-transform: uppercase;
+      color: #000000;
+      &:hover {
+        color: $blue;
+      }
+    }
+    >.active>a {
+      background-color: $blue;
+    }
+  }
+  /***** hamburger menu icon ******/
+  .navbar-toggle {
+    border-color: #000000;
+    &:focus, &:hover {
+      background-color: $blue;
+    }
+    .icon-bar {
+      background-color: #000000;
+    }
+  }
+}

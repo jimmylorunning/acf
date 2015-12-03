@@ -39,4 +39,34 @@ body {
 .blue {
   background-color: #338EE7; }
 
+/********************************/
+/********** NAV BAR *************/
+/********************************/
+.navbar {
+  background-color: #ededed;
+  height: 5rem;
+  min-height: 5rem;
+  border-radius: 0px;
+  border-bottom: none; }
+
+.navbar-inverse {
+  /***** hamburger menu icon ******/ }
+  .navbar-inverse .navbar-nav {
+    font-size: 1.1rem;
+    margin-top: 0px;
+    background-color: #ededed; }
+    .navbar-inverse .navbar-nav > li > a {
+      text-transform: uppercase;
+      color: #000000; }
+      .navbar-inverse .navbar-nav > li > a:hover {
+        color: #338EE7; }
+    .navbar-inverse .navbar-nav > .active > a {
+      background-color: #338EE7; }
+  .navbar-inverse .navbar-toggle {
+    border-color: #000000; }
+    .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+      background-color: #338EE7; }
+    .navbar-inverse .navbar-toggle .icon-bar {
+      background-color: #000000; }
+
 /*# sourceMappingURL=sitewide.css.map */
