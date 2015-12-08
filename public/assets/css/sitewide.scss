@@ -38,6 +38,12 @@ body {
 }
 
 .navbar-inverse {
+  .navbar-brand {
+    color: $brandgray;
+    &:focus, &:hover {
+      color: $submenugray;
+    }
+  }
   .navbar-nav {
     font-size: 1.1rem;
     margin-top: 0px;
@@ -46,18 +52,21 @@ body {
       text-transform: uppercase;
       color: #000000;
       &:hover {
-        color: $blue;
+        color: $orange;
       }
     }
     >.active>a {
-      background-color: $blue;
+      background-color: $orange;
+      &:hover {
+        background-color: $orange;
+      }
     }
   }
   /***** hamburger menu icon ******/
   .navbar-toggle {
     border-color: #000000;
     &:focus, &:hover {
-      background-color: $blue;
+      background-color: $orange;
     }
     .icon-bar {
       background-color: #000000;
