@@ -27,22 +27,35 @@
     <a href="#date=.Jun16">June 16</a>
     <a href="#date=.Jun17">June 17</a>
   </div>
+  <ul class="nav nav-tabs" id="filtertabs" role="tablist">
+    <li role="presentation" id="testtab" class="active"><a href="#tracks" name="tracks" aria-controls="tracks" role="tab" data-toggle="tab">Tracks</a></li>
+    <li role="presentation"><a href="#rides" name="rides" aria-controls="rides" role="tab" data-toggle="tab">Rides</a></li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active track-group" id="tracks">
+      <a href="#track=" id="alltracks">all</a>
+      <a href="#track=.advocacy">advocacy</a>
+      <a href="#track=.party">party</a>
+      <a href="#track=.tech">tech</a>
+      <a href="#track=.art">art</a>
+    </div>
+    <div role="tabpanel" class="tab-pane difficulty-group" id="rides">
+      <a href="#difficulty=" id="allrides">all</a>
+      <a href="#difficulty=.easy">easy</a>
+      <a href="#difficulty=.medium">medium</a>
+      <a href="#difficulty=.difficult">difficult</a>
+    </div>
+  </div>
+  <!--
   <div class="track-group">
   <h4>Tracks</h4>
-    <a href="#track=">all</a>
-    <a href="#track=.ride">ride</a>
-    <a href="#track=.advocacy">advocacy</a>
-    <a href="#track=.party">party</a>
-    <a href="#track=.tech">tech</a>
-    <a href="#track=.art">art</a>
+
   </div>
   <div class="difficulty-group">
     <h5>Difficulty</h5>
-    <a href="#difficulty=" id="difficulty-all">all</a>
-    <a href="#difficulty=.easy">easy</a>
-    <a href="#difficulty=.medium">medium</a>
-    <a href="#difficulty=.difficult">difficult</a>
+    
   </div>
+-->
 </div>
 
 <div class="events_grid"> 
@@ -56,7 +69,6 @@
 
 {% block scripts %}
 
-  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script src="/assets/js/lib/jquery.ba-bbq.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
   <script src="/assets/js/events.js"></script>
