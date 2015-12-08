@@ -1,3 +1,11 @@
+
+  {% if loop.index0 is divisible by(3) %}
+    {% if not loop.first %}
+      </div>
+    {% endif %}
+    <div class="row">
+  {% endif %}
+
   <div class="col-md-4">
     {% if sponsor.sponsorURL %}
       <a href="{{ sponsor.sponsorURL }}">
@@ -7,3 +15,7 @@
       </a>
     {% endif %}
   </div>
+
+  {% if loop.last %}
+    </div>
+  {% endif %}
