@@ -69,4 +69,26 @@ body {
     .navbar-inverse .navbar-toggle .icon-bar {
       background-color: #000000; }
 
+/********************************/
+/********** SUB MENU ************/
+/********************************/
+.submenu h1 {
+  text-transform: lowercase;
+  display: inline-block;
+  float: left; }
+.submenu .tagline {
+  color: #ededed;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-style: italic; }
+.submenu li {
+  text-transform: lowercase;
+  font-size: 3rem;
+  margin-left: 10rem;
+  margin-top: 2rem;
+  display: inline-block;
+  float: left; }
+  .submenu li a {
+    color: #999999; }
+
 /*# sourceMappingURL=sitewide.css.map */

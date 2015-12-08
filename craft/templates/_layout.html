@@ -56,9 +56,19 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-    <div class="container">
-	{% block submenu %}
-	{% endblock %}
+    <div class="container header">
+      <div class="row">
+        <div class="col-md-2">
+          logo
+        </div>
+        <div class="col-md-10 submenu">
+          <div class="tagline">
+            Let it be sexy
+          </div>
+        {% block submenu %}
+        {% endblock %}
+        </div>
+      </div>
     </div><!-- /.container -->
 
     <div class="section {% block contentclass %}{% endblock %}">

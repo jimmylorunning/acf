@@ -64,3 +64,32 @@ body {
     }
   }
 }
+
+/********************************/
+/********** SUB MENU ************/
+/********************************/
+
+.submenu {
+  h1 {
+    text-transform: lowercase;
+    display: inline-block;
+    float: left;
+  }
+  .tagline {
+    color: $gray;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-style: italic;
+  }
+  li {
+    text-transform: lowercase;
+    font-size: 3rem;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    display: inline-block;
+    float: left;
+    a {
+      color: $submenugray;
+    }
+  }
+}
