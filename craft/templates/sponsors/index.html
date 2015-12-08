@@ -9,29 +9,64 @@
 
 {% block contentclass %}gray{% endblock %}
 {% block content %}
+
 <h2>The Whole Bike</h2>
-<ul>
+
 {% for sponsor in entry.sponsors4 %}
+  {% if loop.index0 is divisible by(3) %}
+    {% if not loop.first %}
+      </div>
+    {% endif %}
+    <div class="row">
+  {% endif %}
   {% include 'sponsors/_sponsor.html' %}
+  {% if loop.last %}
+    </div>
+  {% endif %}
 {% endfor %}
-</ul>
+
 <h2>Drivetrain</h2>
-<ul>
+
 {% for sponsor in entry.sponsors3 %}
+  {% if loop.index0 is divisible by(3) %}
+    {% if not loop.first %}
+      </div>
+    {% endif %}
+    <div class="row">
+  {% endif %}
   {% include 'sponsors/_sponsor.html' %}
+  {% if loop.last %}
+    </div>
+  {% endif %}
 {% endfor %}
-</ul>
+
 <h2>Big Ring</h2>
-<ul>
+
 {% for sponsor in entry.sponsors2 %}
+  {% if loop.index0 is divisible by(3) %}
+    {% if not loop.first %}
+      </div>
+    {% endif %}
+    <div class="row">
+  {% endif %}
   {% include 'sponsors/_sponsor.html' %}
+  {% if loop.last %}
+    </div>
+  {% endif %}
 {% endfor %}
-</ul>
+
 <h2>Little Ring</h2>
-<ul>
 {% for sponsor in entry.sponsors1 %}
+  {% if loop.index0 is divisible by(3) %}
+    {% if not loop.first %}
+      </div>
+    {% endif %}
+    <div class="row">
+  {% endif %}
   {% include 'sponsors/_sponsor.html' %}
+  {% if loop.last %}
+    </div>
+  {% endif %}
 {% endfor %}
-</ul>
 
 {% endblock %}
