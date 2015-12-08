@@ -6,11 +6,11 @@
     <div class="row">
   {% endif %}
 
-  <div class="col-md-4">
+  <div class="col-md-4 sponsor">
     {% if sponsor.sponsorURL %}
       <a href="{{ sponsor.sponsorURL }}">
     {% endif %}
-    <img src="{{ sponsor.sponsorLogo.first.getUrl(fit300) }}" width="{{ sponsor.sponsorLogo.first.getWidth(fit300) }}" height="{{ sponsor.sponsorLogo.first.getHeight(fit300) }} alt="{{ sponsor.sponsorName }}">
+    <img src="{{ sponsor.sponsorLogo.first.getUrl(fit300) }}" alt="{{ sponsor.sponsorName }}" class="sponsorImg">
     {% if sponsor.sponsorURL %}
       </a>
     {% endif %}

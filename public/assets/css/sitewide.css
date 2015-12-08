@@ -97,4 +97,19 @@ body {
   .submenu li a {
     color: #999999; }
 
+/********************************/
+/********** SPONSORS ************/
+/********************************/
+.sponsorImg {
+  width: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url(#greyscale);
+  filter: gray;
+  transition: 1s; }
+  .sponsorImg:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+    filter: none; }
+
 /*# sourceMappingURL=sitewide.css.map */
