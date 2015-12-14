@@ -374,7 +374,7 @@ body.rtl table.inputs td:not(:first-child) { padding-right: 14px; }
 
 table.inputs :not(.btngroup) > .btn, table.inputs .btngroup { display: block; float: none; }
 
-div.flex { display: flex; display: -ms-flexbox; align-items: center; -ms-flex-align: center; align-content: stretch; }
+div.flex { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -ms-flex-align: center; align-items: center; align-content: stretch; }
 
 div.flex > .label { white-space: nowrap; }
 
@@ -747,7 +747,7 @@ body.rtl .element.large.hasthumb.hasstatus { padding-right: 18px; }
 .element.large.hasthumb.hasstatus .status { position: absolute; top: 110px; }
 body.ltr .element.large.hasthumb.hasstatus .status { left: 0; }
 body.rtl .element.large.hasthumb.hasstatus .status { right: 0; }
-.element.large.hasthumb .elementthumb { position: absolute; top: 0; border-radius: 3px; overflow: hidden; background: #fff; display: flex; display: -ms-flexbox; justify-content: center; -ms-flex-align: center; -ms-flex-pack: center; align-items: center; -ms-flex-align: center; -ms-flex-align: center; width: 100px; height: 100px; }
+.element.large.hasthumb .elementthumb { position: absolute; top: 0; border-radius: 3px; overflow: hidden; background: #fff; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -ms-flex-align: center; justify-content: center; -ms-flex-pack: center; -ms-flex-align: center; align-items: center; -ms-flex-align: center; width: 100px; height: 100px; }
 body.ltr .element.large.hasthumb .elementthumb { left: 0; }
 body.rtl .element.large.hasthumb .elementthumb { right: 0; }
 .element.large.hasthumb .label { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; word-wrap: normal; }
@@ -1017,7 +1017,7 @@ body.rtl .elementselect .progress-shade { right: 0; }
 /* meta panes */
 .meta { padding: 0; overflow: visible; }
 
-.meta > .field, .meta > .data { display: flex; display: -ms-flexbox; justify-content: space-between; -ms-flex-align: justify; align-items: center; -ms-flex-align: center; flex-wrap: wrap; -ms-flex-wrap: wrap; margin: 0 !important; padding-top: 8px; padding-bottom: 8px; }
+.meta > .field, .meta > .data { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -ms-flex-align: justify; justify-content: space-between; -ms-flex-align: center; align-items: center; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 0 !important; padding-top: 8px; padding-bottom: 8px; }
 
 .meta > .field, .meta > .data { padding-left: 24px; padding-right: 24px; }
 
