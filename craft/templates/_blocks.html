@@ -1,6 +1,6 @@
   {% for block in entry.blocks %}
   <div class="section {{ block.style }}">
-    <div class="container {{block.position}}">
+    <div class="container {{block.position}} blockyblock">
       {% if block.anchor %}
         <a name="{{ block.anchor }}"></a>
       {% endif %}

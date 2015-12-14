@@ -9,6 +9,7 @@ Work in progress.
 - [Sass](http://sass-lang.com/)
 - [Isotope](http://isotope.metafizzy.co/)
 - [jQuery](https://jquery.com/)
+- [FitVids](http://daverupert.com/2011/09/responsive-video-embeds-with-fitvids/)
 
 ### Craft Plugins:
 - [GoogleMaps](https://github.com/objectivehtml/Google-Maps-for-Craft)
