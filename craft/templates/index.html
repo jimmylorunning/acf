@@ -11,8 +11,9 @@ June 11, 12, 13, 14, 15, 16, 17
   {{ entry.body }}
   <h2>Featured events:</h2>
   <ul>
+  {% set fitx = { mode: 'fit', width: 305, height:305 } %}
   {% for e in entry.featuredPages %}
-    <li>{{ e.getLink() }}</li>
+    <li><a href="{{ e.getUrl() }}"><img src="{{ e.photo.first.getUrl(fitx) }}" alt="{{ e.title }}"></a></li>
   {% endfor %}
   </ul>
 {% endblock %}
