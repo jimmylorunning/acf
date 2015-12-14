@@ -114,24 +114,31 @@ body {
 
 /*** homepage ***/
 .featured {
-  background-repeat: no-repeat;
-  background-position: 50%;
-  border-radius: 50%; }
-
-.no0 {
-  width: 100px;
-  height: 100px; }
-
-.no1 {
-  width: 150px;
-  height: 150px; }
-
-.no2 {
-  width: 200px;
-  height: 200px; }
-
-.no3 {
-  width: 250px;
-  height: 250px; }
+  position: relative; }
+  .featured div {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    position: absolute; }
+    .featured div.no0 {
+      width: 100px;
+      height: 100px;
+      top: 15px;
+      left: 300px; }
+    .featured div.no1 {
+      width: 150px;
+      height: 150px;
+      top: 200px;
+      left: 20px; }
+    .featured div.no2 {
+      width: 200px;
+      height: 200px;
+      top: 100px;
+      left: 400px; }
+    .featured div.no3 {
+      width: 250px;
+      height: 250px;
+      top: 250px;
+      right: 20px; }
 
 /*# sourceMappingURL=sitewide.css.map */
