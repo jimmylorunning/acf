@@ -10,8 +10,15 @@ June 11, 12, 13, 14, 15, 16, 17
   <h1>{{ entry.title }}</h1>
   {{ entry.body }}
   <h2>Featured events:</h2>
+  {% set featured = [
+    { mode: 'fit', width: 100, height:100 },
+    { mode: 'fit', width: 150, height:150 },
+    { mode: 'fit', width: 200, height:200 },
+    { mode: 'fit', width: 250, height:250 } ]
+     %}
+
   {% for e in entry.featuredPages %}
-    <a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(fit300) }})' class="featured"></div></a>
+    <a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(featured[loop.index0]) }})' class="featured no{{ loop.index0 }}"></div></a>
   {% endfor %}
 {% endblock %}
 
