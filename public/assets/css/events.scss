@@ -1,6 +1,27 @@
-    .events_grid { padding-top: 40px; }
-    .events_grid_item { width: 20%; height: 100px; background-color: #2d8cea; margin-right: 20px; margin-bottom: 20px; padding: 15px;}
+    .events_grid { 
+      padding-top: 50px; 
+      a {
+        color: #666666;
+        &:hover {
+          color: #000000;
+        }
+      }
+    }
+
+    .events_grid_item { position: relative; margin-right: 20px; margin-bottom: 20px; }
+
     .selected {background-color: #2d8cea;}
-    a { color: white }
+
+    .event-caption { 
+      position: absolute; 
+      bottom: 0px; 
+      background-color: rgba(255, 255, 255, 0.8); 
+      width: 100%; 
+      padding: 10px;
+    }
+
+
+
     #filters a { color: blue }
+
     .button { background-color: #666666; }

@@ -1,14 +1,5 @@
 {% extends "_layout" %}
 
-{% block head %}
-  <style>
-    .events_grid { padding-top: 40px; }
-    .events_grid_item { width: 20%; height: 100px; background-color: #2d8cea; margin-right: 20px; margin-bottom: 20px; padding: 15px;}
-    .is-checked {background-color: #2d8cea;}
-    a { color: white }
-  </style>
-{% endblock %}
-
 {% block submenu %}
 <h1>events</h1>
 {% endblock %}
@@ -46,21 +37,12 @@
       <a href="#difficulty=.difficult">difficult</a>
     </div>
   </div>
-  <!--
-  <div class="track-group">
-  <h4>Tracks</h4>
-
-  </div>
-  <div class="difficulty-group">
-    <h5>Difficulty</h5>
-    
-  </div>
--->
 </div>
 
 <div class="events_grid"> 
 {% for entry in craft.entries.section('events') %}
-<div class="events_grid_item {% for track in entry.track %}{{track}} {% endfor %} {{entry.startDateTime | date('Mj')}} {{ entry.rideDifficulty }}"><a href="{{ entry.url }}">{{ entry.title }}</a>
+<div class="events_grid_item {% for track in entry.track %}{{track}} {% endfor %} {{entry.startDateTime | date('Mj')}} {{ entry.rideDifficulty }}"><a href="{{ entry.url }}"><img src="{{ entry.photo.first.getUrl(fit200) }}">
+  <div class="event-caption">{{ entry.title }}</div></a>
 </div>
 {% endfor %}
 </div>
