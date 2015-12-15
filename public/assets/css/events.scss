@@ -17,9 +17,22 @@
       bottom: 0px; 
       background-color: rgba(255, 255, 255, 0.8); 
       width: 100%; 
-      padding: 10px;
     }
 
+    .capsize0 {
+      font-size: 1.2rem;
+      padding: 3px;
+    }
+
+    .capsize1 {
+      font-size: 1.5rem;
+      padding: 5px;
+    }
+
+    .capsize2 {
+      font-size: 2.2rem;
+      padding: 10px;
+    }
 
 
     #filters a { color: blue }
