@@ -122,7 +122,9 @@ body {
   filter: grayscale(100%);
   filter: url(#greyscale);
   filter: gray;
-  transition: 1s; }
+  transition: 1s;
+  max-width: 100%;
+  height: auto; }
   .sponsorImg:hover {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
