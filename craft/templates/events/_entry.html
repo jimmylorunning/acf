@@ -1,12 +1,17 @@
 {% extends "_layout" %}
 
+{% block head %}
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "071f6c24-03bf-475d-b502-0ab1ccb7e448", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
+{% endblock %}
+
 {% block submenu %}
 <h1>events</h1>
 {% endblock %}
 
 {% block contentclass %}orange{% endblock %}
 {% block content %}
-  <h1>Events</h1>
   <h2>{{ entry.title }}</h2>
   <div id="startdatetime">
     {{ entry.startDateTime | date("l, F jS, g:ia") }}
@@ -31,6 +36,14 @@
   <div id="description">
     {{ entry.description }}
   </div>
+  <div id="sharethis">
+    hellooooo?
+    <span class='st_sharethis_large' displayText='ShareThis'></span>
+    <span class='st_facebook_large' displayText='Facebook'></span>
+    <span class='st_twitter_large' displayText='Tweet'></span>
+    <span class='st_pinterest_large' displayText='Pinterest'></span>
+    <span class='st_email_large' displayText='Email'></span>
+  </div>
   <div id="map">
     {% set options = {
       id: 'eventMap', 
@@ -41,3 +54,4 @@
     {{ craft.googleMaps.data('eventMap', entry.address) }}
   </div>
 {% endblock %}
+
