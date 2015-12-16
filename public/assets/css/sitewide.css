@@ -64,6 +64,10 @@ body {
 .blue {
   background-color: #338EE7; }
 
+.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+
 /********************************/
 /********** NAV BAR *************/
 /********************************/
