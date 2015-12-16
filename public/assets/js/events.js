@@ -117,6 +117,13 @@ $( document ).ready( function() {
         }
       }
   
+      // display message box if no filtered items
+     if ( !container.data('isotope').filteredItems.length ) {
+        $('#no-results').show();
+      } else {
+        $('#no-results').hide();
+      }
+
       isOptionLinkClicked = false;
       hashChanged = true;
     })
