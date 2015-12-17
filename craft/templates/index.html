@@ -7,7 +7,7 @@ June 11, 12, 13, 14, 15, 16, 17
 {% block contentclass %}gray{% endblock %}
 
 {% block content %}
-  <div class="featured">
+  <div class="featured hidden-xs">
     <h1>{{ entry.title }}</h1>
     {{ entry.body }}
     <h2>Featured events:</h2>
@@ -21,6 +21,10 @@ June 11, 12, 13, 14, 15, 16, 17
     {% for e in entry.featuredPages %}
       <a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(featured[loop.index0]) }})' class="no{{ loop.index0 }}"></div></a>
     {% endfor %}
+  </div>
+  <div class="featured-xs visible-xs-inline-block">
+    <h1>{{ entry.title }}</h1>
+    <p>The mobile version will appear here.</p>
   </div>
 {% endblock %}
 
