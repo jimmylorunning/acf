@@ -46,10 +46,13 @@
     {% set options = {
       id: 'eventMap', 
       width: '400px', 
-      height: '300px'
+      height: '300px',
+      zoom: false,
+      preserveViewport: true
     } %}
     {{ craft.googleMaps.map(options) }}
-    {{ craft.googleMaps.data('eventMap', entry.address) }}
+    {{ craft.googleMaps.data('eventMap', entry.map) }}
+    {{ craft.googleMaps.zoom('eventMap', 10) }}
   </div>
 {% endblock %}
 
