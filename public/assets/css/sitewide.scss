@@ -136,33 +136,36 @@ body {
     background-position: 50%;
     border-radius: 50%;
     position: absolute;
+    -webkit-box-shadow: 0px 0px 0px 8px rgba(255, 255, 255, 1);
+    -moz-box-shadow:    0px 0px 0px 8px rgba(255, 255, 255, 1);
+    box-shadow:         0px 0px 0px 8px rgba(255, 255, 255, 1);
 
     &.no0 {
       width: 100px;
       height: 100px;
       top: 15px;
-      left: 300px;
+      left: 50%;
     }
 
     &.no1 {
       width: 150px;
       height: 150px;
       top: 200px;
-      left: 20px;
+      left: 30%;
     }
 
     &.no2 {
       width: 200px;
       height: 200px;
       top: 100px;
-      left: 400px;
+      left: 70%;
     }
 
     &.no3 {
       width: 250px;
       height: 250px;
       top: 250px;
-      right: 20px;
+      right: 10%;
     }
   }
 }
