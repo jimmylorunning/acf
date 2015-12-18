@@ -19,7 +19,7 @@ June 11, 12, 13, 14, 15, 16, 17
        %}
 
     {% for e in entry.featuredPages %}
-      <a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(featured[loop.index0]) }})' class="no{{ loop.index0 }}"></div></a>
+      <a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(featured[loop.index0]) }})' class="no{{ loop.index0 }}"><div class="overlay">{{ e.title }}</div></div></a>
     {% endfor %}
   </div>
   <div class="featured-xs visible-xs-inline-block">

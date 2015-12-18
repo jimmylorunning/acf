@@ -131,7 +131,11 @@ body {
 
 .featured {
   position: relative;
-  div {
+  a {
+    color: #000000;
+  }
+
+  > a > div {
     background-repeat: no-repeat;
     background-position: 50%;
     border-radius: 50%;
@@ -140,30 +144,46 @@ body {
     -moz-box-shadow:    0px 0px 0px 8px rgba(255, 255, 255, 1);
     box-shadow:         0px 0px 0px 8px rgba(255, 255, 255, 1);
 
-    &.no0 {
+    > div {
+      text-align: center;
+      vertical-align: middle;
+      opacity: 0;
+      background-position: 50%;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &.no0, &.no0 div {
       width: 100px;
       height: 100px;
+      line-height: 100px;
       top: 15px;
       left: 50%;
     }
 
-    &.no1 {
+    &.no1, &.no1 div {
       width: 150px;
       height: 150px;
+      line-height: 150px;
       top: 200px;
       left: 30%;
     }
 
-    &.no2 {
+    &.no2, &.no2 div {
       width: 200px;
       height: 200px;
+      line-height: 200px;
       top: 100px;
       left: 70%;
     }
 
-    &.no3 {
+    &.no3, &.no3 div {
       width: 250px;
       height: 250px;
+      line-height: 250px;
       top: 250px;
       right: 10%;
     }
