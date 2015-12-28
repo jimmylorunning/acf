@@ -43,16 +43,7 @@
     <span class='st_pinterest_large' displayText='Pinterest'></span>
   </div>
   <div id="map">
-    {% set options = {
-      id: 'eventMap', 
-      width: '400px', 
-      height: '300px',
-      zoom: false,
-      preserveViewport: true
-    } %}
-    {{ craft.googleMaps.map(options) }}
-    {{ craft.googleMaps.data('eventMap', entry.map) }}
-    {{ craft.googleMaps.zoom('eventMap', 10) }}
+    {{ entry.gmap }}
   </div>
 {% endblock %}
 
