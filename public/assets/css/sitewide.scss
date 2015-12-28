@@ -131,6 +131,19 @@ body {
 
 .featured {
   position: relative;
+  background: url(/images/home_bkg.png);
+  background-position-x: center;
+  background-repeat: no-repeat;
+  height: 950px; 
+
+  .hometext {
+    &::first-letter {
+      font-weight: bold;
+      font-size: 4rem;
+    }
+    padding-top: 35px;
+    width: 380px;
+  }
   a {
     color: #000000;
   }

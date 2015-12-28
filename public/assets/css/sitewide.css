@@ -145,7 +145,17 @@ body {
 
 /*** homepage ***/
 .featured {
-  position: relative; }
+  position: relative;
+  background: url(/images/home_bkg.png);
+  background-position-x: center;
+  background-repeat: no-repeat;
+  height: 950px; }
+  .featured .hometext {
+    padding-top: 35px;
+    width: 380px; }
+    .featured .hometext::first-letter {
+      font-weight: bold;
+      font-size: 4rem; }
   .featured a {
     color: #000000; }
   .featured > a > div {
