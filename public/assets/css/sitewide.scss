@@ -123,6 +123,24 @@ body {
   }
 }
 
+
+/********************************/
+/********** FOOTER   ************/
+/********************************/
+
+#footer {
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 3rem;
+  a {
+    color: #ffffff;
+    &:hover {
+      color: $gray;
+    }
+    margin-right: 2rem;
+  }
+}
+
 /********************************/
 /********** SPONSORS ************/
 /********************************/
@@ -219,7 +237,7 @@ body {
   }
 }
 
-/********* GOOGLE MAPS ***********/
+/********* GOOGLE MAPS (RESPONSIVE) ***********/
 
   #map {
     position: relative;

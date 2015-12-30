@@ -12,6 +12,7 @@
   </head>
   <body>
     {% include '_nav.html' %}
+    <a name="top"></a>
     {% include '_header_start.html' %}
       <div class="submenu">
         {% block submenu %}
@@ -21,6 +22,8 @@
 
     {% block blocks %}
     {% endblock %}
+
+    {% include '_footer.html' %}
 
     {% include '_scripts.html' %}
     {% block scripts %}
