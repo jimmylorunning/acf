@@ -7,8 +7,10 @@
 {% block submenu %}
 <h1>events</h1>
 {% endblock %}
-{% block contentclass %}gray{% endblock %}
-{% block content %}
+
+{% block blocks %}
+{% set blockstyle = 'gray' %}
+{% include '_default_block_start.html' %}
 <h2>Filter</h2>
 <div id="filters">
   <div class="date-group">  
@@ -61,10 +63,10 @@
 
 <div id="no-results"><h1>No Results</h1>
 <p>Whoops, we could not find any events matching your criteria. Please change your filters above to see more results.</div>
+{% include '_default_block_end.html' %}
 {% endblock %}
 
 {% block scripts %}
-
   <script src="/assets/js/lib/jquery.ba-bbq.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
   <script src="/assets/js/events.js"></script>

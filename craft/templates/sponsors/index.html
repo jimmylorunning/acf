@@ -7,9 +7,9 @@
   </ul>
 {% endblock %}
 
-{% block contentclass %}gray{% endblock %}
-{% block content %}
-
+{% block blocks %}
+{% set blockstyle = 'gray' %}
+{% include '_default_block_start.html' %}
 <h2>The Whole Bike</h2>
 
 {% for sponsor in entry.sponsors4 %}
@@ -41,5 +41,6 @@
       0 0 0 1 0" />
     </filter>
 </svg>
+{% include '_default_block_end.html' %}
 {% endblock %}
 

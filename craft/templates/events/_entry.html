@@ -10,8 +10,9 @@
 <h1>events</h1>
 {% endblock %}
 
-{% block contentclass %}orange{% endblock %}
-{% block content %}
+{% block blocks %}
+{% set blockstyle = 'orange' %}
+{% include '_default_block_start.html' %}
   <h2>{{ entry.title }}</h2>
   <div id="startdatetime">
     {{ entry.startDateTime | date("l, F jS, g:ia") }}
@@ -45,5 +46,5 @@
   <div id="map">
     {{ entry.gmap }}
   </div>
+{% include '_default_block_end.html' %}
 {% endblock %}
-

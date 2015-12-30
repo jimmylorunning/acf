@@ -7,27 +7,26 @@
   </ul>
 {% endblock %}
 
-{% block contentclass %}gray{% endblock %}
-{% block content %}
-  {{ entry.body }}
-  {% for level in entry.sponsorshipLevels %}
-    <div class="sponsorLevel">
-      <h3>{{ level.levelName }}</h3>
-      <div class="amount">$
-        {% if level.sponsorshipAmount > 0 %}
-          {{ level.sponsorshipAmount }}
-        {% else %}
-          TBD
-        {% endif %}
-      </div>
-      <div class="benefits">
-        {{ level.benefits }}
-      </div>
-    </div>
-  {% endfor %}
-{% endblock %}
-
 {% block blocks %}
+  {% set blockstyle = 'gray' %}
+  {% include '_default_block_start.html' %}
+    {{ entry.body }}
+    {% for level in entry.sponsorshipLevels %}
+      <div class="sponsorLevel">
+        <h3>{{ level.levelName }}</h3>
+        <div class="amount">$
+          {% if level.sponsorshipAmount > 0 %}
+            {{ level.sponsorshipAmount }}
+          {% else %}
+            TBD
+          {% endif %}
+        </div>
+        <div class="benefits">
+          {{ level.benefits }}
+        </div>
+      </div>
+    {% endfor %}
+  {% include '_default_block_end.html' %}
   <div class="section green">
     <div class="container">
       <a name="signup"></a>
