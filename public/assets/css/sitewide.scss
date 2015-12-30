@@ -234,3 +234,28 @@ body {
     width: 100% !important;
     height: 100% !important;
   }
+
+
+/********* VOLUNTEER PAGE ************/
+
+.volunteerlinks {
+  clear: both;
+  margin: 0;
+  padding: 1em 0 0 0;
+  list-style-type: none;
+  text-align: center;
+  font-style: italic;
+  li {
+    display: inline;
+    font-size: 2em;
+    a {
+      color: $submenugray;
+      text-decoration: none;
+      padding: .2em 1em;
+      &:hover {
+        background-color: $blue;
+        color: #ffffff;
+      }
+    }
+  }
+}

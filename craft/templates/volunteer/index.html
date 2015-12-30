@@ -1,0 +1,21 @@
+{% extends "_layout" %}
+
+{% block submenu %}
+<h1>{{ entry.title }}</h1>
+{% endblock %}
+
+{% block blocks %}
+  {% set blockstyle = 'gray' %}
+  {% include '_default_block_start.html' %}
+    <h2>{{ entry.longTitle }}</h2>
+    <img src="{{ entry.photo.first.getUrl(fit100) }}" class="pull-left">
+    {{ entry.body }}
+    <ul class="volunteerlinks">
+      <li><a href="#lead">Lead A Ride</a></li>
+      <li><a href="#host">Host An Event</a></li>
+      <li><a href="#volunteer">Volunteer With Events</a></li>
+      <li><a href="#booth">Booth Space</a></li>
+    </ul>
+  {% include '_default_block_end.html' %}
+  {% include '_blocks.html' %}
+{% endblock %}
