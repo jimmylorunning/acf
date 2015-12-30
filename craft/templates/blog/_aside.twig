@@ -4,25 +4,12 @@
 {% endif %}
 
     <aside>
-      <h3>
-        <a href="/blog">Blog</a>
-      </h3>
       <h4>
         <a href="/blog/archive">Archive</a>
       </h4>
       <h4>
         <a href="/blog/author">Authors</a>
       </h4>
-      <form action="/blog/search">
-        <label for="search">
-          <h4>Search</h4>
-        </label>
-        <div>
-          <input type="text" name="q" placeholder="Search" value="{{ query }}" tabindex="1">
-          <button type="submit"><span class="fa fa-search"></span></button>
-        </div>
-      </form>
-      
       <h4>Popular Tags</h4>
       {% set allEntries = craft.entries.section('instaBlog').limit(null) %}
       {% set tags = craft.tags.group('instaBlogTags').relatedTo(allEntries) %}
@@ -45,6 +32,16 @@
           </li>
         {% endnav %}
       </ul>
+      <form action="/blog/search">
+        <label for="search">
+          <h4>Search</h4>
+        </label>
+        <div>
+          <input type="text" name="q" placeholder="Search" value="{{ query }}" tabindex="1">
+          <button type="submit"><span class="fa fa-search"></span></button>
+        </div>
+      </form>
+      
 
       <h4>Follow Us</h4>
       {% if craft.instaBlog.settings.facebook|length %}

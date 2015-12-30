@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include '_head.html' %}
+
+    {% block head %}
+    {% endblock %}
+
+    {% include 'blog/_layout-head.twig' %}
+  </head>
+  <body>
+    {% include '_nav.html' %}
+    {% include '_header_start.html' %}
+      <div class="submenu">
+      {% block submenu %}
+      {% endblock %}
+      </div>
+    {% include '_header_end.html' %}
+
+    <div class="section gray"> 
+      <div class="container blockyblock">
+        <div class="row">
+          <div class="col-md-9">
+            {% block blocks %}
+            {% endblock %}
+          </div>
+          <div class="col-md-3">
+            {% include 'blog/_aside.twig' %}
+          </div>
+      </div>
+    </div>
+
+    {% include '_scripts.html' %}
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>
+
