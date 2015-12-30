@@ -58,17 +58,21 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-    <div class="container header">
+    <div class="container">
       <div class="row">
-        <div class="col-md-2">
-          logo
+        <div class="col-md-2" id="logo-container">
+          {% if craft.request.getFirstSegment %}
+          <img src="/images/Allpage_logo.png" alt="Atlanta Cycling Festival">
+          {% endif %}
         </div>
-        <div class="col-md-10 submenu">
+        <div class="col-md-10 header">
           <div class="tagline">
             Let it be sexy
           </div>
-        {% block submenu %}
-        {% endblock %}
+          <div class="submenu">
+            {% block submenu %}
+            {% endblock %}
+          </div>
         </div>
       </div>
     </div><!-- /.container -->

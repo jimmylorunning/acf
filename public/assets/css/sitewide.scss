@@ -79,11 +79,23 @@ body {
 }
 
 /********************************/
+/**********   LOGO   ************/
+/********************************/
+
+#logo-container {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+
+/********************************/
 /********** SUB MENU ************/
 /********************************/
 
-.submenu {
+.header {
   h1 {
+    font-size: 3rem;
+    margin-right: 5rem;
     text-transform: lowercase;
     display: inline-block;
     float: left;
@@ -91,18 +103,22 @@ body {
   .tagline {
     color: $gray;
     text-transform: uppercase;
+    font-weight: bold;
     font-size: 4rem;
     font-style: italic;
+    padding-top: 1.3rem;
   }
-  li {
-    text-transform: lowercase;
-    font-size: 3rem;
-    margin-left: 10rem;
-    margin-top: 2rem;
-    display: inline-block;
-    float: left;
-    a {
-      color: $submenugray;
+  .submenu {
+    margin-top: 5rem;
+    li {
+      text-transform: lowercase;
+      font-size: 3rem;
+      margin-right: 5rem;
+      display: inline-block;
+      float: left;
+      a {
+        color: $submenugray;
+      }
     }
   }
 }
