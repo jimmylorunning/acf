@@ -1,3 +1,6 @@
+/********************************/
+/********** INDEX ***************/
+/********************************/
 .events_grid {
   padding-top: 50px; }
   .events_grid a {
@@ -86,6 +89,49 @@
   background-color: #FDA879;
   padding: 3rem;
   display: none; }
+
+/********************************/
+/********** ENTRY ***************/
+/********************************/
+#eventimage img {
+  width: 90%;
+  max-width: 90%;
+  height: auto;
+  border: 10px solid #ffffff; }
+
+.evententry .essentials, .evententry #description {
+  padding-left: 1.5rem; }
+.evententry h2 {
+  font-size: 5rem;
+  color: #ffffff;
+  font-style: italic; }
+.evententry #startdatetime {
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 2rem; }
+.evententry #eventinfo {
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding: 1.5rem; }
+  .evententry #eventinfo table {
+    width: 100%; }
+
+#sharethis {
+  margin: 1rem; }
+
+.xclose a {
+  font-size: 6rem;
+  color: #000000; }
+  .xclose a:hover {
+    text-decoration: none; }
+
+#mapcontainer {
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff; }
+  #mapcontainer h3 {
+    font-size: 5rem;
+    color: #ffffff;
+    font-style: italic; }
 
 body {
   padding-top: 5rem; }

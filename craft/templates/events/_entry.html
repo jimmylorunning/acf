@@ -13,38 +13,69 @@
 {% block blocks %}
 {% set blockstyle = 'orange' %}
 {% include '_default_block_start.html' %}
-  <h2>{{ entry.title }}</h2>
-  <div id="startdatetime">
-    {{ entry.startDateTime | date("l, F jS, g:ia") }}
-  </div>
-  <div id="eventimage">
-    {% for image in entry.photo %}
-      <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.title }}">
-    {% endfor %}
-  </div>
-  <div id="eventinfo">
-    <div id="type">
-      {% for etrack in entry.track %}
-        {{ etrack }}
-      {% endfor %}
+  <div class="row evententry">
+    <div class="col-md-6">
+      <div class="essentials">
+        <h2>{{ entry.title }}</h2>
+        <div id="startdatetime">
+          {{ entry.startDateTime | date("l, F jS, g:ia") }}
+        </div>
+      </div>
+      <div id="eventinfo">
+        <table>
+          <tr>
+            <th>Type</th>
+            <th>Meet at</th>
+            <th>Skill Level</th>
+          </tr>
+          <tr>
+            <td>
+            {% for etrack in entry.track %}
+              {{ etrack }}{% if not loop.last %}, {% endif %}
+            {% endfor %}
+            </td>
+            <td>
+              {{entry.startingLocation}}
+            </td>
+            <td>
+              {{ entry.rideDifficulty }}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="description">
+        <h3>Description</h3>
+        {{ entry.description }}
+      </div>
     </div>
-    <div id="meetat">
+    <div class="col-md-5">
+      <div id="eventimage">
+        {% set fit500 = { mode: 'fit', width: 500, height:500 } %}
+        {% for image in entry.photo %}
+          <img src="{{ image.getUrl(fit500) }}" alt="{{ image.title }}">
+        {% endfor %}
+      </div>
+      <div id="sharethis">
+        <span class='st_sharethis_large' displayText='ShareThis'></span>
+        <span class='st_facebook_large' displayText='Facebook'></span>
+        <span class='st_twitter_large' displayText='Tweet'></span>
+        <span class='st_pinterest_large' displayText='Pinterest'></span>
+      </div>
     </div>
-    <div id="difficulty">
-      {{ entry.rideDifficulty }}
+    <div class="col-md-1 hidden-xs hidden-sm xclose">
+      {% if craft.request.getUrlReferrer() matches '/events/i' %}
+        <a href="javascript:window.history.back()">
+      {% else %}
+        <a href="/events">
+      {% endif %}
+      X</a>
     </div>
   </div>
-  <div id="description">
-    {{ entry.description }}
-  </div>
-  <div id="sharethis">
-    <span class='st_sharethis_large' displayText='ShareThis'></span>
-    <span class='st_facebook_large' displayText='Facebook'></span>
-    <span class='st_twitter_large' displayText='Tweet'></span>
-    <span class='st_pinterest_large' displayText='Pinterest'></span>
-  </div>
-  <div id="map">
-    {{ entry.gmap }}
+  <div id="mapcontainer">
+    <h3>Starting Point</h3>
+    <div id="map">
+      {{ entry.gmap }}
+    </div>
   </div>
 {% include '_default_block_end.html' %}
 {% endblock %}

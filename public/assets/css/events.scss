@@ -1,3 +1,7 @@
+/********************************/
+/********** INDEX ***************/
+/********************************/
+
     .events_grid { 
       padding-top: 50px; 
       a {
@@ -113,3 +117,61 @@
       display: none;
     }
 
+/********************************/
+/********** ENTRY ***************/
+/********************************/
+
+  #eventimage {
+    img {
+      width: 90%;
+      max-width: 90%;
+      height: auto;
+      border: 10px solid #ffffff;
+    }
+  }
+
+  .evententry {
+    .essentials, #description {
+      padding-left: 1.5rem;
+    }
+    h2 {
+      font-size: 5rem;
+      color: #ffffff;
+      font-style: italic;
+    }
+    #startdatetime {
+      font-size: 2rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    #eventinfo {
+      border-top: 1px solid #ffffff;
+      border-bottom: 1px solid #ffffff;
+      padding: 1.5rem;
+      table {
+        width: 100%;
+      }
+    }
+  }
+
+  #sharethis {
+    margin: 1rem; 
+  }
+
+  .xclose a {
+    font-size: 6rem;
+    color: #000000;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  
+  #mapcontainer {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    h3 {
+      font-size: 5rem;
+      color: #ffffff;
+      font-style: italic;
+    }
+  }  
