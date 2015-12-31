@@ -10,7 +10,10 @@
 
     .events_grid_item { position: relative; margin-right: 20px; margin-bottom: 20px; }
 
-    .selected {background-color: #2d8cea;}
+    .selected {
+      background-color: $blue;
+      color: #ffffff;
+    }
 
     .event-caption { 
       position: absolute; 
@@ -35,7 +38,68 @@
     }
 
 
-    #filters a { color: blue }
+    #filters {
+      ul {
+        clear: both;
+        margin: 0;
+        padding: 1em 0 0 0;
+        list-style-type: none;
+        font-style: italic;
+        &.nav-tabs {
+          li {
+            margin-right: 4px;
+            a {
+              font-size: 1.8rem;
+              background-color: #cccccc;
+              border:none;
+              border-bottom: 4px solid $gray;
+              border-radius: inherit;
+            }
+            &.active {
+              a {
+                background-color: #cccccc;
+                border:none;
+                border-bottom: 4px solid #cccccc;
+                border-radius: inherit;
+              }
+            }
+          }
+        }
+        li {
+          display: inline;
+          font-size: 2.8rem;
+          a {
+            color: $darkergray;
+            text-decoration: none;
+            padding: .2em 1em;
+            &:hover {
+              background-color: $blue;
+              color: #ffffff;
+            }
+            &.selected {
+              color: #ffffff;
+            }
+          }
+        }
+      } 
+    }
+
+    .tab-pane {
+      background-color: #cccccc;
+      padding: 0 1rem 1rem 2rem;
+      ul {
+        li {
+          margin-right: 1rem;
+          a {
+            font-size: 1.5rem;
+            background-color: #ffffff;
+            &.selected {
+              background-color: $blue;
+            }
+          }
+        }
+      }
+    }
 
     .button { background-color: #666666; }
 
@@ -48,3 +112,4 @@
       padding: 3rem;
       display: none;
     }
+

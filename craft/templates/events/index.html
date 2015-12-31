@@ -11,18 +11,18 @@
 {% block blocks %}
 {% set blockstyle = 'gray' %}
 {% include '_default_block_start.html' %}
-<h2>Filter</h2>
 <div id="filters">
   <div class="date-group">  
-    <h3>Dates</h3>
-    <a href="#date=*">all dates</a>
-    <a href="#date=.pre">Pre Festival</a>
-    {% set firstDay = acfSettings.firstDay %}
-    {{ firstDay | date('F') }}
-    {% for i in 1..acfSettings.numberOfDays %}
-      <a href="#date=.{{firstDay|date('Mj')}}">{{firstDay|date('j')}}</a>
-      {% set firstDay = firstDay|date_modify("+1 day") %}
-    {% endfor %}
+    <ul>
+      <li><a href="#date=*">ALL</a></li>
+      <li><a href="#date=.pre">Pre festival</a></li>
+      {% set firstDay = acfSettings.firstDay %}
+      <li>{{ firstDay | date('F') }}</li>
+      {% for i in 1..acfSettings.numberOfDays %}
+        <li><a href="#date=.{{firstDay|date('Mj')}}">{{firstDay|date('j')}}</a></li>
+        {% set firstDay = firstDay|date_modify("+1 day") %}
+      {% endfor %}
+    </ul>
   </div>
   <ul class="nav nav-tabs" id="filtertabs" role="tablist">
     <li role="presentation" id="testtab" class="active"><a href="#tracks" name="tracks" aria-controls="tracks" role="tab" data-toggle="tab">Tracks</a></li>
@@ -30,20 +30,24 @@
   </ul>
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active track-group" id="tracks">
-      <a href="#track=" id="alltracks">all</a>
-      <a href="#track=.advocacy">advocacy</a>
-      <a href="#track=.art">art</a>
-      <a href="#track=.health">health</a>
-      <a href="#track=.mtb">MTB</a>
-      <a href="#track=.party">party</a>
-      <a href="#track=.tech">tech</a>
-      <a href="#track=.words">words</a>
+      <ul>
+        <li><a href="#track=" id="alltracks">all</a></li>
+        <li><a href="#track=.advocacy">advocacy</a></li>
+        <li><a href="#track=.art">art</a></li>
+        <li><a href="#track=.health">health</a></li>
+        <li><a href="#track=.mtb">MTB</a></li>
+        <li><a href="#track=.party">party</a></li>
+        <li><a href="#track=.tech">tech</a></li>
+        <li><a href="#track=.words">words</a></li>
+      </ul>
     </div>
     <div role="tabpanel" class="tab-pane difficulty-group" id="rides">
-      <a href="#difficulty=" id="allrides">all</a>
-      <a href="#difficulty=.easy">easy</a>
-      <a href="#difficulty=.medium">medium</a>
-      <a href="#difficulty=.difficult">difficult</a>
+      <ul>
+        <li><a href="#difficulty=" id="allrides">all</a></li>
+        <li><a href="#difficulty=.easy">easy</a></li>
+        <li><a href="#difficulty=.medium">medium</a></li>
+        <li><a href="#difficulty=.difficult">difficult</a></li>
+      </ul>
     </div>
   </div>
 </div>

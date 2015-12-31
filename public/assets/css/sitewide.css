@@ -11,7 +11,8 @@
   margin-bottom: 20px; }
 
 .selected {
-  background-color: #2d8cea; }
+  background-color: #338EE7;
+  color: #ffffff; }
 
 .event-caption {
   position: absolute;
@@ -31,8 +32,48 @@
   font-size: 2.2rem;
   padding: 10px; }
 
-#filters a {
-  color: blue; }
+#filters ul {
+  clear: both;
+  margin: 0;
+  padding: 1em 0 0 0;
+  list-style-type: none;
+  font-style: italic; }
+  #filters ul.nav-tabs li {
+    margin-right: 4px; }
+    #filters ul.nav-tabs li a {
+      font-size: 1.8rem;
+      background-color: #cccccc;
+      border: none;
+      border-bottom: 4px solid #ededed;
+      border-radius: inherit; }
+    #filters ul.nav-tabs li.active a {
+      background-color: #cccccc;
+      border: none;
+      border-bottom: 4px solid #cccccc;
+      border-radius: inherit; }
+  #filters ul li {
+    display: inline;
+    font-size: 2.8rem; }
+    #filters ul li a {
+      color: #333333;
+      text-decoration: none;
+      padding: .2em 1em; }
+      #filters ul li a:hover {
+        background-color: #338EE7;
+        color: #ffffff; }
+      #filters ul li a.selected {
+        color: #ffffff; }
+
+.tab-pane {
+  background-color: #cccccc;
+  padding: 0 1rem 1rem 2rem; }
+  .tab-pane ul li {
+    margin-right: 1rem; }
+    .tab-pane ul li a {
+      font-size: 1.5rem;
+      background-color: #ffffff; }
+      .tab-pane ul li a.selected {
+        background-color: #338EE7; }
 
 .button {
   background-color: #666666; }
