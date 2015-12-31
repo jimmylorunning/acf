@@ -2,4 +2,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/assets/js/lib/bootstrap.min.js"></script>
     <script src="/assets/js/lib/jquery.fitvids.js"></script>
-    <script src="/assets/js/main.js"></script>
+    {% if not (craft.request.firstSegment == "events") %}
+      <script src="/assets/js/main.js"></script>
+    {% endif %}

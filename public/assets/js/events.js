@@ -112,7 +112,6 @@ $( document ).ready( function() {
             $('#filtertabs a:last').tab('show'); 
           }
           $selectedLink = optionSets.find('a[href="#' + hrefValue + '"]');
-          console.log("hash sl = " + $selectedLink);
           changeSelectedLink( $selectedLink , key + '-group');
         }
       }
