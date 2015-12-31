@@ -17,13 +17,12 @@
     <h3>Dates</h3>
     <a href="#date=*">all dates</a>
     <a href="#date=.pre">Pre Festival</a>
-    <a href="#date=.Jun11">June 11</a>
-    <a href="#date=.Jun12">June 12</a>
-    <a href="#date=.Jun13">June 13</a>
-    <a href="#date=.Jun14">June 14</a>
-    <a href="#date=.Jun15">June 15</a>
-    <a href="#date=.Jun16">June 16</a>
-    <a href="#date=.Jun17">June 17</a>
+    {% set firstDay = acfSettings.firstDay %}
+    {{ firstDay | date('F') }}
+    {% for i in 1..acfSettings.numberOfDays %}
+      <a href="#date=.{{firstDay|date('Mj')}}">{{firstDay|date('j')}}</a>
+      {% set firstDay = firstDay|date_modify("+1 day") %}
+    {% endfor %}
   </div>
   <ul class="nav nav-tabs" id="filtertabs" role="tablist">
     <li role="presentation" id="testtab" class="active"><a href="#tracks" name="tracks" aria-controls="tracks" role="tab" data-toggle="tab">Tracks</a></li>
