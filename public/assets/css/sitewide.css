@@ -205,12 +205,6 @@ body {
 /********************************/
 /********** SUB MENU ************/
 /********************************/
-.header h1 {
-  font-size: 3rem;
-  margin-right: 5rem;
-  text-transform: lowercase;
-  display: inline-block;
-  float: left; }
 .header .tagline {
   color: #ededed;
   text-transform: uppercase;
@@ -219,15 +213,25 @@ body {
   font-style: italic;
   padding-top: 1.3rem; }
 .header .submenu {
-  margin-top: 5rem; }
-  .header .submenu li {
-    text-transform: lowercase;
-    font-size: 3rem;
-    margin-right: 5rem;
-    display: inline-block;
-    float: left; }
-    .header .submenu li a {
-      color: #999999; }
+  margin-top: 5rem;
+  font-style: italic; }
+  .header .submenu h1 {
+    font-size: 4rem;
+    text-transform: lowercase; }
+  .header .submenu ul {
+    padding: 0px; }
+    .header .submenu ul li {
+      text-transform: lowercase;
+      font-size: 3rem;
+      margin-right: 5rem;
+      display: inline-block;
+      float: left; }
+      .header .submenu ul li a {
+        color: #999999; }
+      .header .submenu ul li h1 {
+        font-size: 4rem;
+        text-transform: lowercase;
+        margin-top: 0px; }
 
 /********************************/
 /********** FOOTER   ************/

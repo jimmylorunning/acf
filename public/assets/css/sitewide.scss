@@ -93,13 +93,6 @@ body {
 /********************************/
 
 .header {
-  h1 {
-    font-size: 3rem;
-    margin-right: 5rem;
-    text-transform: lowercase;
-    display: inline-block;
-    float: left;
-  }
   .tagline {
     color: $gray;
     text-transform: uppercase;
@@ -110,14 +103,27 @@ body {
   }
   .submenu {
     margin-top: 5rem;
-    li {
+    font-style: italic;
+    h1 {
+      font-size: 4rem;
       text-transform: lowercase;
-      font-size: 3rem;
-      margin-right: 5rem;
-      display: inline-block;
-      float: left;
-      a {
-        color: $submenugray;
+    }
+    ul {
+      padding: 0px;
+      li {
+        text-transform: lowercase;
+        font-size: 3rem;
+        margin-right: 5rem;
+        display: inline-block;
+        float: left;
+        a {
+          color: $submenugray;
+        }
+        h1 {
+          font-size: 4rem;
+          text-transform: lowercase;
+          margin-top: 0px;
+        }
       }
     }
   }
