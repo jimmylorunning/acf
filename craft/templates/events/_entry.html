@@ -13,6 +13,10 @@
 {% block blocks %}
 {% set blockstyle = 'orange' %}
 {% include '_default_block_start.html' %}
+{% set tablecolumnclass = 'colhalf' %}
+{% if entry.rideDifficulty != "" %}
+  {% set tablecolumnclass = 'colthird' %}
+{% endif %}
   <div class="row evententry">
     <div class="col-md-6">
       <div class="essentials">
@@ -24,9 +28,11 @@
       <div id="eventinfo">
         <table>
           <tr>
-            <th>Type</th>
-            <th>Meet at</th>
-            <th>Skill Level</th>
+            <th class="{{ tablecolumnclass }}">Type</th>
+            <th class="{{ tablecolumnclass }}">Meet at</th>
+            {% if entry.rideDifficulty != "" %}
+            <th class="{{ tablecolumnclass }}">Skill Level</th>
+            {% endif %}
           </tr>
           <tr>
             <td>
@@ -37,9 +43,11 @@
             <td>
               {{entry.startingLocation}}
             </td>
+            {% if entry.rideDifficulty != "" %}
             <td>
               {{ entry.rideDifficulty }}
             </td>
+            {% endif %}
           </tr>
         </table>
       </div>

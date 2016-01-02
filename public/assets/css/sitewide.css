@@ -115,6 +115,10 @@
   padding: 1.5rem; }
   .evententry #eventinfo table {
     width: 100%; }
+  .evententry #eventinfo .colhalf {
+    width: 50%; }
+  .evententry #eventinfo .colthird {
+    width: 33%; }
 
 #sharethis {
   margin: 1rem; }
