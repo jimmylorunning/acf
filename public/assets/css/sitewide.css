@@ -332,6 +332,9 @@ body {
 #home-logo {
   position: absolute; }
 
+.featured-xs {
+  padding-top: 50px; }
+
 /********* HOMEPAGE CAROUSEL ************/
 .carousel-container {
   width: 85%;
