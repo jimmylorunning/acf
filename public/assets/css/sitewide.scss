@@ -133,6 +133,17 @@ body {
   }
 }
 
+@media (max-width: 992px) {
+  .header.home {
+    padding-left: 260px;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .header.home {
+    padding-left: 110px;
+  }
+}
 
 /********************************/
 /********** FOOTER   ************/
