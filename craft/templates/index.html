@@ -1,5 +1,10 @@
 {% extends "_layout" %}
 
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="/assets/css/lib/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/lib/slick-theme.css"/>
+{% endblock %}
+
 {% block submenu %}
 <ul>
   {% set firstDay = acfSettings.firstDay %}
@@ -29,9 +34,16 @@
         <a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(featured[loop.index0]) }})' class="no{{ loop.index0 }}"><div class="overlay">{{ e.title }}</div></div></a>
       {% endfor %}
     </div>
-    <div class="featured-xs visible-xs-inline-block">
+    <div class="featured-xs visible-xs-block">
       <h1>{{ entry.title }}</h1>
       <p>The mobile version will appear here.</p>
+      <div class="carousel-container">
+        <div class="mobile-carousel">
+          {% for e in entry.featuredPages %}
+            <div class="one"><a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(featured[3]) }})' class="mobile-feature"><div class="overlay">{{ e.title }}</div></div></a></div>
+          {% endfor %}
+        </div>
+      </div>
     </div>
   {% include '_default_block_end.html' %}
   {% include '_blocks' %}
@@ -62,4 +74,9 @@
       </form>
     </div>
   </div>
+{% endblock %}
+
+{% block scripts %}
+  <script type="text/javascript" src="/assets/js/lib/slick.min.js"></script>
+  <script type="text/javascript" src="/assets/js/home.js"></script>
 {% endblock %}
