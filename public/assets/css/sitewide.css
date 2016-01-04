@@ -232,6 +232,9 @@ body {
         font-size: 4rem;
         text-transform: lowercase;
         margin-top: 0px; }
+.header.home {
+  padding-left: 80px;
+  height: 210px; }
 
 /********************************/
 /********** FOOTER   ************/
@@ -271,7 +274,7 @@ body {
   background-repeat: no-repeat;
   height: 950px; }
   .featured .hometext {
-    padding-top: 35px;
+    padding-top: 80px;
     width: 380px; }
     .featured .hometext::first-letter {
       font-weight: bold;
@@ -320,6 +323,27 @@ body {
       top: 250px;
       right: 10%; }
 
+#home-logo {
+  position: absolute; }
+
+/********* HOMEPAGE CAROUSEL ************/
+.carousel-container {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.mobile-feature {
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  vertical-align: middle;
+  background-position: 50%;
+  border-radius: 50%;
+  line-height: 250px;
+  color: #ffffff; }
+
 /********* GOOGLE MAPS (RESPONSIVE) ***********/
 #map {
   position: relative;
@@ -352,23 +376,5 @@ body {
       .volunteerlinks li a:hover {
         background-color: #338EE7;
         color: #ffffff; }
-
-/********* homepage carousel ************/
-.carousel-container {
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto; }
-
-.mobile-feature {
-  margin-left: auto;
-  margin-right: auto;
-  width: 250px;
-  height: 250px;
-  text-align: center;
-  vertical-align: middle;
-  background-position: 50%;
-  border-radius: 50%;
-  line-height: 250px;
-  color: #ffffff; }
 
 /*# sourceMappingURL=sitewide.css.map */

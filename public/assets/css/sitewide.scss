@@ -127,6 +127,10 @@ body {
       }
     }
   }
+  &.home {
+    padding-left: 80px;
+    height: 210px;
+  }
 }
 
 
@@ -181,7 +185,7 @@ body {
       font-weight: bold;
       font-size: 4rem;
     }
-    padding-top: 35px;
+    padding-top: 80px;
     width: 380px;
   }
   a {
@@ -243,6 +247,30 @@ body {
   }
 }
 
+#home-logo {
+  position: absolute;
+}
+
+/********* HOMEPAGE CAROUSEL ************/
+
+.carousel-container {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-feature {
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  vertical-align: middle;
+  background-position: 50%;
+  border-radius: 50%;
+  line-height: 250px;
+  color: #ffffff;
+}
 /********* GOOGLE MAPS (RESPONSIVE) ***********/
 
   #map {
@@ -286,24 +314,3 @@ body {
 
 
 
-/********* homepage carousel ************/
-
-.carousel-container {
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.mobile-feature {
-  margin-left: auto;
-  margin-right: auto;
-  width: 250px;
-  height: 250px;
-  text-align: center;
-  vertical-align: middle;
-  background-position: 50%;
-  border-radius: 50%;
-  line-height: 250px;
-  color: #ffffff;
-}

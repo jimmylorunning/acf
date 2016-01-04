@@ -1,11 +1,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2" id="logo-container">
-          {% if craft.request.getFirstSegment %}
-          <img src="/images/Allpage_logo.png" alt="Atlanta Cycling Festival">
+          {% if homepage is defined %}
+            <div id="home-logo">
+              <img src="/images/home_logo.png" alt="Atlanta Cycling Festival">
+            </div>
+          {% else %}
+            <img src="/images/Allpage_logo.png" alt="Atlanta Cycling Festival">
           {% endif %}
         </div>
-        <div class="col-md-10 header">
+        <div class="col-md-10 header {% if homepage is defined %}home{% endif %}">
           <div class="tagline">
             Let it be sexy
           </div>
