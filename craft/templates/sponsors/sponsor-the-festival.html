@@ -12,13 +12,17 @@
   {% include '_default_block_start.html' %}
     {{ entry.body }}
     {% for level in entry.sponsorshipLevels %}
-      <div class="sponsorLevel">
+      <div class="sponsorLevel col-sm-3">
+        {% for image in level.levelImage %}
+          <img src="{{ image.getUrl(fit300) }}" alt="{{ image.title }}">
+        {% endfor %}
+        <img src="">
         <h3>{{ level.levelName }}</h3>
-        <div class="amount">$
+        <div class="amount">
           {% if level.sponsorshipAmount > 0 %}
-            {{ level.sponsorshipAmount }}
+            ${{ level.sponsorshipAmount }}
           {% else %}
-            TBD
+            $TBD
           {% endif %}
         </div>
         <div class="benefits">

@@ -272,7 +272,28 @@ body {
     filter: grayscale(0);
     filter: none; }
 
-/*** homepage ***/
+/********************************/
+/********** BECOME A SPONSOR ****/
+/********************************/
+.sponsorLevel h3, .sponsorLevel .amount {
+  font-size: 2.5em;
+  font-style: italic;
+  line-height: 1em; }
+.sponsorLevel ul {
+  padding-left: 20px; }
+.sponsorLevel img {
+  width: 80%;
+  max-width: 80%;
+  height: auto; }
+
+@media (max-width: 768px) {
+  .sponsorLevel img {
+    width: auto;
+    max-width: none;
+    height: auto; } }
+/********************************/
+/********** HOMEPAGE ************/
+/********************************/
 .featured {
   position: relative;
   background: url(/images/home_bkg.png);
