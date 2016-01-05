@@ -162,6 +162,25 @@
 
   #sharethis {
     margin: 1rem; 
+    .rsvp {
+      height: 32px;
+      top: -11px; /* (height / 2) - padding-top */
+      padding-top: 5px;
+      padding-left: 1em;
+      padding-right: 1em;
+      position: relative;
+      display: inline-block;
+      background-color: #3b5998;
+      a {
+        color: #ffffff;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &:hover {
+        background-color: #8b9dc3;
+      }
+    }
   }
 
   .xclose a {
