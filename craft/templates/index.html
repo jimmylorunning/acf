@@ -48,29 +48,33 @@
   {% include '_blocks' %}
   <div class="section orange">
     <div class="container">
-      <a name="signup"></a>
-      <h2>Signup</h2>
-      <form>
-      <div class="form-group">
-        <label for="fname">First Name</label>
-        <input type="text" class="form-control" name="fname" id="fname">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <a name="signup"></a>
+          <form>
+          <h2>Signup</h2>
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" name="fname" id="fname">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" name="lname" id="lname">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" id="email">
+          </div>
+          <div class="form-group">
+            <label for="name">Comment</label>
+            <textarea class="form-control" name="comment" id="comment" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="form-control" value="send">
+          </div>
+          </form>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="lname">Last Name</label>
-        <input type="text" class="form-control" name="lname" id="lname">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" name="email" id="email">
-      </div>
-      <div class="form-group">
-        <label for="name">Comment</label>
-        <input type="textarea" class="form-control" name="comment" id="comment">
-      </div>
-      <div class="form-group">
-        <input type="submit" class="form-control">
-      </div>
-      </form>
     </div>
   </div>
 {% endblock %}
