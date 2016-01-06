@@ -37,7 +37,7 @@
           <tr>
             <td>
             {% for etrack in entry.track %}
-              {{ etrack }}{% if not loop.last %}, {% endif %}
+              {{ etrack|capitalize }}{% if not loop.last %}, {% endif %}
             {% endfor %}
             </td>
             <td>
@@ -45,7 +45,7 @@
             </td>
             {% if entry.rideDifficulty != "" %}
             <td>
-              {{ entry.rideDifficulty }}
+              {{ entry.rideDifficulty|capitalize }}
             </td>
             {% endif %}
           </tr>
