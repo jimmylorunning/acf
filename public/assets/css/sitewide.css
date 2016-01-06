@@ -236,6 +236,15 @@ body {
     text-transform: lowercase; }
   .header .submenu ul {
     padding: 0px; }
+    .header .submenu ul.homemenu li {
+      color: #338EE7;
+      text-transform: none; }
+      .header .submenu ul.homemenu li a {
+        color: #338EE7; }
+        .header .submenu ul.homemenu li a:hover {
+          text-decoration: none;
+          background-color: #338EE7;
+          color: #ffffff; }
     .header .submenu ul li {
       text-transform: lowercase;
       font-size: 3rem;

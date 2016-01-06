@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block submenu %}
-<ul>
+<ul class="homemenu">
   {% set firstDay = acfSettings.firstDay %}
   <li>{{ firstDay | date('F') }}</li>
   {% for i in 1..acfSettings.numberOfDays %}

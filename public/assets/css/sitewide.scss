@@ -110,6 +110,20 @@ body {
     }
     ul {
       padding: 0px;
+      &.homemenu {
+        li {
+          color: $blue;
+          text-transform: none;
+          a {
+            color: $blue;
+            &:hover {
+              text-decoration: none;
+              background-color: $blue;
+              color: #ffffff;
+            }
+          }
+        }
+      }
       li {
         text-transform: lowercase;
         font-size: 3rem;
