@@ -237,6 +237,7 @@ body {
   .header .submenu ul {
     padding: 0px; }
     .header .submenu ul.homemenu li {
+      margin-right: 5rem;
       color: #338EE7;
       text-transform: none; }
       .header .submenu ul.homemenu li a {
@@ -248,7 +249,7 @@ body {
     .header .submenu ul li {
       text-transform: lowercase;
       font-size: 3rem;
-      margin-right: 5rem;
+      margin-right: 11rem;
       display: inline-block;
       float: left; }
       .header .submenu ul li a {

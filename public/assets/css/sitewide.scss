@@ -112,6 +112,7 @@ body {
       padding: 0px;
       &.homemenu {
         li {
+          margin-right: 5rem;
           color: $blue;
           text-transform: none;
           a {
@@ -127,7 +128,7 @@ body {
       li {
         text-transform: lowercase;
         font-size: 3rem;
-        margin-right: 5rem;
+        margin-right: 11rem;
         display: inline-block;
         float: left;
         a {
