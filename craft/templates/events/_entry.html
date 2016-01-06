@@ -82,11 +82,13 @@
       X</a>
     </div>
   </div>
+  {% if entry.gmap is not empty %}
   <div id="mapcontainer">
     <h3>Starting Point</h3>
     <div id="map">
       {{ entry.gmap }}
     </div>
   </div>
+  {% endif %}
 {% include '_default_block_end.html' %}
 {% endblock %}
