@@ -422,6 +422,8 @@ body {
   width: 85%;
   margin-left: auto;
   margin-right: auto; }
+  .carousel-container a:hover {
+    text-decoration: none; }
 
 .mobile-feature {
   margin-left: auto;
@@ -433,7 +435,9 @@ body {
   background-position: 50%;
   border-radius: 50%;
   line-height: 250px;
-  color: #ffffff; }
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 3rem; }
 
 /********* GOOGLE MAPS (RESPONSIVE) ***********/
 #map {

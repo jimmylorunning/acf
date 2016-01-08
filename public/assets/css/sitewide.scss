@@ -378,6 +378,11 @@ $hpimg9: 300px;
   width: 85%;
   margin-left: auto;
   margin-right: auto;
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .mobile-feature {
@@ -391,6 +396,8 @@ $hpimg9: 300px;
   border-radius: 50%;
   line-height: 250px;
   color: $white;
+  font-weight: bold;
+  font-size: 3rem;
 }
 /********* GOOGLE MAPS (RESPONSIVE) ***********/
 
