@@ -4,7 +4,7 @@
 .events_grid {
   padding-top: 50px; }
   .events_grid a {
-    color: #666666; }
+    color: #454545; }
     .events_grid a:hover {
       color: #000000; }
 
@@ -14,7 +14,7 @@
   margin-bottom: 20px; }
 
 .selected {
-  background-color: #338EE7;
+  background-color: #2D8CEA;
   color: #ffffff; }
 
 .event-caption {
@@ -45,30 +45,30 @@
     margin-right: 4px; }
     #filters ul.nav-tabs li a {
       font-size: 1.8rem;
-      background-color: #cccccc;
+      background-color: #dbdbdb;
       border: none;
       border-bottom: 4px solid #ededed;
       border-radius: inherit; }
     #filters ul.nav-tabs li.active a {
-      background-color: #cccccc;
+      background-color: #dbdbdb;
       border: none;
-      border-bottom: 4px solid #cccccc;
+      border-bottom: 4px solid #dbdbdb;
       border-radius: inherit; }
   #filters ul li {
     display: inline;
     font-size: 2.8rem; }
     #filters ul li a {
-      color: #333333;
+      color: #454545;
       text-decoration: none;
       padding: .2em 1em; }
       #filters ul li a:hover {
-        background-color: #338EE7;
+        background-color: #2D8CEA;
         color: #ffffff; }
       #filters ul li a.selected {
         color: #ffffff; }
 
 .tab-pane {
-  background-color: #cccccc;
+  background-color: #dbdbdb;
   padding: 0 1rem 1rem 2rem; }
   .tab-pane ul li {
     margin-right: 1rem; }
@@ -76,10 +76,7 @@
       font-size: 1.5rem;
       background-color: #ffffff; }
       .tab-pane ul li a.selected {
-        background-color: #338EE7; }
-
-.button {
-  background-color: #666666; }
+        background-color: #2D8CEA; }
 
 #no-results {
   width: 80%;
@@ -137,7 +134,7 @@
       #sharethis .rsvp a:hover {
         text-decoration: none; }
     #sharethis .rsvp:hover {
-      background-color: #8b9dc3; }
+      background-color: #3b5998; }
 
 .xclose a {
   font-size: 6rem;
@@ -169,7 +166,7 @@ body {
   background-color: #ffffff; }
 
 .blue {
-  background-color: #338EE7; }
+  background-color: #2D8CEA; }
 
 .section {
   padding-top: 3rem;
@@ -188,9 +185,9 @@ body {
 .navbar-inverse {
   /***** hamburger menu icon ******/ }
   .navbar-inverse .navbar-brand {
-    color: #aaaaaa; }
+    color: #000000; }
     .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
-      color: #999999; }
+      color: #000000; }
   .navbar-inverse .navbar-nav {
     font-size: 1.1rem;
     margin-top: 0px;
@@ -222,7 +219,7 @@ body {
 /********** SUB MENU ************/
 /********************************/
 .header .tagline {
-  color: #ededed;
+  color: #e2e2e2;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 4rem;
@@ -238,13 +235,13 @@ body {
     padding: 0px; }
     .header .submenu ul.homemenu li {
       margin-right: 5rem;
-      color: #338EE7;
+      color: #2D8CEA;
       text-transform: none; }
       .header .submenu ul.homemenu li a {
-        color: #338EE7; }
+        color: #2D8CEA; }
         .header .submenu ul.homemenu li a:hover {
           text-decoration: none;
-          background-color: #338EE7;
+          background-color: #2D8CEA;
           color: #ffffff; }
     .header .submenu ul li {
       text-transform: lowercase;
@@ -253,7 +250,7 @@ body {
       display: inline-block;
       float: left; }
       .header .submenu ul li a {
-        color: #999999; }
+        color: #a6a6a6; }
       .header .submenu ul li h1 {
         font-size: 4rem;
         text-transform: lowercase;
@@ -426,11 +423,11 @@ body {
     display: inline;
     font-size: 2em; }
     .volunteerlinks li a {
-      color: #999999;
+      color: #4a4a4a;
       text-decoration: none;
       padding: .2em 1em; }
       .volunteerlinks li a:hover {
-        background-color: #338EE7;
+        background-color: #2D8CEA;
         color: #ffffff; }
 
 /********* FORMS ************/
@@ -456,7 +453,7 @@ form h2 {
   border-radius: 0px;
   box-shadow: none; }
   .form-control:focus {
-    border-color: #333333;
+    border-color: #000000;
     box-shadow: none; }
 
 input[type=text].form-control,
@@ -465,7 +462,7 @@ textarea.form-control {
   background-color: transparent; }
 
 select.form-control {
-  background-color: #ededed; }
+  background-color: #ffffff; }
 
 input[type=submit].form-control {
   background-color: #ededed;

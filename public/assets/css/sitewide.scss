@@ -43,9 +43,9 @@ body {
 
 .navbar-inverse {
   .navbar-brand {
-    color: $brandgray;
+    color: $black;
     &:focus, &:hover {
-      color: $submenugray;
+      color: $black;
     }
   }
   .navbar-nav {
@@ -54,7 +54,7 @@ body {
     background-color: $gray;
     > li > a {
       text-transform: uppercase;
-      color: #000000;
+      color: $black;
       &:hover {
         color: $orange;
       }
@@ -68,12 +68,12 @@ body {
   }
   /***** hamburger menu icon ******/
   .navbar-toggle {
-    border-color: #000000;
+    border-color: $black;
     &:focus, &:hover {
       background-color: $orange;
     }
     .icon-bar {
-      background-color: #000000;
+      background-color: $black;
     }
   }
 }
@@ -94,7 +94,7 @@ body {
 
 .header {
   .tagline {
-    color: $gray;
+    color: $tagline;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 4rem;
@@ -120,7 +120,7 @@ body {
             &:hover {
               text-decoration: none;
               background-color: $blue;
-              color: #ffffff;
+              color: $white;
             }
           }
         }
@@ -132,7 +132,7 @@ body {
         display: inline-block;
         float: left;
         a {
-          color: $submenugray;
+          color: $submenu;
         }
         h1 {
           font-size: 4rem;
@@ -169,7 +169,7 @@ body {
   text-align: center;
   font-size: 3rem;
   a {
-    color: #ffffff;
+    color: $white;
     &:hover {
       color: $gray;
     }
@@ -245,7 +245,7 @@ body {
     width: 380px;
   }
   a {
-    color: #000000;
+    color: $black;
   }
 
   > a > div {
@@ -329,7 +329,7 @@ body {
   background-position: 50%;
   border-radius: 50%;
   line-height: 250px;
-  color: #ffffff;
+  color: $white;
 }
 /********* GOOGLE MAPS (RESPONSIVE) ***********/
 
@@ -361,12 +361,12 @@ body {
     display: inline;
     font-size: 2em;
     a {
-      color: $submenugray;
+      color: $volunteernav;
       text-decoration: none;
       padding: .2em 1em;
       &:hover {
         background-color: $blue;
-        color: #ffffff;
+        color: $white;
       }
     }
   }
@@ -377,11 +377,11 @@ body {
 /********* FORMS ************/
 
 .orange form {
-  color: #ffffff;
+  color: $white;
 }
 
 .green form {
-  color: #000000;
+  color: $black;
 }
 
 form {
@@ -401,12 +401,12 @@ form {
 
 .form-control {
   border: none;
-  border-bottom: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid $white;
+  border-right: 1px solid $white;
   border-radius: 0px;
   box-shadow: none;
   &:focus {
-    border-color: $darkergray;
+    border-color: $black;
     box-shadow: none;
   }
 }
@@ -418,7 +418,7 @@ textarea.form-control {
 }
 
 select.form-control {
-  background-color: $gray;
+  background-color: $white;
 }
 
 input[type=submit].form-control {
