@@ -14,7 +14,7 @@
     {% for level in entry.sponsorshipLevels %}
       <div class="sponsorLevel col-sm-3">
         {% for image in level.levelImage %}
-          <img src="{{ image.getUrl(fit300) }}" alt="{{ image.title }}">
+          <img src="{{ image.getUrl() }}" alt="{{ image.title }}">
         {% endfor %}
         <img src="">
         <h3>{{ level.levelName }}</h3>
