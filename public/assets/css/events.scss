@@ -1,5 +1,5 @@
 /********************************/
-/********** INDEX ***************/
+/********** EVENTS INDEX ********/
 /********************************/
 
     .events_grid { 
@@ -134,7 +134,7 @@
     }
     h2 {
       font-size: 5rem;
-      color: #ffffff;
+      color: $white;
       font-style: italic;
     }
     #startdatetime {
@@ -198,3 +198,20 @@
       font-style: italic;
     }
   }  
+
+/********* GOOGLE MAPS (RESPONSIVE) ***********/
+
+  #map {
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+  }
+  #map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+

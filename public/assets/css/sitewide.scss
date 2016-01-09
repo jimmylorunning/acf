@@ -1,8 +1,24 @@
 @import 'variables';
 @import 'events';
+@import 'homepage';
+@import 'sponsors';
+@import 'volunteer';
 
 body {
   padding-top: 5rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: 600;
 }
 
 .orange {
@@ -26,8 +42,14 @@ body {
 }  
 
 .section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+  border: 1px solid $submenu;
+}
+
+video {
+  margin-top: 1rem;
+  background-color: transparent;
 }
 /********************************/
 /********** NAV BAR *************/
@@ -43,7 +65,8 @@ body {
 
 .navbar-inverse {
   .navbar-brand {
-    color: $black;
+    color: $submenu;
+    font-size: 1.2rem;
     &:focus, &:hover {
       color: $black;
     }
@@ -83,8 +106,8 @@ body {
 /********************************/
 
 #logo-container {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 
@@ -93,25 +116,30 @@ body {
 /********************************/
 
 .header {
+  letter-spacing: -2px;
+  padding-left: 0px;
+  padding-right: 0px;
   .tagline {
     color: $tagline;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 5rem;
     font-style: italic;
     padding-top: 1.3rem;
   }
   .submenu {
-    margin-top: 5rem;
+    margin-top: 2rem;
     font-style: italic;
     h1 {
-      font-size: 4rem;
+      font-size: 5rem;
+      font-weight: 700;
       text-transform: lowercase;
     }
     ul {
       padding: 0px;
       &.homemenu {
         li {
+          font-weight: 600;
           margin-right: 5rem;
           color: $blue;
           text-transform: none;
@@ -126,6 +154,8 @@ body {
         }
       }
       li {
+        font-weight: 600;
+        line-height: 2em;
         text-transform: lowercase;
         font-size: 3rem;
         margin-right: 11rem;
@@ -135,16 +165,17 @@ body {
           color: $submenu;
         }
         h1 {
-          font-size: 4rem;
+          font-size: 5rem;
           text-transform: lowercase;
           margin-top: 0px;
+          font-weight: 700;
         }
       }
     }
   }
   &.home {
     padding-left: 80px;
-    height: 210px;
+    height: 180px;
   }
 }
 
@@ -176,271 +207,6 @@ body {
     margin-right: 2rem;
   }
 }
-
-/********************************/
-/********** SPONSORS ************/
-/********************************/
-
-.sponsorImg {
-  width: 100%;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  filter: url(#greyscale);
-  filter: gray;
-  transition: 1s;
-  max-width: 100%;
-  height: auto;
-  &:hover {
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
-    filter: none;
-  }
-}
-
-/********************************/
-/********** BECOME A SPONSOR ****/
-/********************************/
-
-.sponsorLevel {
-  h3, .amount {
-    font-size: 2.5em;
-    font-style: italic;
-    line-height: 1em;
-  }
-  ul {
-    padding-left: 20px;
-  }
-  img {
-    width: 80%;
-    max-width: 80%;
-    height: auto;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .sponsorLevel img {
-    width: auto;
-    max-width: none;
-    height: auto;
-  }
-}
-/********************************/
-/********** HOMEPAGE ************/
-/********************************/
-
-$hpimg0: 80px;
-$hpimg1: 120px;
-$hpimg2: 170px;
-$hpimg3: 250px;
-$hpimg4: 100px;
-$hpimg5: 160px;
-$hpimg6: 200px;
-$hpimg7: 240px;
-$hpimg8: 110px;
-$hpimg9: 300px;
-
-.featured {
-  position: relative;
-  background: url(/images/home_bkg.png);
-  background-position-x: center;
-  background-repeat: no-repeat;
-  height: 950px; 
-
-  .hometext {
-    &::first-letter {
-      font-weight: bold;
-      font-size: 4rem;
-    }
-    padding-top: 80px;
-    width: 380px;
-  }
-  a {
-    color: $black;
-  }
-
-  > a > div {
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50%;
-    position: absolute;
-    -webkit-box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 1);
-    -moz-box-shadow:    0px 0px 0px 4px rgba(255, 255, 255, 1);
-    box-shadow:         0px 0px 0px 4px rgba(255, 255, 255, 1);
-
-    > div {
-      text-align: center;
-      vertical-align: middle;
-      opacity: 0;
-      overflow: hidden;
-      background-position: 50%;
-      border-radius: 50%;
-      font-weight: bold;
-      background-color: rgba(255, 255, 255, 0.75);
-      &:hover {
-        opacity: 1;
-      }
-    }
-
-    &.no0, &.no0 div {
-      width: $hpimg0;
-      height: $hpimg0;
-      line-height: $hpimg0;
-      top: 230px;
-      left: 46.5%;
-    }
-
-    &.no1, &.no1 div {
-      width: $hpimg1;
-      height: $hpimg1;
-      line-height: $hpimg1;
-      top: 138px;
-      left: 64%;
-    }
-
-    &.no2, &.no2 div {
-      width: $hpimg2;
-      height: $hpimg2;
-      line-height: $hpimg2;
-      top: 2px;
-      left: 76%;
-    }
-
-    &.no3, &.no3 div {
-      width: $hpimg3;
-      height: $hpimg3;
-      line-height: $hpimg3;
-      top: 288px;
-      left: 6%;
-    }
-
-    &.no4, &.no4 div {
-      width: $hpimg4;
-      height: $hpimg4;
-      line-height: $hpimg4;
-      top: 360px;
-      left: 30%;
-    }
-    
-    &.no5, &.no5 div {
-      width: $hpimg5;
-      height: $hpimg5;
-      line-height: $hpimg5;
-      top: 300px;
-      left: 83%;
-    }
-    
-    &.no6, &.no6 div {
-      width: $hpimg6;
-      height: $hpimg6;
-      line-height: $hpimg6;
-      top: 395px;
-      left: 57%;
-    }
-    
-    &.no7, &.no7 div {
-      width: $hpimg7;
-      height: $hpimg7;
-      line-height: $hpimg7;
-      top: 574px;
-      left: 12%;
-    }
-    
-    &.no8, &.no8 div {
-      width: $hpimg8;
-      height: $hpimg8;
-      line-height: $hpimg8;
-      top: 563px;
-      left: 45%;
-    }
-    
-    &.no9, &.no9 div {
-      width: $hpimg9;
-      height: $hpimg9;
-      line-height: $hpimg9;
-      top: 642px;
-      left: 58%;
-    }
-  }
-}
-
-#home-logo {
-  position: absolute;
-}
-
-.featured-xs {
-  padding-top: 50px;
-}
-
-/********* HOMEPAGE CAROUSEL ************/
-
-.carousel-container {
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-  a {
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
-.mobile-feature {
-  margin-left: auto;
-  margin-right: auto;
-  width: 250px;
-  height: 250px;
-  text-align: center;
-  vertical-align: middle;
-  background-position: 50%;
-  border-radius: 50%;
-  line-height: 250px;
-  color: $white;
-  font-weight: bold;
-  font-size: 3rem;
-}
-/********* GOOGLE MAPS (RESPONSIVE) ***********/
-
-  #map {
-    position: relative;
-    padding-bottom: 75%; // This is the aspect ratio
-    height: 0;
-    overflow: hidden;
-  }
-  #map iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-
-/********* VOLUNTEER PAGE ************/
-
-.volunteerlinks {
-  clear: both;
-  margin: 0;
-  padding: 1em 0 0 0;
-  list-style-type: none;
-  text-align: center;
-  font-style: italic;
-  li {
-    display: inline;
-    font-size: 2em;
-    a {
-      color: $volunteernav;
-      text-decoration: none;
-      padding: .2em 1em;
-      &:hover {
-        background-color: $blue;
-        color: $white;
-      }
-    }
-  }
-}
-
-
 
 /********* FORMS ************/
 

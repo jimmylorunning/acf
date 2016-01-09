@@ -1,0 +1,174 @@
+/********************************/
+/********** HOMEPAGE ************/
+/********************************/
+
+$hpimg0: 80px;
+$hpimg1: 120px;
+$hpimg2: 170px;
+$hpimg3: 250px;
+$hpimg4: 100px;
+$hpimg5: 160px;
+$hpimg6: 200px;
+$hpimg7: 240px;
+$hpimg8: 110px;
+$hpimg9: 300px;
+
+.featured {
+  position: relative;
+  background: url(/images/home_bkg.png);
+  background-position-x: center;
+  background-repeat: no-repeat;
+  height: 950px; 
+
+  .hometext {
+    &::first-letter {
+      font-weight: bold;
+      font-size: 4rem;
+    }
+    padding-top: 80px;
+    width: 380px;
+  }
+  a {
+    color: $black;
+  }
+
+  > a > div {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 1);
+    -moz-box-shadow:    0px 0px 0px 4px rgba(255, 255, 255, 1);
+    box-shadow:         0px 0px 0px 4px rgba(255, 255, 255, 1);
+
+    > div {
+      text-align: center;
+      vertical-align: middle;
+      opacity: 0;
+      overflow: hidden;
+      background-position: 50%;
+      border-radius: 50%;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.75);
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &.no0, &.no0 div {
+      width: $hpimg0;
+      height: $hpimg0;
+      line-height: $hpimg0;
+      top: 230px;
+      left: 46.5%;
+    }
+
+    &.no1, &.no1 div {
+      width: $hpimg1;
+      height: $hpimg1;
+      line-height: $hpimg1;
+      top: 138px;
+      left: 64%;
+    }
+
+    &.no2, &.no2 div {
+      width: $hpimg2;
+      height: $hpimg2;
+      line-height: $hpimg2;
+      top: 2px;
+      left: 76%;
+    }
+
+    &.no3, &.no3 div {
+      width: $hpimg3;
+      height: $hpimg3;
+      line-height: $hpimg3;
+      top: 288px;
+      left: 6%;
+    }
+
+    &.no4, &.no4 div {
+      width: $hpimg4;
+      height: $hpimg4;
+      line-height: $hpimg4;
+      top: 360px;
+      left: 30%;
+    }
+    
+    &.no5, &.no5 div {
+      width: $hpimg5;
+      height: $hpimg5;
+      line-height: $hpimg5;
+      top: 300px;
+      left: 83%;
+    }
+    
+    &.no6, &.no6 div {
+      width: $hpimg6;
+      height: $hpimg6;
+      line-height: $hpimg6;
+      top: 395px;
+      left: 57%;
+    }
+    
+    &.no7, &.no7 div {
+      width: $hpimg7;
+      height: $hpimg7;
+      line-height: $hpimg7;
+      top: 574px;
+      left: 12%;
+    }
+    
+    &.no8, &.no8 div {
+      width: $hpimg8;
+      height: $hpimg8;
+      line-height: $hpimg8;
+      top: 563px;
+      left: 45%;
+    }
+    
+    &.no9, &.no9 div {
+      width: $hpimg9;
+      height: $hpimg9;
+      line-height: $hpimg9;
+      top: 642px;
+      left: 58%;
+    }
+  }
+}
+
+#home-logo {
+  position: absolute;
+}
+
+.featured-xs {
+  padding-top: 50px;
+}
+
+/********* HOMEPAGE CAROUSEL ************/
+
+.carousel-container {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.mobile-feature {
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  vertical-align: middle;
+  background-position: 50%;
+  border-radius: 50%;
+  line-height: 250px;
+  color: $white;
+  font-weight: bold;
+  font-size: 3rem;
+}
