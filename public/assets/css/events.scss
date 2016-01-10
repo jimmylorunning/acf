@@ -12,7 +12,12 @@
       }
     }
 
-    .events_grid_item { position: relative; margin-right: 20px; margin-bottom: 20px; }
+    .events_grid_item { 
+      position: relative; 
+      margin-right: 20px; 
+      margin-bottom: 20px; 
+      border: 5px solid $white;
+    }
 
     .selected {
       background-color: $blue;
@@ -50,6 +55,7 @@
         list-style-type: none;
         font-style: italic;
         &.nav-tabs {
+          border: 0px;
           li {
             margin-right: 4px;
             a {
@@ -71,7 +77,8 @@
         }
         li {
           display: inline;
-          font-size: 2.8rem;
+          font-size: 3rem;
+          font-weight: 600;
           a {
             color: $eventsnav;
             text-decoration: none;
@@ -90,7 +97,7 @@
 
     .tab-pane {
       background-color: $filterbg;
-      padding: 0 1rem 1rem 2rem;
+      padding: 0 0.5rem 0.5rem 2rem;
       ul {
         li {
           margin-right: 1rem;
@@ -103,6 +110,13 @@
           }
         }
       }
+    }
+
+    #filters .tab-content ul {
+      padding-top: 0px;
+    }
+    .tab-content {
+      max-width: 580px;
     }
 
     #no-results {
@@ -124,16 +138,23 @@
       width: 90%;
       max-width: 90%;
       height: auto;
-      border: 10px solid $white;
+      border: 5px solid $white;
     }
   }
 
+  .eventbg {
+    background: url(/images/Event_bkg.png);
+    background-position-x: center;
+    background-repeat: no-repeat;
+  }
+  
   .evententry {
+    margin-top: 1rem;
     .essentials, #description {
       padding-left: 1.5rem;
     }
     h2 {
-      font-size: 5rem;
+      font-size: 4rem;
       color: $white;
       font-style: italic;
     }
@@ -193,7 +214,7 @@
     border-top: 1px solid $white;
     border-bottom: 1px solid $white;
     h3 {
-      font-size: 5rem;
+      font-size: 4rem;
       color: $white;
       font-style: italic;
     }
@@ -203,9 +224,10 @@
 
   #map {
     position: relative;
-    padding-bottom: 75%; // This is the aspect ratio
+    padding-bottom: 40%; // This is the aspect ratio
     height: 0;
     overflow: hidden;
+    border: 5px solid $white;
   }
   #map iframe {
     position: absolute;

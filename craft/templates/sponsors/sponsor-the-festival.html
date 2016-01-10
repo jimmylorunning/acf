@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block blocks %}
-  {% set blockstyle = 'gray' %}
+  {% set blockstyle = 'gray sponsorbg2a' %}
   {% include '_default_block_start.html' %}
     {{ entry.body }}
     {% for level in entry.sponsorshipLevels %}
@@ -31,7 +31,7 @@
       </div>
     {% endfor %}
   {% include '_default_block_end.html' %}
-  <div class="section green">
+  <div class="section green sponsorbg2b">
     <div class="container">
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1">

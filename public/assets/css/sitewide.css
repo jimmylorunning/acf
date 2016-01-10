@@ -11,7 +11,8 @@
 .events_grid_item {
   position: relative;
   margin-right: 20px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  border: 5px solid #ffffff; }
 
 .selected {
   background-color: #2D8CEA;
@@ -41,22 +42,25 @@
   padding: 1em 0 0 0;
   list-style-type: none;
   font-style: italic; }
-  #filters ul.nav-tabs li {
-    margin-right: 4px; }
-    #filters ul.nav-tabs li a {
-      font-size: 1.8rem;
-      background-color: #dbdbdb;
-      border: none;
-      border-bottom: 4px solid #ededed;
-      border-radius: inherit; }
-    #filters ul.nav-tabs li.active a {
-      background-color: #dbdbdb;
-      border: none;
-      border-bottom: 4px solid #dbdbdb;
-      border-radius: inherit; }
+  #filters ul.nav-tabs {
+    border: 0px; }
+    #filters ul.nav-tabs li {
+      margin-right: 4px; }
+      #filters ul.nav-tabs li a {
+        font-size: 1.8rem;
+        background-color: #dbdbdb;
+        border: none;
+        border-bottom: 4px solid #ededed;
+        border-radius: inherit; }
+      #filters ul.nav-tabs li.active a {
+        background-color: #dbdbdb;
+        border: none;
+        border-bottom: 4px solid #dbdbdb;
+        border-radius: inherit; }
   #filters ul li {
     display: inline;
-    font-size: 2.8rem; }
+    font-size: 3rem;
+    font-weight: 600; }
     #filters ul li a {
       color: #454545;
       text-decoration: none;
@@ -69,7 +73,7 @@
 
 .tab-pane {
   background-color: #dbdbdb;
-  padding: 0 1rem 1rem 2rem; }
+  padding: 0 0.5rem 0.5rem 2rem; }
   .tab-pane ul li {
     margin-right: 1rem; }
     .tab-pane ul li a {
@@ -77,6 +81,12 @@
       background-color: #ffffff; }
       .tab-pane ul li a.selected {
         background-color: #2D8CEA; }
+
+#filters .tab-content ul {
+  padding-top: 0px; }
+
+.tab-content {
+  max-width: 580px; }
 
 #no-results {
   width: 80%;
@@ -94,28 +104,35 @@
   width: 90%;
   max-width: 90%;
   height: auto;
-  border: 10px solid #ffffff; }
+  border: 5px solid #ffffff; }
 
-.evententry .essentials, .evententry #description {
-  padding-left: 1.5rem; }
-.evententry h2 {
-  font-size: 5rem;
-  color: #ffffff;
-  font-style: italic; }
-.evententry #startdatetime {
-  font-size: 2rem;
-  font-style: italic;
-  margin-bottom: 2rem; }
-.evententry #eventinfo {
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
-  padding: 1.5rem; }
-  .evententry #eventinfo table {
-    width: 100%; }
-  .evententry #eventinfo .colhalf {
-    width: 50%; }
-  .evententry #eventinfo .colthird {
-    width: 33%; }
+.eventbg {
+  background: url(/images/Event_bkg.png);
+  background-position-x: center;
+  background-repeat: no-repeat; }
+
+.evententry {
+  margin-top: 1rem; }
+  .evententry .essentials, .evententry #description {
+    padding-left: 1.5rem; }
+  .evententry h2 {
+    font-size: 4rem;
+    color: #ffffff;
+    font-style: italic; }
+  .evententry #startdatetime {
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 2rem; }
+  .evententry #eventinfo {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 1.5rem; }
+    .evententry #eventinfo table {
+      width: 100%; }
+    .evententry #eventinfo .colhalf {
+      width: 50%; }
+    .evententry #eventinfo .colthird {
+      width: 33%; }
 
 #sharethis {
   margin: 1rem; }
@@ -146,16 +163,17 @@
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff; }
   #mapcontainer h3 {
-    font-size: 5rem;
+    font-size: 4rem;
     color: #ffffff;
     font-style: italic; }
 
 /********* GOOGLE MAPS (RESPONSIVE) ***********/
 #map {
   position: relative;
-  padding-bottom: 75%;
+  padding-bottom: 40%;
   height: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  border: 5px solid #ffffff; }
 
 #map iframe {
   position: absolute;
@@ -167,6 +185,9 @@
 /********************************/
 /********** HOMEPAGE ************/
 /********************************/
+.section.homegray {
+  padding-top: 2rem; }
+
 .featured {
   position: relative;
   background: url(/images/home_bkg.png);
@@ -268,6 +289,13 @@
   padding-top: 50px; }
 
 /********* HOMEPAGE CAROUSEL ************/
+.featured-xs {
+  background: url(/images/mobilebkg.png);
+  background-position-x: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  padding-top: 110px; }
+
 .carousel-container {
   width: 85%;
   margin-left: auto;
@@ -289,17 +317,39 @@
   font-weight: bold;
   font-size: 3rem; }
 
+button.prev-arrow.slick-arrow, button.next-arrow.slick-arrow {
+  display: block !important;
+  position: absolute;
+  z-index: 500;
+  top: 63px;
+  border: 0;
+  background: transparent; }
+  button.prev-arrow.slick-arrow:focus, button.next-arrow.slick-arrow:focus {
+    outline: none; }
+
+button.next-arrow.slick-arrow {
+  right: 0px; }
+
 /********************************/
 /********** SPONSORS ************/
 /********************************/
+.sponsorbg {
+  background: url(/images/Sponsor_bkg.png);
+  background-position-x: center;
+  background-repeat: no-repeat; }
+
+.sponsor {
+  width: 280px;
+  height: 180px; }
+
 .sponsorImg {
-  width: 100%;
+  width: 70%;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   filter: url(#greyscale);
   filter: gray;
   transition: 1s;
-  max-width: 100%;
+  max-width: 70%;
   height: auto; }
   .sponsorImg:hover {
     -webkit-filter: grayscale(0);
@@ -309,18 +359,39 @@
 /********************************/
 /********** BECOME A SPONSOR ****/
 /********************************/
-.sponsorLevel h3, .sponsorLevel .amount {
-  font-size: 2.5em;
-  font-style: italic;
-  line-height: 1em; }
-.sponsorLevel ul {
-  padding-left: 20px; }
-.sponsorLevel img {
-  width: 80%;
-  max-width: 80%;
-  height: auto; }
+.sponsorbg2a {
+  background: url(/images/Sponsor_bkg2a.png);
+  background-position-x: center;
+  background-position-y: 20px;
+  background-repeat: no-repeat; }
+
+.sponsorbg2b {
+  background: url(/images/Sponsor_bkg2b.png);
+  background-position-x: center;
+  background-position-y: 20px;
+  background-repeat: no-repeat; }
+
+.sponsorLevel {
+  border-right: 2px solid #ffffff;
+  min-height: 700px; }
+  .sponsorLevel h3, .sponsorLevel .amount {
+    font-size: 2.5em;
+    font-style: italic;
+    line-height: 1em; }
+  .sponsorLevel ul {
+    padding-left: 20px; }
+  .sponsorLevel img {
+    width: 80%;
+    max-width: 80%;
+    height: auto; }
 
 @media (max-width: 768px) {
+  .sponsorLevel {
+    padding-top: 2rem;
+    border-right: 0;
+    border-bottom: 2px solid #ffffff;
+    min-height: 0; }
+
   .sponsorLevel img {
     width: auto;
     max-width: none;
@@ -496,7 +567,11 @@ video {
     color: #ffffff;
     margin-right: 2rem; }
     #footer a:hover {
-      color: #ededed; }
+      color: #ededed;
+      text-decoration: none; }
+    #footer a .backtotop {
+      font-size: 1.2rem;
+      vertical-align: middle; }
 
 /********* FORMS ************/
 .orange form {

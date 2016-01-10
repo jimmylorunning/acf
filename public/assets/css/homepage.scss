@@ -13,6 +13,10 @@ $hpimg7: 240px;
 $hpimg8: 110px;
 $hpimg9: 300px;
 
+.section.homegray {
+  padding-top: 2rem;
+}
+
 .featured {
   position: relative;
   background: url(/images/home_bkg.png);
@@ -147,6 +151,14 @@ $hpimg9: 300px;
 
 /********* HOMEPAGE CAROUSEL ************/
 
+.featured-xs {
+  background: url(/images/mobilebkg.png);
+  background-position-x: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  padding-top: 110px;
+}
+
 .carousel-container {
   width: 85%;
   margin-left: auto;
@@ -171,4 +183,20 @@ $hpimg9: 300px;
   color: $white;
   font-weight: bold;
   font-size: 3rem;
+}
+
+button.prev-arrow.slick-arrow, button.next-arrow.slick-arrow {
+  display: block !important;
+  position: absolute;
+  z-index: 500;
+  top: 63px;
+  border: 0;
+  background: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+
+button.next-arrow.slick-arrow {
+  right: 0px;
 }
