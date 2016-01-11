@@ -225,11 +225,12 @@ a.navbar-brand h1 {
   background-repeat: no-repeat;
   height: 950px; }
   .featured .hometext {
-    padding-top: 80px;
+    padding-top: 120px;
     width: 380px; }
     .featured .hometext::first-letter {
       font-weight: bold;
-      font-size: 4rem; }
+      font-size: 4rem;
+      line-height: 0px; }
   .featured a {
     color: #000000; }
   .featured > a > div {
@@ -312,11 +313,9 @@ a.navbar-brand h1 {
       top: 642px;
       left: 58%; }
 
-.featured-xs {
-  padding-top: 50px; }
-
 /********* HOMEPAGE CAROUSEL ************/
 .featured-xs {
+  padding-top: 50px;
   background: url(/images/mobilebkg.png);
   background-position-x: center;
   background-repeat: no-repeat;
@@ -442,6 +441,16 @@ button.next-arrow.slick-arrow {
         background-color: #2D8CEA;
         color: #ffffff; }
 
+::-moz-selection {
+  background: #2D8CEA;
+  text-shadow: none;
+  color: #ffffff; }
+
+::selection {
+  background: #2D8CEA;
+  text-shadow: none;
+  color: #ffffff; }
+
 body {
   padding-top: 5rem;
   font-family: 'Open Sans', sans-serif;
@@ -471,6 +480,14 @@ h3 {
 
 .blue {
   background-color: #2D8CEA; }
+  .blue ::-moz-selection {
+    background: #ededed;
+    text-shadow: none;
+    color: #ffffff; }
+  .blue ::selection {
+    background: #ededed;
+    text-shadow: none;
+    color: #ffffff; }
 
 .section {
   padding-top: 0rem;

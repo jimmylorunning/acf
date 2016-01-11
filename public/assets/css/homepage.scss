@@ -72,8 +72,9 @@ $hpimg9: 300px;
     &::first-letter {
       font-weight: bold;
       font-size: 4rem;
+      line-height: 0px; 
     }
-    padding-top: 80px;
+    padding-top: 120px;
     width: 380px;
   }
   a {
@@ -185,14 +186,10 @@ $hpimg9: 300px;
   }
 }
 
-
-.featured-xs {
-  padding-top: 50px;
-}
-
 /********* HOMEPAGE CAROUSEL ************/
 
 .featured-xs {
+  padding-top: 50px;
   background: url(/images/mobilebkg.png);
   background-position-x: center;
   background-repeat: no-repeat;
