@@ -53,9 +53,9 @@
 
 <div class="events_grid"> 
 {% set eventPhotoSize = { 
-  '0': { mode: 'fit', width: 100, height:100 },
-  '1': { mode: 'fit', width: 200, height:200 },
-  '2': { mode: 'fit', width: 400, height:400 } }
+  '0': { mode: 'fit', width: 85, height:85 },
+  '1': { mode: 'fit', width: 185, height:185 },
+  '2': { mode: 'fit', width: 384, height:384 } }
 %}
 {% for entry in craft.entries.section('events') %}
 <div class="events_grid_item {% for track in entry.track %}{{track}} {% endfor %} {{entry.startDateTime | date('Mj')}} {{ entry.rideDifficulty }} {% if (entry.startDateTime <  acfSettings.firstDay) %}pre{% endif %}"><a href="{{ entry.url }}"><img src="{{ entry.photo.first.getUrl(eventPhotoSize[entry.photoSize]) }}">

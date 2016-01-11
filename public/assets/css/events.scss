@@ -14,8 +14,8 @@
 
     .events_grid_item { 
       position: relative; 
-      margin-right: 20px; 
-      margin-bottom: 20px; 
+      margin-right: 5px;
+      margin-bottom: 5px;
       border: 5px solid $white;
     }
 
@@ -147,7 +147,7 @@
     background-position-x: center;
     background-repeat: no-repeat;
   }
-  
+
   .evententry {
     margin-top: 1rem;
     .essentials, #description {
