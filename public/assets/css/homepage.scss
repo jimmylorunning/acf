@@ -2,6 +2,15 @@
 /********** HOMEPAGE ************/
 /********************************/
 
+a.navbar-brand h1 {
+  margin: 3px 0px 0px 0px;
+  color: $submenu;
+  font-size: 1.2rem;
+  &:focus, &:hover {
+    color: $black;
+  }
+}
+
 /********** HEADER **************/
 
 #home-logo {

@@ -185,6 +185,13 @@
 /********************************/
 /********** HOMEPAGE ************/
 /********************************/
+a.navbar-brand h1 {
+  margin: 3px 0px 0px 0px;
+  color: #a6a6a6;
+  font-size: 1.2rem; }
+  a.navbar-brand h1:focus, a.navbar-brand h1:hover {
+    color: #000000; }
+
 /********** HEADER **************/
 #home-logo {
   position: absolute; }
