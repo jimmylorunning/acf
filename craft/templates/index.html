@@ -7,14 +7,14 @@
 {% endblock %}
 
 {% block submenu %}
-<ul class="homemenu">
+<div class="homemenu">
   {% set firstDay = acfSettings.firstDay %}
-  <li>{{ firstDay | date('F') }}</li>
+  <div>{{ firstDay | date('F') }}</div>
   {% for i in 1..acfSettings.numberOfDays %}
-    <li><a href="/events/#date=.{{firstDay|date('Mj')}}">{{firstDay|date('j')}}</a></li>
+    <div><a href="/events/#date=.{{firstDay|date('Mj')}}">{{firstDay|date('j')}}</a></div>
     {% set firstDay = firstDay|date_modify("+1 day") %}
   {% endfor %}
-</ul>
+</div>
 {% endblock %}
 
 {% block blocks %}

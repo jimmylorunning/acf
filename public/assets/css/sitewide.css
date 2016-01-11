@@ -195,14 +195,14 @@
 @media (max-width: 768px) {
   .home #logo-container {
     width: 123px; } }
-.header .submenu ul.homemenu li {
+.header .submenu div.homemenu div {
   font-weight: 600;
   margin-right: 5rem;
   color: #2D8CEA;
   text-transform: none; }
-  .header .submenu ul.homemenu li a {
+  .header .submenu div.homemenu div a {
     color: #2D8CEA; }
-    .header .submenu ul.homemenu li a:hover {
+    .header .submenu div.homemenu div a:hover {
       text-decoration: none;
       background-color: #2D8CEA;
       color: #ffffff; }
@@ -554,23 +554,21 @@ video {
       font-size: 5rem;
       font-weight: 700;
       text-transform: lowercase; }
-    .header .submenu ul {
-      padding: 0px; }
-      .header .submenu ul li {
-        font-weight: 600;
-        line-height: 2em;
+    .header .submenu div {
+      font-weight: 600;
+      line-height: 2em;
+      text-transform: lowercase;
+      font-size: 3rem;
+      margin-right: 11rem;
+      display: inline-block;
+      float: left; }
+      .header .submenu div a {
+        color: #a6a6a6; }
+      .header .submenu div h1 {
+        font-size: 5rem;
         text-transform: lowercase;
-        font-size: 3rem;
-        margin-right: 11rem;
-        display: inline-block;
-        float: left; }
-        .header .submenu ul li a {
-          color: #a6a6a6; }
-        .header .submenu ul li h1 {
-          font-size: 5rem;
-          text-transform: lowercase;
-          margin-top: 0px;
-          font-weight: 700; }
+        margin-top: 0px;
+        font-weight: 700; }
 
 /********************************/
 /********** FOOTER   ************/

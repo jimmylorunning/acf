@@ -154,25 +154,22 @@ video {
       font-weight: 700;
       text-transform: lowercase;
     }
-    ul {
-      padding: 0px;
-      li {
-        font-weight: 600;
-        line-height: 2em;
+    div {
+      font-weight: 600;
+      line-height: 2em;
+      text-transform: lowercase;
+      font-size: 3rem;
+      margin-right: 11rem;
+      display: inline-block;
+      float: left;
+      a {
+        color: $submenu;
+      }
+      h1 {
+        font-size: 5rem;
         text-transform: lowercase;
-        font-size: 3rem;
-        margin-right: 11rem;
-        display: inline-block;
-        float: left;
-        a {
-          color: $submenu;
-        }
-        h1 {
-          font-size: 5rem;
-          text-transform: lowercase;
-          margin-top: 0px;
-          font-weight: 700;
-        }
+        margin-top: 0px;
+        font-weight: 700;
       }
     }
   }
