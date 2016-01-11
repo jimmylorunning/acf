@@ -4,6 +4,18 @@
 @import 'sponsors';
 @import 'volunteer';
 
+::-moz-selection {
+    background: $blue;
+    text-shadow: none;
+    color: $white
+}
+
+::selection {
+    background: $blue;
+    text-shadow: none;
+    color: $white;
+}
+
 body {
   padding-top: 5rem;
   font-family: 'Open Sans', sans-serif;
@@ -40,6 +52,18 @@ h3 {
 
 .blue {
   background-color: $blue;
+
+  ::-moz-selection {
+    background: $gray;
+    text-shadow: none;
+    color: $white
+  }
+
+  ::selection {
+    background: $gray;
+    text-shadow: none;
+    color: $white;
+  }
 }  
 
 .section {
