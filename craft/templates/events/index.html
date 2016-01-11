@@ -59,7 +59,7 @@
 %}
 {% for entry in craft.entries.section('events') %}
 <div class="events_grid_item {% for track in entry.track %}{{track}} {% endfor %} {{entry.startDateTime | date('Mj')}} {{ entry.rideDifficulty }} {% if (entry.startDateTime <  acfSettings.firstDay) %}pre{% endif %}"><a href="{{ entry.url }}"><img src="{{ entry.photo.first.getUrl(eventPhotoSize[entry.photoSize]) }}" width="{{ eventPhotoSize[entry.photoSize].width }}" height="{{ eventPhotoSize[entry.photoSize].height }}" alt='{{ entry.title|replace("'", "\'") }}'>
-  <div class="event-caption capsize{{ entry.photoSize }}">{{ entry.title }}</div></a>
+  <div class="event-caption capsize{{ entry.photoSize }}">{{ entry.title }}<div class="datetime">{{ entry.startDateTime | date('F j, g:ia') }}</div></div></a>
 </div>
 {% endfor %}
 </div>
