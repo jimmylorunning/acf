@@ -10,8 +10,8 @@
 
 .events_grid_item {
   position: relative;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
   border: 5px solid #ffffff; }
 
 .selected {
@@ -185,6 +185,29 @@
 /********************************/
 /********** HOMEPAGE ************/
 /********************************/
+/********** HEADER **************/
+#home-logo {
+  position: absolute; }
+
+.home #logo-container {
+  width: 215px; }
+
+@media (max-width: 768px) {
+  .home #logo-container {
+    width: 123px; } }
+.header .submenu ul.homemenu li {
+  font-weight: 600;
+  margin-right: 5rem;
+  color: #2D8CEA;
+  text-transform: none; }
+  .header .submenu ul.homemenu li a {
+    color: #2D8CEA; }
+    .header .submenu ul.homemenu li a:hover {
+      text-decoration: none;
+      background-color: #2D8CEA;
+      color: #ffffff; }
+
+/*********** FEATURE **********/
 .section.homegray {
   padding-top: 2rem; }
 
@@ -281,9 +304,6 @@
       line-height: 300px;
       top: 642px;
       left: 58%; }
-
-#home-logo {
-  position: absolute; }
 
 .featured-xs {
   padding-top: 50px; }
@@ -453,6 +473,19 @@ video {
   margin-top: 1rem;
   background-color: transparent; }
 
+.table-like {
+  display: table; }
+
+.wide-table {
+  width: 1100px; }
+
+.tr-like {
+  display: table-row; }
+
+.td-like {
+  display: table-cell;
+  vertical-align: top; }
+
 /********************************/
 /********** NAV BAR *************/
 /********************************/
@@ -495,15 +528,18 @@ video {
 /********************************/
 #logo-container {
   padding-top: 0.8rem;
-  padding-bottom: 0.8rem; }
+  padding-bottom: 0.8rem;
+  min-height: 160px;
+  width: 123px; }
 
 /********************************/
 /********** SUB MENU ************/
 /********************************/
 .header {
   letter-spacing: -2px;
-  padding-left: 0px;
-  padding-right: 0px; }
+  padding-left: 20px;
+  padding-right: 0px;
+  height: 160px; }
   .header .tagline {
     color: #e2e2e2;
     text-transform: uppercase;
@@ -520,17 +556,6 @@ video {
       text-transform: lowercase; }
     .header .submenu ul {
       padding: 0px; }
-      .header .submenu ul.homemenu li {
-        font-weight: 600;
-        margin-right: 5rem;
-        color: #2D8CEA;
-        text-transform: none; }
-        .header .submenu ul.homemenu li a {
-          color: #2D8CEA; }
-          .header .submenu ul.homemenu li a:hover {
-            text-decoration: none;
-            background-color: #2D8CEA;
-            color: #ffffff; }
       .header .submenu ul li {
         font-weight: 600;
         line-height: 2em;
@@ -546,16 +571,7 @@ video {
           text-transform: lowercase;
           margin-top: 0px;
           font-weight: 700; }
-  .header.home {
-    padding-left: 80px;
-    height: 180px; }
 
-@media (max-width: 992px) {
-  .header.home {
-    padding-left: 260px; } }
-@media (min-width: 993px) and (max-width: 1200px) {
-  .header.home {
-    padding-left: 110px; } }
 /********************************/
 /********** FOOTER   ************/
 /********************************/

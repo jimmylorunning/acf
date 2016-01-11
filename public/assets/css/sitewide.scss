@@ -51,6 +51,23 @@ video {
   margin-top: 1rem;
   background-color: transparent;
 }
+
+.table-like {
+  display: table;
+}
+
+.wide-table {
+  width: 1100px;
+}
+
+.tr-like {
+  display: table-row;
+}
+
+.td-like {
+  display: table-cell;
+  vertical-align: top;
+}
 /********************************/
 /********** NAV BAR *************/
 /********************************/
@@ -108,8 +125,9 @@ video {
 #logo-container {
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
+  min-height: 160px;
+  width: 123px;
 }
-
 
 /********************************/
 /********** SUB MENU ************/
@@ -117,8 +135,9 @@ video {
 
 .header {
   letter-spacing: -2px;
-  padding-left: 0px;
+  padding-left: 20px;
   padding-right: 0px;
+  height: 160px;
   .tagline {
     color: $tagline;
     text-transform: uppercase;
@@ -137,22 +156,6 @@ video {
     }
     ul {
       padding: 0px;
-      &.homemenu {
-        li {
-          font-weight: 600;
-          margin-right: 5rem;
-          color: $blue;
-          text-transform: none;
-          a {
-            color: $blue;
-            &:hover {
-              text-decoration: none;
-              background-color: $blue;
-              color: $white;
-            }
-          }
-        }
-      }
       li {
         font-weight: 600;
         line-height: 2em;
@@ -172,22 +175,6 @@ video {
         }
       }
     }
-  }
-  &.home {
-    padding-left: 80px;
-    height: 180px;
-  }
-}
-
-@media (max-width: 992px) {
-  .header.home {
-    padding-left: 260px;
-  }
-}
-
-@media (min-width: 993px) and (max-width: 1200px) {
-  .header.home {
-    padding-left: 110px;
   }
 }
 

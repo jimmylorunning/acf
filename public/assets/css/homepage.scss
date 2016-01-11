@@ -2,6 +2,41 @@
 /********** HOMEPAGE ************/
 /********************************/
 
+/********** HEADER **************/
+
+#home-logo {
+  position: absolute;
+} 
+
+.home #logo-container {
+  width:215px;
+}
+
+@media (max-width: 768px) {
+  .home #logo-container {
+    width: 123px;
+  }
+}
+
+.header .submenu ul.homemenu {
+  li {
+    font-weight: 600;
+    margin-right: 5rem;
+    color: $blue;
+    text-transform: none;
+    a {
+      color: $blue;
+      &:hover {
+        text-decoration: none;
+        background-color: $blue;
+        color: $white;
+      }
+    }
+  }
+}
+
+/*********** FEATURE **********/
+
 $hpimg0: 80px;
 $hpimg1: 120px;
 $hpimg2: 170px;
@@ -141,9 +176,6 @@ $hpimg9: 300px;
   }
 }
 
-#home-logo {
-  position: absolute;
-}
 
 .featured-xs {
   padding-top: 50px;
