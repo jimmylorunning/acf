@@ -3,12 +3,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>
-      {% if entry.title is defined %}
-        {{ entry.title }} - 
-      {% else %}
-        {{ craft.request.firstSegment|capitalize }} -
-      {% endif %}{{ acfSettings.displaySiteName }}</title>
+    {% if entry.pageDescription is defined %}<meta name="description" content="{{ entry.pageDescription }}">{% elseif craft.request.firstSegment == 'events' %}<meta name="description" content="{{ acfSettings.eventsPageDescription }}">{% elseif craft.request.firstSegment == 'blog' %}<meta name="description" content="{{ acfSettings.blogPageDescription }}">{% endif %}
+
+    <title>{% if entry.title is defined %}{{ entry.title }} - {% else %}{{ craft.request.firstSegment|capitalize }} - {% endif %}{{ acfSettings.displaySiteName }}</title>
     <link rel="home" href="{{ siteUrl }}" />
 
     <!-- Google Fonts -->
