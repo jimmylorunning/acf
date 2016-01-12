@@ -371,8 +371,18 @@ button.next-arrow.slick-arrow {
 
 .sponsor {
   width: 280px;
-  height: 180px; }
+  height: 180px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; }
 
+@media (max-width: 768px) {
+  .sponsor {
+    display: block;
+    height: auto;
+    padding: 3em 0px;
+    margin-right: auto;
+    margin-left: auto; } }
 .sponsorImg {
   width: 70%;
   -webkit-filter: grayscale(100%);

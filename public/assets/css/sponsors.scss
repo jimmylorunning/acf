@@ -11,6 +11,19 @@
 .sponsor {
   width: 280px;
   height: 180px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sponsor {
+    display: block; 
+    height: auto;
+    padding: 3em 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .sponsorImg {
