@@ -1,0 +1,5 @@
+{% set segments = craft.request.getSegments() %}
+  <div>{% if segments[1] is defined %}<a href="/about">about</a>{% else %}<h1>about</h1>{% endif %}</div>
+  <div><a href="/about#goal">goal</a></div>
+  <div><a href="/about#faqs">faqs</a></div>
+  <div>{% if segments[1] is defined %}<h1>consulting</h1>{% else %}<a href="/about/consulting">consulting</a>{% endif %}</div>
