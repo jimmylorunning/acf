@@ -507,7 +507,7 @@ h3 {
 .section {
   padding-top: 0rem;
   padding-bottom: 1rem;
-  border: 1px solid #a6a6a6; }
+  border-top: 1px solid #a6a6a6; }
 
 .section.no-border {
   border: 0px; }
