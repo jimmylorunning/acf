@@ -1,10 +1,5 @@
 {% extends "_layout" %}
 
-{% set form = craft.formBuilder2.getFormByHandle('testForm') %}
-{% set formSettings = form.formSettings %}
-{% set spamProtectionSettings = form.spamProtectionSettings %}
-{% set tabs = form.fieldLayout.getFieldLayout().getTabs() %}
-{% set scripts = craft.formBuilder2.includeScripts(form) %}
 
 {% block submenu %}
 <h1>{{ entry.title }}</h1>
@@ -25,7 +20,24 @@
   {% include '_default_block_end.html' %}
   {% include '_blocks.html' %}
 
-  {% set blockstyle = 'orange' %}
+  {% set form = craft.formBuilder2.getFormByHandle('testForm') %}
+  {% set formSettings = form.formSettings %}
+  {% set spamProtectionSettings = form.spamProtectionSettings %}
+  {% set tabs = form.fieldLayout.getFieldLayout().getTabs() %}
+  {% set scripts = craft.formBuilder2.includeScripts(form) %}
+
+  {% set blockstyle = 'orange formbuilder' %}
+  {% include '_default_block_start.html' %}
+  {% include '_form.html' %}
+  {% include '_default_block_end.html' %}
+
+  {% set form = craft.formBuilder2.getFormByHandle('leadARide') %}
+  {% set formSettings = form.formSettings %}
+  {% set spamProtectionSettings = form.spamProtectionSettings %}
+  {% set tabs = form.fieldLayout.getFieldLayout().getTabs() %}
+  {% set scripts = craft.formBuilder2.includeScripts(form) %}
+
+  {% set blockstyle = 'blue formbuilder' %}
   {% include '_default_block_start.html' %}
   {% include '_form.html' %}
   {% include '_default_block_end.html' %}
