@@ -187,6 +187,61 @@
   width: 100% !important;
   height: 100% !important; }
 
+.formbuilder legend {
+  padding-bottom: 1.5em;
+  font-style: italic;
+  border: none; }
+.formbuilder label {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: normal;
+  margin-bottom: 5px; }
+  .formbuilder label.required::after {
+    content: " *";
+    color: red; }
+.formbuilder input[type=PlainText] {
+  height: 34px;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  border-radius: 0px;
+  box-shadow: none; }
+  .formbuilder input[type=PlainText]:focus {
+    border-color: #000000;
+    outline: none;
+    box-shadow: none; }
+.formbuilder.white input[type=PlainText], .formbuilder.gray input[type=PlainText] {
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000; }
+.formbuilder.white .redactor-box, .formbuilder.gray .redactor-box {
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000; }
+.formbuilder.white button[type=submit], .formbuilder.gray button[type=submit] {
+  border: 1px solid black; }
+.formbuilder input, .formbuilder textarea, .formbuilder select {
+  width: 100%;
+  background-color: transparent;
+  padding: 6px 12px 6px 12px;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+.formbuilder .field {
+  margin-bottom: 15px; }
+.formbuilder .instructions {
+  font-size: 0.8em; }
+.formbuilder select {
+  height: 34px;
+  color: black;
+  background-color: #ffffff; }
+.formbuilder button[type=submit] {
+  width: 100%;
+  background-color: #ededed;
+  color: #000000;
+  padding: 0.7em;
+  margin-top: 2em;
+  height: auto;
+  text-transform: uppercase;
+  border: none;
+  border: 1px solid white; }
+
 /********************************/
 /********** HOMEPAGE ************/
 /********************************/
