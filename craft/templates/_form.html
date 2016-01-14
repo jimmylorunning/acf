@@ -10,7 +10,6 @@
     {% for tab in tabs %}
       {% set fields = tab.getFields() %}
       <fieldset class="{{ tab.name |lower|replace(' ', '-') }}">
-        <legend>{{ tab.name }}</legend>
         {% for field in fields %}
           {% set input = craft.formBuilder2.getInputHtml(field) %}
           {{ input|raw }}

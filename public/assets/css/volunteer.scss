@@ -3,7 +3,7 @@
 .volunteerlinks {
   clear: both;
   margin: 0;
-  padding: 1em 0 0 0;
+  padding: 1em 0 2em 0;
   list-style-type: none;
   text-align: center;
   font-style: italic;
@@ -14,7 +14,7 @@
       color: $volunteernav;
       text-decoration: none;
       padding: .2em 1em;
-      &:hover {
+      &.active, &:hover {
         background-color: $blue;
         color: $white;
       }
