@@ -1,5 +1,5 @@
-{% extends "_layout" %}
 {% set homepage = 1 %}
+{% extends "_layout" %}
 
 {% block head %}
   <link rel="stylesheet" type="text/css" href="/assets/css/lib/slick.css"/>
@@ -7,28 +7,36 @@
 {% endblock %}
 
 {% block submenu %}
-<ul class="homemenu">
+<div class="homemenu">
   {% set firstDay = acfSettings.firstDay %}
-  <li>{{ firstDay | date('F') }}</li>
+  <div>{{ firstDay | date('F') }}</div>
   {% for i in 1..acfSettings.numberOfDays %}
-    <li><a href="/events/#date=.{{firstDay|date('Mj')}}">{{firstDay|date('j')}}</a></li>
+    <div><a href="/events/#date=.{{firstDay|date('Mj')}}">{{firstDay|date('j')}}</a></div>
     {% set firstDay = firstDay|date_modify("+1 day") %}
   {% endfor %}
-</ul>
+</div>
 {% endblock %}
 
 {% block blocks %}
-  {% set blockstyle = 'gray' %}
+  {% set blockstyle = 'gray homegray' %}
   {% include '_default_block_start.html' %}
     <div class="featured hidden-xs">
       <div class="hometext">
        {{ entry.body }}
       </div>
+
       {% set featured = [
+        { mode: 'fit', width: 80, height:80},
+        { mode: 'fit', width: 120, height:120 },
+        { mode: 'fit', width: 170, height:170 },
+        { mode: 'fit', width: 250, height:250 },
         { mode: 'fit', width: 100, height:100 },
-        { mode: 'fit', width: 150, height:150 },
+        { mode: 'fit', width: 160, height:160 },
         { mode: 'fit', width: 200, height:200 },
-        { mode: 'fit', width: 250, height:250 } ]
+        { mode: 'fit', width: 240, height:240 },
+        { mode: 'fit', width: 110, height:110 },
+        { mode: 'fit', width: 300, height:300 }
+         ]
          %}
 
       {% for e in entry.featuredPages %}

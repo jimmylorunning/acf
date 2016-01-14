@@ -1,14 +1,12 @@
 {% extends "_layout" %}
 
 {% block submenu %}
-  <ul>
-    <li><h1>sponsors</h1></li>
-    <li><a href="/sponsors/sponsor-the-festival">sponsor the festival</a></li>
-  </ul>
+  <div><h1>sponsors</h1></div>
+  <div><a href="/sponsors/sponsor-the-festival">sponsor the festival</a></div>
 {% endblock %}
 
 {% block blocks %}
-{% set blockstyle = 'gray' %}
+{% set blockstyle = 'gray sponsorbg' %}
 {% include '_default_block_start.html' %}
 <h2>The Whole Bike</h2>
 

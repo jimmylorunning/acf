@@ -1,9 +1,38 @@
 @import 'variables';
 @import 'events';
 @import 'formbuilder';
+@import 'homepage';
+@import 'sponsors';
+@import 'volunteer';
+
+::-moz-selection {
+    background: $blue;
+    text-shadow: none;
+    color: $white
+}
+
+::selection {
+    background: $blue;
+    text-shadow: none;
+    color: $white;
+}
 
 body {
   padding-top: 5rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: $blue;
+}
+
+h2 {
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: 600;
 }
 
 .orange {
@@ -24,11 +53,50 @@ body {
 
 .blue {
   background-color: $blue;
+
+  ::-moz-selection {
+    background: $gray;
+    text-shadow: none;
+    color: $white
+  }
+
+  ::selection {
+    background: $gray;
+    text-shadow: none;
+    color: $white;
+  }
 }  
 
 .section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid $submenu;
+}
+
+.section.no-border {
+  border: 0px;
+}
+
+video {
+  margin-top: 1rem;
+  background-color: transparent;
+}
+
+.table-like {
+  display: table;
+}
+
+.wide-table {
+  width: 1100px;
+}
+
+.tr-like {
+  display: table-row;
+}
+
+.td-like {
+  display: table-cell;
+  vertical-align: top;
 }
 /********************************/
 /********** NAV BAR *************/
@@ -44,9 +112,10 @@ body {
 
 .navbar-inverse {
   .navbar-brand {
-    color: $brandgray;
+    color: $submenu;
+    font-size: 1.2rem;
     &:focus, &:hover {
-      color: $submenugray;
+      color: $black;
     }
   }
   .navbar-nav {
@@ -55,7 +124,7 @@ body {
     background-color: $gray;
     > li > a {
       text-transform: uppercase;
-      color: #000000;
+      color: $black;
       &:hover {
         color: $orange;
       }
@@ -69,12 +138,12 @@ body {
   }
   /***** hamburger menu icon ******/
   .navbar-toggle {
-    border-color: #000000;
+    border-color: $black;
     &:focus, &:hover {
       background-color: $orange;
     }
     .icon-bar {
-      background-color: #000000;
+      background-color: $black;
     }
   }
 }
@@ -83,81 +152,60 @@ body {
 /**********   LOGO   ************/
 /********************************/
 
-#logo-container {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+.header-container {
+  background-color: $white;
 }
 
+#logo-container {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  min-height: 160px;
+  width: 123px;
+}
 
 /********************************/
 /********** SUB MENU ************/
 /********************************/
 
 .header {
+  letter-spacing: -2px;
+  padding-left: 20px;
+  padding-right: 0px;
+  height: 160px;
   .tagline {
-    color: $gray;
+    color: $tagline;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 5rem;
     font-style: italic;
     padding-top: 1.3rem;
   }
   .submenu {
-    margin-top: 5rem;
+    margin-top: 2rem;
     font-style: italic;
     h1 {
-      font-size: 4rem;
+      font-size: 5rem;
+      font-weight: 700;
       text-transform: lowercase;
     }
-    ul {
-      padding: 0px;
-      &.homemenu {
-        li {
-          margin-right: 5rem;
-          color: $blue;
-          text-transform: none;
-          a {
-            color: $blue;
-            &:hover {
-              text-decoration: none;
-              background-color: $blue;
-              color: #ffffff;
-            }
-          }
-        }
+    div {
+      font-weight: 600;
+      line-height: 2em;
+      text-transform: lowercase;
+      font-size: 3rem;
+      margin-right: 11rem;
+      display: inline-block;
+      float: left;
+      a {
+        color: $submenu;
       }
-      li {
+      h1 {
+        font-size: 5rem;
         text-transform: lowercase;
-        font-size: 3rem;
-        margin-right: 11rem;
-        display: inline-block;
-        float: left;
-        a {
-          color: $submenugray;
-        }
-        h1 {
-          font-size: 4rem;
-          text-transform: lowercase;
-          margin-top: 0px;
-        }
+        margin-top: 0px;
+        font-weight: 700;
       }
     }
-  }
-  &.home {
-    padding-left: 80px;
-    height: 210px;
-  }
-}
-
-@media (max-width: 992px) {
-  .header.home {
-    padding-left: 260px;
-  }
-}
-
-@media (min-width: 993px) and (max-width: 1200px) {
-  .header.home {
-    padding-left: 110px;
   }
 }
 
@@ -170,205 +218,15 @@ body {
   text-align: center;
   font-size: 3rem;
   a {
-    color: #ffffff;
+    color: $white;
     &:hover {
       color: $gray;
+      text-decoration: none;
     }
     margin-right: 2rem;
-  }
-}
-
-/********************************/
-/********** SPONSORS ************/
-/********************************/
-
-.sponsorImg {
-  width: 100%;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  filter: url(#greyscale);
-  filter: gray;
-  transition: 1s;
-  max-width: 100%;
-  height: auto;
-  &:hover {
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
-    filter: none;
-  }
-}
-
-/********************************/
-/********** BECOME A SPONSOR ****/
-/********************************/
-
-.sponsorLevel {
-  h3, .amount {
-    font-size: 2.5em;
-    font-style: italic;
-    line-height: 1em;
-  }
-  ul {
-    padding-left: 20px;
-  }
-  img {
-    width: 80%;
-    max-width: 80%;
-    height: auto;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .sponsorLevel img {
-    width: auto;
-    max-width: none;
-    height: auto;
-  }
-}
-/********************************/
-/********** HOMEPAGE ************/
-/********************************/
-
-.featured {
-  position: relative;
-  background: url(/images/home_bkg.png);
-  background-position-x: center;
-  background-repeat: no-repeat;
-  height: 950px; 
-
-  .hometext {
-    &::first-letter {
-      font-weight: bold;
-      font-size: 4rem;
-    }
-    padding-top: 80px;
-    width: 380px;
-  }
-  a {
-    color: #000000;
-  }
-
-  > a > div {
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50%;
-    position: absolute;
-    -webkit-box-shadow: 0px 0px 0px 8px rgba(255, 255, 255, 1);
-    -moz-box-shadow:    0px 0px 0px 8px rgba(255, 255, 255, 1);
-    box-shadow:         0px 0px 0px 8px rgba(255, 255, 255, 1);
-
-    > div {
-      text-align: center;
+    .backtotop {
+      font-size: 1.2rem;
       vertical-align: middle;
-      opacity: 0;
-      background-position: 50%;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.5);
-      &:hover {
-        opacity: 1;
-      }
-    }
-
-    &.no0, &.no0 div {
-      width: 100px;
-      height: 100px;
-      line-height: 100px;
-      top: 15px;
-      left: 50%;
-    }
-
-    &.no1, &.no1 div {
-      width: 150px;
-      height: 150px;
-      line-height: 150px;
-      top: 200px;
-      left: 30%;
-    }
-
-    &.no2, &.no2 div {
-      width: 200px;
-      height: 200px;
-      line-height: 200px;
-      top: 100px;
-      left: 70%;
-    }
-
-    &.no3, &.no3 div {
-      width: 250px;
-      height: 250px;
-      line-height: 250px;
-      top: 250px;
-      right: 10%;
-    }
-  }
-}
-
-#home-logo {
-  position: absolute;
-}
-
-.featured-xs {
-  padding-top: 50px;
-}
-
-/********* HOMEPAGE CAROUSEL ************/
-
-.carousel-container {
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mobile-feature {
-  margin-left: auto;
-  margin-right: auto;
-  width: 250px;
-  height: 250px;
-  text-align: center;
-  vertical-align: middle;
-  background-position: 50%;
-  border-radius: 50%;
-  line-height: 250px;
-  color: #ffffff;
-}
-/********* GOOGLE MAPS (RESPONSIVE) ***********/
-
-  #map {
-    position: relative;
-    padding-bottom: 75%; // This is the aspect ratio
-    height: 0;
-    overflow: hidden;
-  }
-  #map iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-
-/********* VOLUNTEER PAGE ************/
-
-.volunteerlinks {
-  clear: both;
-  margin: 0;
-  padding: 1em 0 0 0;
-  list-style-type: none;
-  text-align: center;
-  font-style: italic;
-  li {
-    display: inline;
-    font-size: 2em;
-    a {
-      color: $submenugray;
-      text-decoration: none;
-      padding: .2em 1em;
-      &:hover {
-        background-color: $blue;
-        color: #ffffff;
-      }
     }
   }
 }
@@ -378,11 +236,11 @@ body {
 /********* FORMS ************/
 
 .orange form {
-  color: #ffffff;
+  color: $white;
 }
 
 .green form {
-  color: #000000;
+  color: $black;
 }
 
 form {
@@ -402,12 +260,12 @@ form {
 
 .form-control {
   border: none;
-  border-bottom: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid $white;
+  border-right: 1px solid $white;
   border-radius: 0px;
   box-shadow: none;
   &:focus {
-    border-color: $darkergray;
+    border-color: $black;
     box-shadow: none;
   }
 }
@@ -419,7 +277,7 @@ textarea.form-control {
 }
 
 select.form-control {
-  background-color: $gray;
+  background-color: $white;
 }
 
 input[type=submit].form-control {

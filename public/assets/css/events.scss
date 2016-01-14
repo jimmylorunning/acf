@@ -1,22 +1,27 @@
 /********************************/
-/********** INDEX ***************/
+/********** EVENTS INDEX ********/
 /********************************/
 
     .events_grid { 
       padding-top: 50px; 
       a {
-        color: #666666;
+        color: $eventsnav;
         &:hover {
-          color: #000000;
+          color: $black;
         }
       }
     }
 
-    .events_grid_item { position: relative; margin-right: 20px; margin-bottom: 20px; }
+    .events_grid_item { 
+      position: relative; 
+      margin-right: 5px;
+      margin-bottom: 5px;
+      border: 5px solid $white;
+    }
 
     .selected {
       background-color: $blue;
-      color: #ffffff;
+      color: $white;
     }
 
     .event-caption { 
@@ -24,15 +29,21 @@
       bottom: 0px; 
       background-color: rgba(255, 255, 255, 0.8); 
       width: 100%; 
+      font-weight: bold;
+      font-style: italic;
+      .datetime {
+        font-weight: normal;
+        font-style: none;
+      }
     }
 
     .capsize0 {
-      font-size: 1.2rem;
-      padding: 3px;
+      font-size: 1rem;
+      padding: 2px;
     }
 
     .capsize1 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       padding: 5px;
     }
 
@@ -50,20 +61,21 @@
         list-style-type: none;
         font-style: italic;
         &.nav-tabs {
+          border: 0px;
           li {
             margin-right: 4px;
             a {
               font-size: 1.8rem;
-              background-color: #cccccc;
+              background-color: $filterbg;
               border:none;
               border-bottom: 4px solid $gray;
               border-radius: inherit;
             }
             &.active {
               a {
-                background-color: #cccccc;
+                background-color: $filterbg;
                 border:none;
-                border-bottom: 4px solid #cccccc;
+                border-bottom: 4px solid $filterbg;
                 border-radius: inherit;
               }
             }
@@ -71,17 +83,18 @@
         }
         li {
           display: inline;
-          font-size: 2.8rem;
+          font-size: 3rem;
+          font-weight: 600;
           a {
-            color: $darkergray;
+            color: $eventsnav;
             text-decoration: none;
             padding: .2em 1em;
             &:hover {
               background-color: $blue;
-              color: #ffffff;
+              color: $white;
             }
             &.selected {
-              color: #ffffff;
+              color: $white;
             }
           }
         }
@@ -89,14 +102,14 @@
     }
 
     .tab-pane {
-      background-color: #cccccc;
-      padding: 0 1rem 1rem 2rem;
+      background-color: $filterbg;
+      padding: 0 0.5rem 0.5rem 2rem;
       ul {
         li {
           margin-right: 1rem;
           a {
             font-size: 1.5rem;
-            background-color: #ffffff;
+            background-color: $white;
             &.selected {
               background-color: $blue;
             }
@@ -105,7 +118,12 @@
       }
     }
 
-    .button { background-color: #666666; }
+    #filters .tab-content ul {
+      padding-top: 0px;
+    }
+    .tab-content {
+      max-width: 580px;
+    }
 
     #no-results {
       width: 80%;
@@ -126,17 +144,24 @@
       width: 90%;
       max-width: 90%;
       height: auto;
-      border: 10px solid #ffffff;
+      border: 5px solid $white;
     }
   }
 
+  .eventbg {
+    background: url(/images/Event_bkg.png);
+    background-position-x: center;
+    background-repeat: no-repeat;
+  }
+
   .evententry {
+    margin-top: 1rem;
     .essentials, #description {
       padding-left: 1.5rem;
     }
     h2 {
-      font-size: 5rem;
-      color: #ffffff;
+      font-size: 4rem;
+      color: $white;
       font-style: italic;
     }
     #startdatetime {
@@ -145,8 +170,8 @@
       margin-bottom: 2rem;
     }
     #eventinfo {
-      border-top: 1px solid #ffffff;
-      border-bottom: 1px solid #ffffff;
+      border-top: 1px solid $white;
+      border-bottom: 1px solid $white;
       padding: 1.5rem;
       table {
         width: 100%;
@@ -170,33 +195,51 @@
       padding-right: 1em;
       position: relative;
       display: inline-block;
-      background-color: #3b5998;
+      background-color: $facebookbg;
       a {
-        color: #ffffff;
-        &:hover {
+        color: $white;
+        &:hover{
           text-decoration: none;
         }
       }
       &:hover {
-        background-color: #8b9dc3;
+        background-color: $facebookbg2;
       }
     }
   }
 
   .xclose a {
     font-size: 6rem;
-    color: #000000;
+    color: $black;
     &:hover {
       text-decoration: none;
     }
   }
   
   #mapcontainer {
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
     h3 {
-      font-size: 5rem;
-      color: #ffffff;
+      font-size: 4rem;
+      color: $white;
       font-style: italic;
     }
   }  
+
+/********* GOOGLE MAPS (RESPONSIVE) ***********/
+
+  #map {
+    position: relative;
+    padding-bottom: 40%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+    border: 5px solid $white;
+  }
+  #map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
