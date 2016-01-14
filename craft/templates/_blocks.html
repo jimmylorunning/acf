@@ -1,5 +1,5 @@
   {% for block in entry.blocks %}
-  <div class="section {{ block.style }}">
+  <div class="section {{ block.style }} {{ block.class }}">
     <div class="container {{block.position}} blockyblock">
       {% if block.anchor %}
         <a name="{{ block.anchor }}"></a>
@@ -8,6 +8,14 @@
         <h2>{{ block.heading }}</h2>
       {% endif %}
       {{ block.text }}
+      {% if block.formHandle != "" %}
+        {% set form = craft.formBuilder2.getFormByHandle(block.formHandle) %}
+        {% set formSettings = form.formSettings %}
+        {% set spamProtectionSettings = form.spamProtectionSettings %}
+        {% set tabs = form.fieldLayout.getFieldLayout().getTabs() %}
+        {% set scripts = craft.formBuilder2.includeScripts(form) %}
+        {% include '_form.html' %}
+      {% endif %}
     </div>
   </div>
   {% endfor %}
