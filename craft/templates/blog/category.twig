@@ -2,15 +2,12 @@
 
 {% block blocks %}
 <section id="instablog">
-  <header>
-    <h1>Blog</h1>  
-  </header>
 
   {% if craft.request.segment(3) == '' %}
 
     <article>
-      <h1>Category</h1>
-      <h2>Browse categories below:</h2>
+      <h2>Category</h2>
+      <p>Browse categories below:</p>
       <ul>
         {% nav category in craft.categories.group('instaBlogCategories') %}
           <li>
@@ -31,8 +28,7 @@
 
       {% if entries|length %}
         <article>
-          <h1>Category</h1>
-          <h2>&ldquo;{{ category.slug|title }}&rdquo;</h2>    
+          <h2>Category: &ldquo;{{ category.slug|title }}&rdquo;</h2>
           {{ category.instaBlogBody }}
         </article>
 

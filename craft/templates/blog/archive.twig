@@ -2,13 +2,9 @@
 
 {% block blocks %}
 <section id="instablog">
-  <header>
-    <h1>Blog</h1>  
-  </header>
-
     <article>
       {# To customize ref: http://buildwithcraft.com/help/entry-archive #}
-      <h1>Archive</h1>
+      <h2>Archive</h2>
 
       {% set allEntries = craft.entries.section('instaBlog').limit(null) %}
       {% for year, entriesInYear in allEntries | group("postDate.year") %}

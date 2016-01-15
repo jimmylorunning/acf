@@ -3,14 +3,13 @@
     {% for blog in entries %}
       <article itemtype="http://schema.org/Article">
         <header>
-          <h4><a href="/{{ blog.uri }}" itemprop="name">{{ blog.title }}</a></h4>
+          <h2><a href="/{{ blog.uri }}" itemprop="name">{{ blog.title }}</a></h2>
         </header>
         <div>
           <span itemprop="author">{{ blog.author.fullName }}</span>
         </div>
         <div itemprop="articleBody">
-          <span itemprop="datePublished">{{ blog.postDate.format('F d, Y') }}</span> - {{ blog.instaBlogBody|striptags|truncate(240) }}
-          <a class="more" href="/{{ blog.uri }}">Read More</a>
+          <span itemprop="datePublished">{{ blog.postDate.format('F d, Y') }}</span> - {{ blog.instaBlogBody }}
         </div>
         <footer>
           {% include 'blog/_share.twig' %}

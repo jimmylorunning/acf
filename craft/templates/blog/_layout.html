@@ -12,19 +12,18 @@
     {% include '_nav.html' %}
     {% include '_header_start.html' %}
       <div class="submenu">
-      {% block submenu %}
-      {% endblock %}
+        <h1>Blog</h1>
       </div>
     {% include '_header_end.html' %}
 
     <div class="section gray"> 
       <div class="container blockyblock">
         <div class="row">
-          <div class="col-md-9">
+          <div class="col-md-9 blog-content">
             {% block blocks %}
             {% endblock %}
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 blog-sidebar">
             {% include 'blog/_aside.twig' %}
           </div>
         </div>

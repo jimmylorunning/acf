@@ -8,9 +8,6 @@
 
 {% block blocks %}
 <section id="instablog">
-  <header>
-    <h1>Blog</h1>  
-  </header>
   
   {% paginate craft.entries.search(query).section('instaBlog').limit(10).order('score') as entries %}
 

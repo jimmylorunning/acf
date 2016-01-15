@@ -7,9 +7,6 @@
       <h4>
         <a href="/blog/archive">Archive</a>
       </h4>
-      <h4>
-        <a href="/blog/author">Authors</a>
-      </h4>
       <h4>Popular Tags</h4>
       {% set allEntries = craft.entries.section('instaBlog').limit(null) %}
       {% set tags = craft.tags.group('instaBlogTags').relatedTo(allEntries) %}
@@ -41,19 +38,4 @@
           <button type="submit"><span class="fa fa-search"></span></button>
         </div>
       </form>
-      
-
-      <h4>Follow Us</h4>
-      {% if craft.instaBlog.settings.facebook|length %}
-        <a class="fa fa-facebook-square fa-2" href="{{ craft.instaBlog.settings.facebook }}"></a>
-      {% endif %}
-      {% if craft.instaBlog.settings.twitter|length %}
-        <a class="fa fa-twitter-square fa-2" href="{{ craft.instaBlog.settings.twitter }}"></a>
-      {% endif %}
-      {% if craft.instaBlog.settings.googlePlus|length %}
-        <a class="fa fa-google-plus-square fa-2" href="{{ craft.instaBlog.settings.googlePlus }}"></a>
-      {% endif %}
-      {% if craft.instaBlog.settings.linkedin|length %}
-        <a class="fa fa-linkedin-square fa-2" href="{{ craft.instaBlog.settings.linkedin }}"></a>
-      {% endif %}
     </aside>

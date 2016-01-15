@@ -1,8 +1,9 @@
 {% extends craft.instaBlog.settings.layout|length ? craft.instaBlog.settings.layout : 'blog/_instablog-layout' %}
 
 {% block submenu %}
-<h1>blog</h1>
+  {% include 'blog/_submenu.html' %}
 {% endblock %}
+
 {% block blocks %}
 <section id="instablog">
   {% paginate craft.entries.section('instaBlog').limit(10) as entries %}

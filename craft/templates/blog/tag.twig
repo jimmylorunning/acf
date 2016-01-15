@@ -5,16 +5,13 @@
 
 {% block blocks %}
 <section id="instablog">
-  <header>
-    <h1>Blog</h1>  
-  </header>
 
   {% if craft.request.segment(3) == '' %}
     {% set instaTags = craft.tags.group('instaBlogTags') %}
 
     <article>
-      <h1>Tag</h1>
-      <h2>Browse tags below:</h2>
+      <h2>Tag</h2>
+      <p>Browse tags below:</p>
       <ul>
       {% for tag in instaTags %}
         <li><a href="/blog/tag/{{ tag.name|split(' ')|join('-')|lower }}">{{ tag.name }}</a>
@@ -28,8 +25,7 @@
 
       {% if entries|length %}
         <article>
-          <h1>Tag</h1>
-          <h2>&ldquo;{{ searchValue | title }}&rdquo;</h2>
+          <h2>Tag: &ldquo;{{ searchValue | title }}&rdquo;</h2>
         </article>
     
         {% include 'blog/_entries.twig' %}

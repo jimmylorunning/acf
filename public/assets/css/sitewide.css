@@ -511,6 +511,9 @@ button.next-arrow.slick-arrow {
         background-color: #2D8CEA;
         color: #ffffff; }
 
+.blog-content {
+  border-right: 1px solid #a6a6a6; }
+
 ::-moz-selection {
   background: #2D8CEA;
   text-shadow: none;
