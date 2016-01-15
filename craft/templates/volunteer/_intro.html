@@ -2,7 +2,6 @@
   {% set blockstyle = 'gray' %}
   {% include '_default_block_start.html' %}
     <h2>{{ volunteerIndex.longTitle }}</h2>
-    <img src="{{ volunteerIndex.photo.first.getUrl(fit100) }}" class="pull-left">
     {{ volunteerIndex.body }}
     {% set pages = craft.entries.section('volunteerForms').level(0) %}
     <ul class="volunteerlinks">
