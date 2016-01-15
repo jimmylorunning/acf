@@ -1,4 +1,4 @@
 {
-	"buttons": ["html","formatting","bold","italic","unorderedlist","orderedlist","link","image","video"],"plugins":["fullscreen","video"],
+	"buttons": ["html","formatting","bold","italic","unorderedlist","orderedlist","link","image","properties","video"],"plugins":["fullscreen","video","properties"],
 	"toolbarFixed": true
 }
