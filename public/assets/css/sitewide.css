@@ -514,6 +514,9 @@ button.next-arrow.slick-arrow {
 .blog-content {
   border-right: 1px solid #a6a6a6; }
 
+.share {
+  font-size: 1.7em; }
+
 ::-moz-selection {
   background: #2D8CEA;
   text-shadow: none;
