@@ -46,6 +46,15 @@ class FormBuilder2Variable
 	 */
 	public function getFormById($formId)
 	{
+		return craft()->formBuilder2_form->getFormById($formId);
+	}
+
+  /**
+	 * Get Form By Id
+	 * 
+	 */
+	public function getFormHtmlById($formId)
+	{
 		$form = craft()->formBuilder2_form->getFormById($formId);
 
 		$variables['formId'] = $form;
@@ -259,8 +268,7 @@ class FormBuilder2Variable
 	    break;
 	  }
 
-    craft()->path->setTemplatesPath($originalTemplatesPath);
-
+	  craft()->path->setTemplatesPath($originalTemplatesPath);
 	  return $html;
 	}
 

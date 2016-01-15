@@ -20,10 +20,10 @@ $customDbConfig = array(
 
   // Dev Database Info
   'dev' => array(
-	'server'	=> '',
-	'user'		=> '',
-	'password' 	=> '',
-	'database' 	=> ''
+	'server'	=> 'localhost',
+	'user'		=> 'acflocal',
+	'password' 	=> 'acflocal',
+	'database' 	=> 'acflocal'
   )
 
 );
