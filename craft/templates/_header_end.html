@@ -3,3 +3,22 @@
       </div>
     </div><!-- /.container -->
   </div><!-- /.section -->
+  {% if craft.session.hasFlash('success') %}
+    <div class="section white no-border"><div class="container">
+    <div class="alert alert-success alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" aria-hidden="true">&times;</button>
+      {{ craft.session.getFlash('success') | raw }}
+    </div>
+    </div></div>
+  {% endif %}
+  {% if craft.session.hasFlash('error') %}    
+    <div class="section white no-border"><div class="container">
+    <div class="alert alert-danger fade in" role="alert">
+      <p>{{ craft.session.getFlash('error') | raw }}</p>
+      {% set errors = (errors is defined ? errors : null) %}
+      {% for error in errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </div>
+    </div></div>
+  {% endif %}
