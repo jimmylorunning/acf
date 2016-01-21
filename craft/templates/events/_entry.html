@@ -4,6 +4,7 @@
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "071f6c24-03bf-475d-b502-0ab1ccb7e448", doNotHash: true, doNotCopy: false, hashAddressBar: false, onhover: false});</script>
+<link type="text/css" href="/assets/css/atc-base.css" rel="stylesheet">
 {% endblock %}
 
 {% block submenu %}
@@ -11,6 +12,14 @@
 {% endblock %}
 
 {% block blocks %}
+<script type="text/javascript">(function () {
+  if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
+  if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
+    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+    s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
+    s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
+    var h = d[g]('body')[0];h.appendChild(s); }})();
+</script>
 {% set blockstyle = 'orange eventbg' %}
 {% include '_default_block_start.html' %}
 {% set tablecolumnclass = 'colhalf' %}
@@ -68,6 +77,21 @@
         <span class='st_facebook_large' displayText='Facebook'></span>
         <span class='st_twitter_large' displayText='Tweet'></span>
         <span class='st_pinterest_large' displayText='Pinterest'></span>
+    <span class="addtocalendar atc-style-blue">
+        <a class="atcb-link">
+          <img src="/images/cal-bw-01.png" width="32">
+        </a>
+        <var class="atc_event">
+            <var class="atc_date_start">2016-05-04 12:00:00</var>
+            <var class="atc_date_end">2016-05-04 18:00:00</var>
+            <var class="atc_timezone">Europe/London</var>
+            <var class="atc_title">Star Wars Day Party</var>
+            <var class="atc_description">May the force be with you</var>
+            <var class="atc_location">Tatooine</var>
+            <var class="atc_organizer">Luke Skywalker</var>
+            <var class="atc_organizer_email">luke@starwars.com</var>
+        </var>
+    </span>
         {% if entry.facebookId is not empty %}
         <span class='rsvp'><a href="https://www.facebook.com/events/{{ entry.facebookId }}">RSVP on Facebook</a></span>
         {% endif %}
