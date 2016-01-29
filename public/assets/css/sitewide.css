@@ -187,6 +187,8 @@
   width: 100% !important;
   height: 100% !important; }
 
+.formbuilder .container {
+  width: 80%; }
 .formbuilder legend {
   padding-bottom: 1.5em;
   font-style: italic;
