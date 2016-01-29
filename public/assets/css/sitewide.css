@@ -187,6 +187,8 @@
   width: 100% !important;
   height: 100% !important; }
 
+.formbuilder.orange {
+  color: #ffffff; }
 .formbuilder .container {
   width: 80%; }
 .formbuilder legend {
@@ -201,14 +203,14 @@
   .formbuilder label.required::after {
     content: " *";
     color: red; }
-.formbuilder input[type=PlainText] {
+.formbuilder input[type=PlainText], .formbuilder input[type=text], .formbuilder input[type=email], .formbuilder textarea {
   height: 34px;
   border: none;
   border-bottom: 1px solid #ffffff;
   border-right: 1px solid #ffffff;
   border-radius: 0px;
   box-shadow: none; }
-  .formbuilder input[type=PlainText]:focus {
+  .formbuilder input[type=PlainText]:focus, .formbuilder input[type=text]:focus, .formbuilder input[type=email]:focus, .formbuilder textarea:focus {
     border-color: #000000;
     outline: none;
     box-shadow: none; }
@@ -225,6 +227,8 @@
   background-color: transparent;
   padding: 6px 12px 6px 12px;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+.formbuilder textarea {
+  height: 90px; }
 .formbuilder .field {
   margin-bottom: 15px; }
 .formbuilder .instructions {
@@ -233,7 +237,7 @@
   height: 34px;
   color: black;
   background-color: #ffffff; }
-.formbuilder button[type=submit] {
+.formbuilder button[type=submit], .formbuilder input[type=submit] {
   width: 100%;
   background-color: #ededed;
   color: #000000;
@@ -600,6 +604,10 @@ video {
   float: right;
   margin: 0px 0px 5px 5px; }
 
+.hide {
+  position: absolute;
+  left: -5000px; }
+
 /********************************/
 /********** NAV BAR *************/
 /********************************/
@@ -703,46 +711,5 @@ video {
     #footer a .backtotop {
       font-size: 1.2rem;
       vertical-align: middle; }
-
-/********* FORMS ************/
-.orange form {
-  color: #ffffff; }
-
-.green form {
-  color: #000000; }
-
-form h2 {
-  padding-bottom: 1.5em;
-  font-style: italic; }
-
-.form-group label {
-  text-transform: uppercase;
-  font-size: 0.8em;
-  font-weight: normal; }
-
-.form-control {
-  border: none;
-  border-bottom: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
-  border-radius: 0px;
-  box-shadow: none; }
-  .form-control:focus {
-    border-color: #000000;
-    box-shadow: none; }
-
-input[type=text].form-control,
-input[type=email].form-control,
-textarea.form-control {
-  background-color: transparent; }
-
-select.form-control {
-  background-color: #ffffff; }
-
-input[type=submit].form-control {
-  background-color: #ededed;
-  padding: 0.7em;
-  margin-top: 2em;
-  height: auto;
-  text-transform: uppercase; }
 
 /*# sourceMappingURL=sitewide.css.map */

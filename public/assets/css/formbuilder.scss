@@ -1,4 +1,7 @@
 .formbuilder {
+  &.orange {
+    color: $white;
+  }
   .container {
     width: 80%;
   }
@@ -22,7 +25,7 @@
     }
   }
 
-  input[type=PlainText] {
+  input[type=PlainText], input[type=text], input[type=email], textarea {
     height: 34px;
     border: none;
     border-bottom: 1px solid #ffffff;
@@ -57,6 +60,10 @@
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   }
 
+  textarea {
+    height: 90px;
+  }
+
   .field {
     margin-bottom: 15px;
   }
@@ -71,7 +78,7 @@
     background-color: $white;
   }
 
-  button[type=submit] {
+  button[type=submit],input[type=submit] {
     width: 100%;
     background-color: $gray;
     color: #000000;
