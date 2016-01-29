@@ -11,19 +11,18 @@
   
   {% paginate craft.entries.search(query).section('instaBlog').limit(10).order('score') as entries %}
 
-    {% if entries|length %}
-      <article>
-        <h2>Search results for:</h2>
-        <h3>&ldquo;{{ query | title }}&rdquo;</h3>
-      </article>
+  {% if entries|length %}
+    <article>
+      <h2>Search results for:</h2>
+      <h3>&ldquo;{{ query | title }}&rdquo;</h3>
+    </article>
 
-      {% include 'blog/_entries.twig' %}
+    {% include 'blog/_entries.twig' %}
 
-    {% else %}
-      {% include 'blog/_not-found.twig' with {'type': 'search'} %}
-    {% endif %}
+  {% else %}
+    {% include 'blog/_not-found.twig' with {'type': 'search'} %}
+  {% endif %}
 
-  {% endpaginate %}
 
 </section>
 {% endblock %}

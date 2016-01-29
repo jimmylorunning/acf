@@ -23,18 +23,17 @@
 
     {% paginate craft.entries.search(tags).section('instaBlog').limit(10).order('dateCreated') as entries %}  
 
-      {% if entries|length %}
-        <article>
-          <h2>Tag: &ldquo;{{ searchValue | title }}&rdquo;</h2>
-        </article>
-    
-        {% include 'blog/_entries.twig' %}
+    {% if entries|length %}
+      <article>
+        <h2>Tag: &ldquo;{{ searchValue | title }}&rdquo;</h2>
+      </article>
+  
+      {% include 'blog/_entries.twig' %}
 
-      {% else %}
-        {% include 'blog/_not-found.twig' with {'type': 'tag'} %}
-      {% endif %}
+    {% else %}
+      {% include 'blog/_not-found.twig' with {'type': 'tag'} %}
+    {% endif %}
 
-    {% endpaginate %}
   {% endif %}
   
 </section>

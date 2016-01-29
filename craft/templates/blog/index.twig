@@ -7,7 +7,6 @@
 {% block blocks %}
 <section id="instablog">
   {% paginate craft.entries.section('instaBlog').limit(10) as entries %}
-    {% include 'blog/_entries.twig' %}
-  {% endpaginate %}
+  {% include 'blog/_entries.twig' %}
 </section>
 {% endblock %}

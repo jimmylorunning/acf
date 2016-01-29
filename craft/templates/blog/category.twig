@@ -26,20 +26,19 @@
 
     {% paginate craft.entries.section('instaBlog').relatedTo(category).limit(10) as entries %}  
 
-      {% if entries|length %}
-        <article>
-          <h2>Category: &ldquo;{{ category.slug|title }}&rdquo;</h2>
-          {{ category.instaBlogBody }}
-        </article>
+    {% if entries|length %}
+      <article>
+        <h2>Category: &ldquo;{{ category.slug|title }}&rdquo;</h2>
+        {{ category.instaBlogBody }}
+      </article>
 
-        {% include 'blog/_entries.twig' %}
+      {% include 'blog/_entries.twig' %}
 
-      {% else %}
-        {% include 'blog/_not-found.twig' with {'type': 'category'} %}
-      {% endif %}
-
-      {% endpaginate %}
+    {% else %}
+      {% include 'blog/_not-found.twig' with {'type': 'category'} %}
     {% endif %}
+
+  {% endif %}
 
 </section>
 {% endblock %}
