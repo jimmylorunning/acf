@@ -158,10 +158,10 @@
     #sharethis .rsvp:hover {
       background-color: #3b5998; }
 
-.xclose a {
+.orange .xclose a, .xclose a {
   font-size: 6rem;
   color: #000000; }
-  .xclose a:hover {
+  .orange .xclose a:hover, .xclose a:hover {
     color: #000000;
     text-decoration: none; }
 
@@ -570,6 +570,8 @@ a, a:hover {
 
 .blue {
   background-color: #2D8CEA; }
+  .blue a, .blue a:hover {
+    color: #ffffff; }
   .blue ::-moz-selection {
     background: #ededed;
     text-shadow: none;
