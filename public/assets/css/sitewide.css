@@ -571,6 +571,9 @@ h3 {
     text-shadow: none;
     color: #ffffff; }
 
+.bluefg {
+  color: #2D8CEA; }
+
 .section {
   padding-top: 0rem;
   padding-bottom: 1rem;
@@ -700,6 +703,8 @@ video {
       float: left; }
       .header .submenu div a {
         color: #a6a6a6; }
+        .header .submenu div a.bluefg {
+          color: #2D8CEA; }
       .header .submenu div h1 {
         font-size: 5rem;
         text-transform: lowercase;

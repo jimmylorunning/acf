@@ -68,6 +68,10 @@ h3 {
   }
 }  
 
+.bluefg {
+  color: $blue;
+}
+
 .section {
   padding-top: 0rem;
   padding-bottom: 1rem;
@@ -226,6 +230,9 @@ video {
       display: inline-block;
       float: left;
       a {
+        &.bluefg {
+          color: $blue;
+        }
         color: $submenu;
       }
       h1 {
