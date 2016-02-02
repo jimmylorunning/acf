@@ -40,7 +40,7 @@
   }
 
   &.white, &.gray {
-    input[type=PlainText] {
+    input[type=PlainText], input[type=text], input[type=email], textarea {
       border-bottom: 1px solid #000000;
       border-right: 1px solid #000000;
     }

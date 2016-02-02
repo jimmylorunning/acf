@@ -214,7 +214,7 @@
     border-color: #000000;
     outline: none;
     box-shadow: none; }
-.formbuilder.white input[type=PlainText], .formbuilder.gray input[type=PlainText] {
+.formbuilder.white input[type=PlainText], .formbuilder.white input[type=text], .formbuilder.white input[type=email], .formbuilder.white textarea, .formbuilder.gray input[type=PlainText], .formbuilder.gray input[type=text], .formbuilder.gray input[type=email], .formbuilder.gray textarea {
   border-bottom: 1px solid #000000;
   border-right: 1px solid #000000; }
 .formbuilder.white .redactor-box, .formbuilder.gray .redactor-box {
