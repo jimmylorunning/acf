@@ -110,6 +110,19 @@ video {
   margin: 0px 0px 5px 5px;
 }
 
+.centerimg img {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.blog-content img {
+  max-width: 100%;
+}
+
 .hide {
   position: absolute; 
   left: -5000px;
