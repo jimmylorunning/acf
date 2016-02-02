@@ -8,7 +8,7 @@
 
   <div class="sponsor">
     {% if sponsor.sponsorURL %}
-      <a href="{{ sponsor.sponsorURL }}">
+      <a href="{{ sponsor.sponsorURL }}" target="_blank">
     {% endif %}
     <img src="{{ sponsor.sponsorLogo.first.getUrl(fit300) }}" alt="{{ sponsor.sponsorName }}" class="sponsorImg">
     {% if sponsor.sponsorURL %}
