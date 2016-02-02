@@ -38,11 +38,13 @@ h3 {
 
 a, a:hover {
   color: $blue;
-
 }
 
 .orange {
   background-color: $orange;
+  a, a:hover {
+    color: $white;
+  }
 }
 
 .gray {
@@ -59,6 +61,9 @@ a, a:hover {
 
 .blue {
   background-color: $blue;
+  a, a:hover {
+    color: $white;
+  }
 
   ::-moz-selection {
     background: $gray;
