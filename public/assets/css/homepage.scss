@@ -79,6 +79,9 @@ $hpimg9: 300px;
   }
   a {
     color: $black;
+    &:hover {
+      color: $black;
+    }
   }
 
   > a > div {

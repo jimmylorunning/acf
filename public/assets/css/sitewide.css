@@ -158,10 +158,11 @@
     #sharethis .rsvp:hover {
       background-color: #3b5998; }
 
-.xclose a {
+.orange .xclose a, .xclose a {
   font-size: 6rem;
   color: #000000; }
-  .xclose a:hover {
+  .orange .xclose a:hover, .xclose a:hover {
+    color: #000000;
     text-decoration: none; }
 
 #mapcontainer {
@@ -299,6 +300,8 @@ a.navbar-brand h1 {
       line-height: 0px; }
   .featured a {
     color: #000000; }
+    .featured a:hover {
+      color: #000000; }
   .featured > a > div {
     background-repeat: no-repeat;
     background-position: 50%;
@@ -553,6 +556,8 @@ a, a:hover {
 
 .orange {
   background-color: #FDA879; }
+  .orange a, .orange a:hover {
+    color: #ffffff; }
 
 .gray {
   background-color: #ededed; }
@@ -565,6 +570,8 @@ a, a:hover {
 
 .blue {
   background-color: #2D8CEA; }
+  .blue a, .blue a:hover {
+    color: #ffffff; }
   .blue ::-moz-selection {
     background: #ededed;
     text-shadow: none;
