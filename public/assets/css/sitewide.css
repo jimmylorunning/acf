@@ -140,7 +140,8 @@
       width: 33%; }
 
 #sharethis {
-  margin: 1rem; }
+  margin: 1rem;
+  width: 360px; }
   #sharethis .rsvp {
     height: 32px;
     top: -11px;
@@ -158,6 +159,11 @@
     #sharethis .rsvp:hover {
       background-color: #3b5998; }
 
+@media (max-width: 350px) {
+  #sharethis {
+    width: auto; }
+    #sharethis .rsvp {
+      margin-top: 20px; } }
 .orange .xclose a, .xclose a {
   font-size: 6rem;
   color: #000000; }
@@ -412,10 +418,8 @@ a.navbar-brand h1 {
   width: 250px;
   height: 250px;
   text-align: center;
-  /*  vertical-align: middle; */
   background-position: 50%;
   border-radius: 50%;
-  /*  line-height: 250px; */
   padding-top: 100px;
   color: #ffffff;
   font-weight: bold;
