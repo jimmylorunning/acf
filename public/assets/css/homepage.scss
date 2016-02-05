@@ -229,17 +229,20 @@ $hpimg5: 300px;
       text-decoration: none;
     }
   }
+  .slick-list {
+    margin-top: 44px;
+  }
 }
 
 .mobile-feature {
   margin-left: auto;
   margin-right: auto;
-  width: 250px;
-  height: 250px;
+  width: 170px;
+  height: 170px;
   text-align: center;
   background-position: 50%;
   border-radius: 50%;
-  padding-top: 100px;
+  padding-top: 60px;
   color: $white;
   font-weight: bold;
   font-size: 2rem;
@@ -249,7 +252,7 @@ button.prev-arrow.slick-arrow, button.next-arrow.slick-arrow {
   display: block !important;
   position: absolute;
   z-index: 500;
-  top: 63px;
+  top: 18px;
   border: 0;
   background: transparent;
   &:focus {
@@ -257,6 +260,11 @@ button.prev-arrow.slick-arrow, button.next-arrow.slick-arrow {
   }
 }
 
+
 button.next-arrow.slick-arrow {
-  right: 0px;
+  right: -30px;
+}
+
+button.prev-arrow.slick-arrow {
+  left: -30px;
 }
