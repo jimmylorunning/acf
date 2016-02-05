@@ -690,6 +690,12 @@ video {
     .navbar-inverse .navbar-toggle .icon-bar {
       background-color: #000000; }
 
+/* adding this for the events index page 
+   because the featured images make the size
+   of the page at least 384px */
+@media (max-width: 390px) {
+  .container > .navbar-header {
+    width: 320px; } }
 /********************************/
 /**********   LOGO   ************/
 /********************************/
