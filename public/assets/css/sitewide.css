@@ -283,7 +283,7 @@ a.navbar-brand h1 {
 
 @media (max-width: 767px) {
   .header .submenu div.homemenu div {
-    margin-right: 1.3rem; } }
+    margin-right: 1.1rem; } }
 @media (min-width: 768px) and (max-width: 992px) {
   .header .submenu div.homemenu div {
     margin-right: 2.2rem; } }
