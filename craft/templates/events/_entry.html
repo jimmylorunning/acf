@@ -20,6 +20,7 @@
     s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
     var h = d[g]('body')[0];h.appendChild(s); }})();
 </script>
+{% set fit500 = { mode: 'fit', width: 500, height:500 } %}
 {% set blockstyle = 'orange eventbg' %}
 {% include '_default_block_start.html' %}
 {% set tablecolumnclass = 'colhalf' %}
@@ -32,6 +33,11 @@
         <h2>{{ entry.title }}</h2>
         <div id="startdatetime">
           {{ entry.startDateTime | date("l, F jS, g:ia") }}
+        </div>
+        <div class="eventimage visible-sm-block visible-xs-block sm">
+          {% for image in entry.photo %}
+            <img src="{{ image.getUrl(fit500) }}" alt="{{ image.title }}">
+          {% endfor %}
         </div>
       </div>
       <div id="eventinfo">
@@ -66,8 +72,7 @@
       </div>
     </div>
     <div class="col-md-5">
-      <div id="eventimage">
-        {% set fit500 = { mode: 'fit', width: 500, height:500 } %}
+      <div class="eventimage visible-md-block visible-lg-block">
         {% for image in entry.photo %}
           <img src="{{ image.getUrl(fit500) }}" alt="{{ image.title }}">
         {% endfor %}

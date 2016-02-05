@@ -105,11 +105,18 @@
 /********************************/
 /********** ENTRY ***************/
 /********************************/
-#eventimage img {
+.eventimage img {
   width: 90%;
   max-width: 90%;
   height: auto;
   border: 5px solid #ffffff; }
+.eventimage.sm {
+  margin-bottom: 15px; }
+  .eventimage.sm img {
+    width: 75%; }
+
+.margin-bottom {
+  margin-bottom: 15px; }
 
 .eventbg {
   background: url(/images/Event_bkg.png);
