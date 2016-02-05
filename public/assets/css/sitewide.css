@@ -153,7 +153,8 @@
     display: inline-block;
     background-color: #3b5998; }
     #sharethis .rsvp a {
-      color: #ffffff; }
+      color: #ffffff;
+      text-decoration: none; }
       #sharethis .rsvp a:hover {
         text-decoration: none; }
     #sharethis .rsvp:hover {
