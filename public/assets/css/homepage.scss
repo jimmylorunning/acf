@@ -21,7 +21,7 @@ a.navbar-brand h1 {
   width:215px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .home #logo-container {
     width: 123px;
   }
@@ -40,6 +40,15 @@ a.navbar-brand h1 {
         background-color: $blue;
         color: $white;
       }
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .header .submenu div.homemenu {
+    div {
+      margin-right: 1.5rem;
     }
   }
 }

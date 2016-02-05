@@ -266,7 +266,7 @@ a.navbar-brand h1 {
 .home #logo-container {
   width: 215px; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .home #logo-container {
     width: 123px; } }
 .header .submenu div.homemenu div {
@@ -281,6 +281,9 @@ a.navbar-brand h1 {
       background-color: #2D8CEA;
       color: #ffffff; }
 
+@media (max-width: 767px) {
+  .header .submenu div.homemenu div {
+    margin-right: 1.5rem; } }
 /*********** FEATURE **********/
 .section.homegray {
   padding-top: 2rem; }
@@ -602,6 +605,9 @@ video {
 .wide-table {
   width: 1100px; }
 
+@media (min-width: 1100px) {
+  .wide-table-sm-plus {
+    width: 1100px; } }
 .tr-like {
   display: table-row; }
 
@@ -609,6 +615,16 @@ video {
   display: table-cell;
   vertical-align: top; }
 
+@media (min-width: 767px) {
+  .tr-like-sm-plus {
+    display: table-row; }
+
+  .table-like-sm-plus {
+    display: table; }
+
+  .td-like-sm-plus {
+    display: table-cell;
+    vertical-align: top; } }
 .leftimg img {
   float: left;
   margin: 0px 5px 5px 0px; }
@@ -687,8 +703,7 @@ video {
 .header {
   letter-spacing: -2px;
   padding-left: 20px;
-  padding-right: 0px;
-  height: 160px; }
+  padding-right: 0px; }
   .header .tagline {
     color: #e2e2e2;
     text-transform: uppercase;
@@ -721,6 +736,24 @@ video {
         margin-top: 0px;
         font-weight: 700; }
 
+@media (max-width: 767px) {
+  .header {
+    letter-spacing: normal;
+    height: auto; }
+    .header .tagline {
+      display: none; }
+    .header .submenu {
+      margin-top: 1rem; }
+      .header .submenu h1 {
+        font-size: 2.2rem;
+        font-weight: 600; }
+      .header .submenu div {
+        font-weight: 500;
+        font-size: 1.6rem;
+        margin-right: 3rem; }
+        .header .submenu div h1 {
+          font-size: 2.2rem;
+          font-weight: 600; } }
 /********************************/
 /********** FOOTER   ************/
 /********************************/
