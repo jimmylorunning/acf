@@ -31,6 +31,9 @@ a.navbar-brand h1 {
   div {
     font-weight: 600;
     margin-right: 5rem;
+    &:last-child {
+      margin-right: 0px;
+    }
     color: $blue;
     text-transform: none;
     a {
