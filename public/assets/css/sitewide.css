@@ -105,11 +105,18 @@
 /********************************/
 /********** ENTRY ***************/
 /********************************/
-#eventimage img {
+.eventimage img {
   width: 90%;
   max-width: 90%;
   height: auto;
   border: 5px solid #ffffff; }
+.eventimage.sm {
+  margin-bottom: 15px; }
+  .eventimage.sm img {
+    width: 75%; }
+
+.margin-bottom {
+  margin-bottom: 15px; }
 
 .eventbg {
   background: url(/images/Event_bkg.png);
@@ -140,7 +147,8 @@
       width: 33%; }
 
 #sharethis {
-  margin: 1rem; }
+  margin: 1rem;
+  width: 360px; }
   #sharethis .rsvp {
     height: 32px;
     top: -11px;
@@ -152,12 +160,18 @@
     display: inline-block;
     background-color: #3b5998; }
     #sharethis .rsvp a {
-      color: #ffffff; }
+      color: #ffffff;
+      text-decoration: none; }
       #sharethis .rsvp a:hover {
         text-decoration: none; }
     #sharethis .rsvp:hover {
       background-color: #3b5998; }
 
+@media (max-width: 350px) {
+  #sharethis {
+    width: auto; }
+    #sharethis .rsvp {
+      margin-top: 20px; } }
 .orange .xclose a, .xclose a {
   font-size: 6rem;
   color: #000000; }
@@ -266,7 +280,7 @@ a.navbar-brand h1 {
 .home #logo-container {
   width: 215px; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .home #logo-container {
     width: 123px; } }
 .header .submenu div.homemenu div {
@@ -274,6 +288,8 @@ a.navbar-brand h1 {
   margin-right: 5rem;
   color: #2D8CEA;
   text-transform: none; }
+  .header .submenu div.homemenu div:last-child {
+    margin-right: 0px; }
   .header .submenu div.homemenu div a {
     color: #2D8CEA; }
     .header .submenu div.homemenu div a:hover {
@@ -281,6 +297,12 @@ a.navbar-brand h1 {
       background-color: #2D8CEA;
       color: #ffffff; }
 
+@media (max-width: 767px) {
+  .header .submenu div.homemenu div {
+    margin-right: 1.1rem; } }
+@media (min-width: 768px) and (max-width: 992px) {
+  .header .submenu div.homemenu div {
+    margin-right: 2.2rem; } }
 /*********** FEATURE **********/
 .section.homegray {
   padding-top: 2rem; }
@@ -404,13 +426,12 @@ a.navbar-brand h1 {
   width: 250px;
   height: 250px;
   text-align: center;
-  vertical-align: middle;
   background-position: 50%;
   border-radius: 50%;
-  line-height: 250px;
+  padding-top: 100px;
   color: #ffffff;
   font-weight: bold;
-  font-size: 3rem; }
+  font-size: 2rem; }
 
 button.prev-arrow.slick-arrow, button.next-arrow.slick-arrow {
   display: block !important;
@@ -490,7 +511,7 @@ button.next-arrow.slick-arrow {
     max-width: 80%;
     height: auto; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .sponsorLevel {
     padding-top: 2rem;
     border-right: 0;
@@ -602,6 +623,9 @@ video {
 .wide-table {
   width: 1100px; }
 
+@media (min-width: 993px) {
+  .wide-table-sm-plus {
+    width: 1100px; } }
 .tr-like {
   display: table-row; }
 
@@ -609,6 +633,16 @@ video {
   display: table-cell;
   vertical-align: top; }
 
+@media (min-width: 767px) {
+  .tr-like-sm-plus {
+    display: table-row; }
+
+  .table-like-sm-plus {
+    display: table; }
+
+  .td-like-sm-plus {
+    display: table-cell;
+    vertical-align: top; } }
 .leftimg img {
   float: left;
   margin: 0px 5px 5px 0px; }
@@ -669,6 +703,12 @@ video {
     .navbar-inverse .navbar-toggle .icon-bar {
       background-color: #000000; }
 
+/* adding this for the events index page 
+   because the featured images make the size
+   of the page at least 384px */
+@media (max-width: 390px) {
+  .container > .navbar-header {
+    width: 320px; } }
 /********************************/
 /**********   LOGO   ************/
 /********************************/
@@ -687,8 +727,7 @@ video {
 .header {
   letter-spacing: -2px;
   padding-left: 20px;
-  padding-right: 0px;
-  height: 160px; }
+  padding-right: 0px; }
   .header .tagline {
     color: #e2e2e2;
     text-transform: uppercase;
@@ -711,6 +750,8 @@ video {
       margin-right: 11rem;
       display: inline-block;
       float: left; }
+      .header .submenu div:last-child {
+        margin-right: 0px; }
       .header .submenu div a {
         color: #a6a6a6; }
         .header .submenu div a.bluefg {
@@ -721,6 +762,32 @@ video {
         margin-top: 0px;
         font-weight: 700; }
 
+@media (max-width: 767px) {
+  .header {
+    letter-spacing: normal;
+    height: auto; }
+    .header .tagline {
+      display: none; }
+    .header .submenu {
+      margin-top: 1rem; }
+      .header .submenu h1 {
+        font-size: 2.2rem;
+        font-weight: 600; }
+      .header .submenu div {
+        font-weight: 500;
+        font-size: 1.6rem;
+        margin-right: 3rem; }
+        .header .submenu div h1 {
+          font-size: 2.2rem;
+          font-weight: 600; } }
+@media (min-width: 768px) and (max-width: 992px) {
+  .header .submenu h1 {
+    font-size: 4rem; }
+  .header .submenu div {
+    font-size: 2.3rem;
+    margin-right: 6rem; }
+    .header .submenu div h1 {
+      font-size: 4rem; } }
 /********************************/
 /********** FOOTER   ************/
 /********************************/

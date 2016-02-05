@@ -21,7 +21,7 @@ a.navbar-brand h1 {
   width:215px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .home #logo-container {
     width: 123px;
   }
@@ -31,6 +31,9 @@ a.navbar-brand h1 {
   div {
     font-weight: 600;
     margin-right: 5rem;
+    &:last-child {
+      margin-right: 0px;
+    }
     color: $blue;
     text-transform: none;
     a {
@@ -40,6 +43,23 @@ a.navbar-brand h1 {
         background-color: $blue;
         color: $white;
       }
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .header .submenu div.homemenu {
+    div {
+      margin-right: 1.1rem;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .header .submenu div.homemenu {
+    div {
+      margin-right: 2.2rem;
     }
   }
 }
@@ -217,13 +237,12 @@ $hpimg5: 300px;
   width: 250px;
   height: 250px;
   text-align: center;
-  vertical-align: middle;
   background-position: 50%;
   border-radius: 50%;
-  line-height: 250px;
+  padding-top: 100px;
   color: $white;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 button.prev-arrow.slick-arrow, button.next-arrow.slick-arrow {

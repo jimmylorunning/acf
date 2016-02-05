@@ -20,6 +20,7 @@
     s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
     var h = d[g]('body')[0];h.appendChild(s); }})();
 </script>
+{% set fit500 = { mode: 'fit', width: 500, height:500 } %}
 {% set blockstyle = 'orange eventbg' %}
 {% include '_default_block_start.html' %}
 {% set tablecolumnclass = 'colhalf' %}
@@ -32,6 +33,11 @@
         <h2>{{ entry.title }}</h2>
         <div id="startdatetime">
           {{ entry.startDateTime | date("l, F jS, g:ia") }}
+        </div>
+        <div class="eventimage visible-sm-block visible-xs-block sm">
+          {% for image in entry.photo %}
+            <img src="{{ image.getUrl(fit500) }}" alt="{{ image.title }}">
+          {% endfor %}
         </div>
       </div>
       <div id="eventinfo">
@@ -66,8 +72,7 @@
       </div>
     </div>
     <div class="col-md-5">
-      <div id="eventimage">
-        {% set fit500 = { mode: 'fit', width: 500, height:500 } %}
+      <div class="eventimage visible-md-block visible-lg-block">
         {% for image in entry.photo %}
           <img src="{{ image.getUrl(fit500) }}" alt="{{ image.title }}">
         {% endfor %}
@@ -82,18 +87,18 @@
           <img src="/images/cal-bw-01.png" width="32">
         </a>
         <var class="atc_event">
-            <var class="atc_date_start">2016-05-04 12:00:00</var>
-            <var class="atc_date_end">2016-05-04 18:00:00</var>
-            <var class="atc_timezone">Europe/London</var>
-            <var class="atc_title">Star Wars Day Party</var>
-            <var class="atc_description">May the force be with you</var>
-            <var class="atc_location">Tatooine</var>
-            <var class="atc_organizer">Luke Skywalker</var>
-            <var class="atc_organizer_email">luke@starwars.com</var>
+            <var class="atc_date_start">{{ entry.startDateTime | date("Y-m-d H:i:s") }}</var>
+            <var class="atc_date_end">{{ entry.startDateTime | date("Y-m-d H:59:59") }}</var>
+            <var class="atc_timezone">America/New_York</var>
+            <var class="atc_title">{{ entry.title }}</var>
+            <var class="atc_description">{{ entry.description|striptags }}</var>
+            <var class="atc_location">{{ entry.startingLocation }}, {{ entry.startingAddress }}</var>
+            <var class="atc_organizer">Atlanta Cycling Festival</var>
+            <var class="atc_organizer_email"></var>
         </var>
     </span>
         {% if entry.facebookId is not empty %}
-        <span class='rsvp'><a href="https://www.facebook.com/events/{{ entry.facebookId }}">RSVP on Facebook</a></span>
+        <span class='rsvp'><a href="https://www.facebook.com/events/{{ entry.facebookId }}" target="_blank">RSVP on Facebook</a></span>
         {% endif %}
       </div>
     </div>
