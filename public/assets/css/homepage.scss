@@ -237,13 +237,12 @@ $hpimg5: 300px;
   width: 250px;
   height: 250px;
   text-align: center;
-  vertical-align: middle;
   background-position: 50%;
   border-radius: 50%;
-  line-height: 250px;
+  padding-top: 100px;
   color: $white;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 button.prev-arrow.slick-arrow, button.next-arrow.slick-arrow {

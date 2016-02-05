@@ -412,13 +412,14 @@ a.navbar-brand h1 {
   width: 250px;
   height: 250px;
   text-align: center;
-  vertical-align: middle;
+  /*  vertical-align: middle; */
   background-position: 50%;
   border-radius: 50%;
-  line-height: 250px;
+  /*  line-height: 250px; */
+  padding-top: 100px;
   color: #ffffff;
   font-weight: bold;
-  font-size: 3rem; }
+  font-size: 2rem; }
 
 button.prev-arrow.slick-arrow, button.next-arrow.slick-arrow {
   display: block !important;
