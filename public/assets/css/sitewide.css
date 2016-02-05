@@ -283,7 +283,10 @@ a.navbar-brand h1 {
 
 @media (max-width: 767px) {
   .header .submenu div.homemenu div {
-    margin-right: 1.5rem; } }
+    margin-right: 1.3rem; } }
+@media (min-width: 768px) and (max-width: 992px) {
+  .header .submenu div.homemenu div {
+    margin-right: 2.2rem; } }
 /*********** FEATURE **********/
 .section.homegray {
   padding-top: 2rem; }
@@ -493,7 +496,7 @@ button.next-arrow.slick-arrow {
     max-width: 80%;
     height: auto; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .sponsorLevel {
     padding-top: 2rem;
     border-right: 0;
@@ -754,6 +757,14 @@ video {
         .header .submenu div h1 {
           font-size: 2.2rem;
           font-weight: 600; } }
+@media (min-width: 768px) and (max-width: 992px) {
+  .header .submenu h1 {
+    font-size: 4rem; }
+  .header .submenu div {
+    font-size: 2.3rem;
+    margin-right: 6rem; }
+    .header .submenu div h1 {
+      font-size: 4rem; } }
 /********************************/
 /********** FOOTER   ************/
 /********************************/
