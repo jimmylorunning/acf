@@ -79,6 +79,23 @@ $hpimg5: 300px;
 
 .section.homegray {
   padding-top: 2rem;
+  border-top: 0px;
+}
+
+.hometext-xs {
+  &::first-letter {
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 0px; 
+  }
+  padding-top: 30px;
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.section.homegray-xs {
+  padding-bottom: 0px;
 }
 
 .featured {

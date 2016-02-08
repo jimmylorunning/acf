@@ -18,6 +18,12 @@
 {% endblock %}
 
 {% block blocks %}
+  {% set blockstyle = 'gray homegray-xs visible-xs-block' %}
+  {% include '_default_block_start.html' %}
+    <div class="hometext-xs">
+      {{ entry.body }}
+    </div>
+  {% include '_default_block_end.html' %} 
   {% set blockstyle = 'gray homegray' %}
   {% include '_default_block_start.html' %}
     <div class="featured hidden-xs">
