@@ -13,6 +13,8 @@
   margin-right: 5px;
   margin-bottom: 5px;
   border: 5px solid #ffffff; }
+  .events_grid_item:hover {
+    border: 5px solid #2D8CEA; }
 
 .selected {
   background-color: #2D8CEA;
