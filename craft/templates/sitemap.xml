@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+  {% set sections = craft.sections.getAllSections() %}
+
+  {% for section in sections %}
+    {% for entry in craft.entries.sectionId(section.id) %}
+    {% if (entry.includeInSitemap is defined) and (entry.includeInSitemap == 'yes') %}
+    <url>
+      <loc>{{ entry.url }}</loc>
+      <lastmod>{{ entry.dateUpdated | date("Y-m-d") }}</lastmod>
+      {% if entry.priority is defined %}
+        <priority>{{ entry.priority }}</priority>
+      {% endif %}
+      {% if entry.changeFrequency is defined %}
+        <changefreq>{{ entry.changeFrequency }}</changefreq>
+      {% endif %}
+    </url>
+    {% endif %}
+    {% endfor %}
+  {% endfor %}
+    <url>
+      <loc>{{ siteUrl }}blog</loc>
+      <priority>{{ acfSettings.blogPriority }}</priority>
+      <changefreq>{{ acfSettings.blogChangeFrequency}}</changefreq>
+    </url>
+    <url>
+      <loc>{{ siteUrl }}events</loc>
+      <priority>{{ acfSettings.eventsPriority }}</priority>
+      <changefreq>{{ acfSettings.eventsChangeFrequency}}</changefreq>
+    </url>
+</urlset>
