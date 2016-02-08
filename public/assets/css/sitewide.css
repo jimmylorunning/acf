@@ -305,7 +305,20 @@ a.navbar-brand h1 {
     margin-right: 2.2rem; } }
 /*********** FEATURE **********/
 .section.homegray {
-  padding-top: 2rem; }
+  padding-top: 2rem;
+  border-top: 0px; }
+
+.hometext-xs {
+  padding-top: 30px; }
+  .hometext-xs::first-letter {
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 0px; }
+  .hometext-xs p {
+    margin-bottom: 0px; }
+
+.section.homegray-xs {
+  padding-bottom: 0px; }
 
 .featured {
   position: relative;
