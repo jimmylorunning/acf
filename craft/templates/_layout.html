@@ -9,6 +9,14 @@
     {% block head %}
     {% endblock %}
 
+    {% if entry is defined %}
+      <meta property="og:url" content="{{ entry.url }}" />
+      <meta property="og:title" content="{{ entry.title }}" />
+      <meta property="og:description" content="{{ entry.pageDescription }}" />
+      {% if entry.photo.first %}
+      <meta property="og:image" content="{{ entry.photo.first.getUrl() }}" />
+      {% endif %}
+    {% endif %}
   </head>
   <body>
     {% include '_nav.html' %}
