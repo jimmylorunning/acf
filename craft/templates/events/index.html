@@ -15,9 +15,9 @@
   <div class="date-group">  
     <ul>
       <li><a href="#date=*">ALL</a></li>
-      <li><a href="#date=.pre">Pre festival</a></li>
+      <li><a href="#date=.pre">Pre&nbsp;festival</a></li>
       {% set firstDay = acfSettings.firstDay %}
-      <li>{{ firstDay | date('F') }}</li>
+      <li class="monthname">{{ firstDay | date('F') }}</li>
       {% for i in 1..acfSettings.numberOfDays %}
         <li><a href="#date=.{{firstDay|date('Mj')}}">{{firstDay|date('j')}}</a></li>
         {% set firstDay = firstDay|date_modify("+1 day") %}
