@@ -13,8 +13,8 @@
       <meta property="og:url" content="{{ entry.url }}" />
       <meta property="og:title" content="{{ entry.title }}" />
       <meta property="og:description" content="{{ entry.pageDescription }}" />
-      {% if entry.photo.first %}
-      <meta property="og:image" content="{{ entry.photo.first.getUrl() }}" />
+      {% if entry.facebookImage.first %}
+      <meta property="og:image" content="{{ entry.facebookImage.first.getUrl() }}" />
       {% endif %}
     {% endif %}
   </head>
