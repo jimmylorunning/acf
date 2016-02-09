@@ -8,10 +8,10 @@
     <url>
       <loc>{{ entry.url }}</loc>
       <lastmod>{{ entry.dateUpdated | date("Y-m-d") }}</lastmod>
-      {% if entry.priority is defined %}
+      {% if (entry.priority is defined) and (entry.priority != "") %}
         <priority>{{ entry.priority }}</priority>
       {% endif %}
-      {% if entry.changeFrequency is defined %}
+      {% if (entry.changeFrequency is defined) and (entry.changeFrequency != "") %}
         <changefreq>{{ entry.changeFrequency }}</changefreq>
       {% endif %}
     </url>
@@ -20,12 +20,20 @@
   {% endfor %}
     <url>
       <loc>{{ siteUrl }}blog</loc>
+      {% if (acfSettings.blogPriority is defined) and (acfSettings.blogPriority != "") %}
       <priority>{{ acfSettings.blogPriority }}</priority>
+      {% endif %}
+      {% if (acfSettings.blogChangeFrequency is defined) and (acfSettings.blogChangeFrequency != "") %}
       <changefreq>{{ acfSettings.blogChangeFrequency}}</changefreq>
+      {% endif %}
     </url>
     <url>
       <loc>{{ siteUrl }}events</loc>
+      {% if (acfSettings.eventsPriority is defined) and (acfSettings.eventsPriority != "") %}
       <priority>{{ acfSettings.eventsPriority }}</priority>
+      {% endif %}
+      {% if (acfSettings.eventsChangeFrequency is defined) and (acfSettings.eventsChangeFrequency != "") %}
       <changefreq>{{ acfSettings.eventsChangeFrequency}}</changefreq>
+      {% endif %}
     </url>
 </urlset>
