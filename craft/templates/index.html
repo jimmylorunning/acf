@@ -46,14 +46,18 @@
          %}
 
       {% for e in entry.featuredPages %}
-        <a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(featured[loop.index0]) }})' class="no{{ loop.index0 }}"><div class="overlay">{{ e.title }}</div></div></a>
+        {% if e.photo.first %}
+          <a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(featured[loop.index0]) }})' class="no{{ loop.index0 }}"><div class="overlay">{{ e.title }}</div></div></a>
+        {% endif %}
       {% endfor %}
     </div>
     <div class="featured-xs visible-xs-block">
       <div class="carousel-container">
         <div class="mobile-carousel">
           {% for e in entry.featuredPages %}
-            <div class="one"><a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(featured[1]) }})' class="mobile-feature"><div class="overlay">{{ e.title }}</div></div></a></div>
+            {% if e.photo.first %}
+              <div class="one"><a href="{{ e.getUrl() }}"><div style='background-image: url({{ e.photo.first.getUrl(featured[1]) }})' class="mobile-feature"><div class="overlay">{{ e.title }}</div></div></a></div>
+            {% endif %}
           {% endfor %}
         </div>
       </div>
