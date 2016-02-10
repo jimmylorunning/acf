@@ -145,83 +145,113 @@ $hpimg5: 300px;
     }
 
     &.no0, &.no0 div {
+      font-size: 1.2rem;
       width: $hpimg0;
       height: $hpimg0;
-      line-height: $hpimg0;
       top: 230px;
       left: 46.5%;
     }
+    &.no0 div {    
+      padding-top: $hpimg0 / 2 - 15px;
+    }
 
     &.no6, &.no6 div {
+      font-size: 1.4rem;
       width: $hpimg6;
       height: $hpimg6;
-      line-height: $hpimg6;
       top: 138px;
       left: 64%;
     }
+    &.no6 div {
+      padding-top: $hpimg6 / 2 - 20px;
+    }
 
     &.no1, &.no1 div {
+      font-size: 2rem;
       width: $hpimg1;
       height: $hpimg1;
-      line-height: $hpimg1;
       top: 2px;
       left: 76%;
     }
+    &.no1 div {
+      padding-top: $hpimg1 / 2 - 20px;
+    }
 
     &.no7, &.no7 div {
+      font-size: 2.3rem;
       width: $hpimg7;
       height: $hpimg7;
-      line-height: $hpimg7;
       top: 288px;
       left: 6%;
     }
+    &.no7 div {
+      padding-top: $hpimg7 / 2 - 30px;
+    }
 
     &.no4, &.no4 div {
+      font-size: 1.5rem;
       width: $hpimg4;
       height: $hpimg4;
-      line-height: $hpimg4;
       top: 360px;
       left: 30%;
     }
+    &.no4 div {
+      padding-top: $hpimg4 / 2 - 17px;
+    }
     
     &.no8, &.no8 div {
+      font-size: 2rem;
       width: $hpimg8;
       height: $hpimg8;
-      line-height: $hpimg8;
       top: 300px;
       left: 83%;
     }
+    &.no8 div {
+      padding-top: $hpimg8 / 2 - 20px;
+    }
     
     &.no2, &.no2 div {
+      font-size: 2rem;
       width: $hpimg2;
       height: $hpimg2;
-      line-height: $hpimg2;
       top: 395px;
       left: 57%;
     }
+    &.no2 div {
+      padding-top: $hpimg2 / 2 - 22px;
+    }
     
     &.no3, &.no3 div {
+      font-size: 2rem;
       width: $hpimg3;
       height: $hpimg3;
-      line-height: $hpimg3;
       top: 574px;
       left: 12%;
     }
+    &.no3 div {
+      padding-top: $hpimg3 / 2 - 22px;
+    }
     
     &.no9, &.no9 div {
+      font-size: 1.3rem;
       width: $hpimg9;
       height: $hpimg9;
-      line-height: $hpimg9;
       top: 563px;
       left: 45%;
     }
+    &.no9 div {
+      padding-top: $hpimg9 / 2 - 17px;
+    }
     
     &.no5, &.no5 div {
+      font-size: 2.5rem;
       width: $hpimg5;
       height: $hpimg5;
-      line-height: $hpimg5;
       top: 642px;
       left: 58%;
+    }
+    &.no5 div {
+      padding-top: $hpimg5 / 2 - 30px;
     }
   }
 }
