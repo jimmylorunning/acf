@@ -7,7 +7,11 @@
       {% if block.heading %}
         <h2>{{ block.heading }}</h2>
       {% endif %}
-      {{ block.text }}
+      {% if (craft.request.firstSegment == "thank-you") and (craft.session.hasFlash('success')) %}
+        <p>{{ craft.session.getFlash('success') | raw }}</p>
+      {% else %}
+        {{ block.text }}
+      {% endif %}
       {% if block.formHandle != "" %}
         {% set form = craft.formBuilder2.getFormByHandle(block.formHandle) %}
         {% set formSettings = form.formSettings %}

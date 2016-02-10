@@ -3,7 +3,7 @@
       </div>
     </div><!-- /.container -->
   </div><!-- /.section -->
-  {% if craft.session.hasFlash('success') %}
+  {% if craft.session.hasFlash('success') and (craft.request.firstSegment != "thank-you") %}
     <div class="section white no-border"><div class="container">
     <div class="alert alert-success alert-dismissible fade in" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close" aria-hidden="true">&times;</button>
