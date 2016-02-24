@@ -530,17 +530,17 @@ button.prev-arrow.slick-arrow {
     margin-left: auto; } }
 .sponsorImg {
   width: 70%;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  filter: url(#greyscale);
-  filter: gray;
+  /*  -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: url(#greyscale);
+    filter: gray; */
   transition: 1s;
   max-width: 70%;
   height: auto; }
   .sponsorImg:hover {
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
-    filter: none; }
+    /*    -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+        filter: none;*/ }
 
 /********************************/
 /********** BECOME A SPONSOR ****/

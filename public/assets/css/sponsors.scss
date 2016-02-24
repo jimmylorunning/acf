@@ -28,17 +28,17 @@
 
 .sponsorImg {
   width: 70%;
-  -webkit-filter: grayscale(100%);
+/*  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   filter: url(#greyscale);
-  filter: gray;
+  filter: gray; */
   transition: 1s;
   max-width: 70%;
   height: auto;
   &:hover {
-    -webkit-filter: grayscale(0);
+/*    -webkit-filter: grayscale(0);
     filter: grayscale(0);
-    filter: none;
+    filter: none;*/
   }
 }
 
