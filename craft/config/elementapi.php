@@ -9,6 +9,7 @@ return [
       'transformer' => function(EntryModel $entry) {
         return [
           'title' => $entry->title,
+          'starts' => $entry->startDateTime,
           'url' => $entry->url,
           'jsonUrl' => UrlHelper::getUrl("events/{$entry->id}.json"),
         ];
