@@ -25,6 +25,8 @@ return [
             'title' => $entry->title,
             'url' => $entry->url,
             'starts' => $entry->startDateTime,
+            'startingAddress' => $entry->startingAddress,
+            'startingLocation' => $entry->startingLocation,
             'track' => $entry->track,
             'difficulty' => $entry->rideDifficulty,
             'description' => ($entry->description ? (string) $entry->description : false),
