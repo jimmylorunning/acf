@@ -16,6 +16,7 @@ return [
           'title' => $entry->title,
           'photos' => $photos,
           'starts' => $entry->startDateTime,
+          'track' => $entry->track,
           'url' => $entry->url,
           'jsonUrl' => UrlHelper::getUrl("events/{$entry->id}.json"),
         ];
