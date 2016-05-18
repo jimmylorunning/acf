@@ -88,7 +88,11 @@
         </a>
         <var class="atc_event">
             <var class="atc_date_start">{{ entry.startDateTime | date("Y-m-d H:i:s") }}</var>
+            {% if entry.endDateTime %}
             <var class="atc_date_end">{{ entry.endDateTime | date("Y-m-d H:i:s") }}</var>
+            {% else %}
+            <var class="atc_date_end">{{ entry.startDateTime | date("Y-m-d H:i:s") }}</var>
+            {% endif %}
             <var class="atc_timezone">America/New_York</var>
             <var class="atc_title">{{ entry.title }}</var>
             <var class="atc_description">{{ entry.description|striptags }}</var>
