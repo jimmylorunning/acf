@@ -91,7 +91,8 @@
             {% if entry.endDateTime %}
             <var class="atc_date_end">{{ entry.endDateTime | date("Y-m-d H:i:s") }}</var>
             {% else %}
-            <var class="atc_date_end">{{ entry.startDateTime | date("Y-m-d H:i:s") }}</var>
+            {% set endtime = entry.startDateTime|date_modify("+1 hour") %}
+            <var class="atc_date_end">{{ endtime | date("Y-m-d H:i:s") }}</var>
             {% endif %}
             <var class="atc_timezone">America/New_York</var>
             <var class="atc_title">{{ entry.title }}</var>
