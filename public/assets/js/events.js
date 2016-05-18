@@ -3,7 +3,10 @@ $( document ).ready( function() {
   isotopeOptions = {};
   defaultOptions = {
     filter: '*',
-    layoutMode: 'masonry'
+    layoutMode: 'masonry',
+    masonry: {
+      columnWidth: 200 
+    }
   };
 
   // init Isotope
