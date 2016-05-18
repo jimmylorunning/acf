@@ -14,8 +14,10 @@
       <meta property="og:title" content="{{ entry.title }}" />
       <meta property="og:description" content="{{ entry.pageDescription }}" />
       {% if entry.facebookImage.first %}
-      <meta property="og:image" content="{{ entry.facebookImage.first.getUrl() }}" />
+        <meta property="og:image" content="{{ entry.facebookImage.first.getUrl() }}" />
       {% endif %}
+    {% elseif craft.request.firstSegment == 'events' %}
+      <meta property="og:image" content="{{ acfSettings.eventsFacebookImage.first.getUrl() }}" />
     {% endif %}
   </head>
   <body>
