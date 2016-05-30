@@ -7,15 +7,13 @@
         {% endif %}
 
         {# Open Graph data #}
-        {% set facebook = entry.author.instaBlogFacebook ? entry.author.instaBlogFacebook : craft.instaBlog.settings.facebook %}
-        {# <meta property="og:image" content="{{ entry.listIcon|first.getUrl({width: 600}) }}"> #}
-        {# <meta property="og:image" content="/images/facebook70kft.png"> #}
         <meta name="author" content="{{ entry.author.fullName }}">
         <meta property="og:type" content="article">
         <meta property="og:url" content="{{ craft.request.url }}" >
         <meta property="og:title" content="{{ entry.title }}">
         <meta property="og:description"  content="{{ entry.postDate.format('M d, Y') }} - {{ entry.instaBlogBody|striptags|truncate(360) }}">
         <meta property="og:site_name" content="{{ siteName }}">
+        <meta property="og:image" content="{{ entry.facebookImage.first.getUrl() }}">
         <meta property="article:published_time" content="{{ entry.dateCreated.iso8601 }}">
         <meta property="article:modified_time" content="{{ entry.dateUpdated.iso8601 }}">
         {% if entry.expiryDate|length %}<meta property="article:expiration_time" content="{{ entry.expiryDate.iso8601 }}">{% endif %}
