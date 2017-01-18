@@ -13,7 +13,7 @@ define('URI_SCHEME', ( isset($_SERVER['HTTPS'] ) ) ? "https://" : "http://" );
 $subdomain = @include(CRAFT_CONFIG_PATH . 'local/subdomain.php');
 
 // The site url
-define('SITE_URL', URI_SCHEME . $subdomain . $_SERVER['SERVER_NAME'] . '/');
+define('SITE_URL', URI_SCHEME . $subdomain . $_SERVER['SERVER_NAME'] );
 
 // The site basepath
 define('BASEPATH', realpath(CRAFT_BASE_PATH . '/../') . '/');
