@@ -45,7 +45,17 @@ class UpdateHelper
 			}
 
 			$rowData = explode(';', $row);
-			$file = IOHelper::normalizePathSeparators($handle == 'craft' ? craft()->path->getAppPath() : craft()->path->getPluginsPath().$handle.'/'.$rowData[0]);
+
+			if ($handle == 'craft')
+			{
+				$directory = craft()->path->getAppPath();
+			}
+			else
+			{
+				$directory = craft()->path->getPluginsPath().$handle.'/';
+			}
+
+			$file = IOHelper::normalizePathSeparators($directory.$rowData[0]);
 
 			// It's a folder
 			if (static::isManifestLineAFolder($file))
@@ -81,8 +91,17 @@ class UpdateHelper
 	public static function rollBackDatabaseChanges($backupPath)
 	{
 		$dbBackup = new DbBackup();
-		$fullBackupPath = craft()->path->getDbBackupPath().$backupPath.'.sql';
-		$dbBackup->restore($fullBackupPath);
+		$fileName = $backupPath.'.sql';
+		$fullBackupPath = craft()->path->getDbBackupPath().$fileName;
+
+		if (PathHelper::ensurePathIsContained($fileName))
+		{
+			$dbBackup->restore($fullBackupPath);
+		}
+		else
+		{
+			Craft::log('Someone tried to restore a database from outside of the Craft backups folder: '.$fullBackupPath, LogLevel::Warning);
+		}
 	}
 
 	/**
@@ -94,6 +113,17 @@ class UpdateHelper
 	 */
 	public static function doFileUpdate($manifestData, $sourceTempFolder, $handle)
 	{
+		if ($handle == 'craft')
+		{
+			$destDirectory = craft()->path->getAppPath();
+			$sourceFileDirectory = 'app/';
+		}
+		else
+		{
+			$destDirectory = craft()->path->getPluginsPath().$handle.'/';
+			$sourceFileDirectory = '';
+		}
+
 		try
 		{
 			foreach ($manifestData as $row)
@@ -116,8 +146,8 @@ class UpdateHelper
 					$tempPath = $rowData[0];
 				}
 
-				$destFile = IOHelper::normalizePathSeparators($handle == 'craft' ? craft()->path->getAppPath() : craft()->path->getPluginsPath().$handle).'/'.$tempPath;
-				$sourceFile = IOHelper::getRealPath(IOHelper::normalizePathSeparators($sourceTempFolder.($handle == 'craft' ? '/app/' : '/').$tempPath));
+				$destFile = IOHelper::normalizePathSeparators($destDirectory.$tempPath);
+				$sourceFile = IOHelper::getRealPath(IOHelper::normalizePathSeparators($sourceTempFolder.'/'.$sourceFileDirectory.$tempPath));
 
 				switch (trim($rowData[1]))
 				{
@@ -127,6 +157,21 @@ class UpdateHelper
 						if ($folder)
 						{
 							Craft::log('Updating folder: '.$destFile, LogLevel::Info, true);
+
+							// Invalidate any existing files
+							if (function_exists('opcache_invalidate') && IOHelper::folderExists($destFile))
+							{
+								$iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($destFile));
+
+								foreach ($iterator as $oldFile)
+								{
+									/** @var \SplFileInfo $file */
+									if ($oldFile->isFile())
+									{
+										opcache_invalidate($oldFile, true);
+									}
+								}
+							}
 
 							$tempFolder = rtrim($destFile, '/').StringHelper::UUID().'/';
 							$tempTempFolder = rtrim($destFile, '/').'-tmp/';
@@ -141,6 +186,13 @@ class UpdateHelper
 						else
 						{
 							Craft::log('Updating file: '.$destFile, LogLevel::Info, true);
+
+							// Invalidate opcache
+							if (function_exists('opcache_invalidate') && IOHelper::fileExists($destFile))
+							{
+								opcache_invalidate($destFile, true);
+							}
+
 							IOHelper::copyFile($sourceFile, $destFile);
 						}
 
@@ -166,32 +218,7 @@ class UpdateHelper
 	 */
 	public static function isManifestVersionInfoLine($line)
 	{
-		if ($line[0] == '#' && $line[1] == '#')
-		{
-			return true;
-		}
-
-		return false;
-	}
-
-	/**
-	 * Returns the local build number from the given manifest file.
-	 *
-	 * @param $manifestData
-	 *
-	 * @return bool|string
-	 */
-	public static function getLocalBuildFromManifest($manifestData)
-	{
-		if (static::isManifestVersionInfoLine($manifestData[0]))
-		{
-			$parts = explode(';', $manifestData[0]);
-			$index = mb_strrpos($parts[0], '.');
-			$version = mb_substr($parts[0], $index + 1);
-			return $version;
-		}
-
-		return false;
+		return strncmp($line, '##', 2) === 0;
 	}
 
 	/**
@@ -203,16 +230,14 @@ class UpdateHelper
 	 */
 	public static function getLocalVersionFromManifest($manifestData)
 	{
-		if (static::isManifestVersionInfoLine($manifestData[0]))
+		if (!static::isManifestVersionInfoLine($manifestData[0]))
 		{
-			$parts = explode(';', $manifestData[0]);
-			$index = mb_strrpos($parts[0], '.');
-			$build = mb_substr($parts[0], 2, $index - 2);
-
-			return $build;
+			return false;
 		}
 
-		return false;
+		preg_match('/^##(.*);/', $manifestData[0], $matches);
+
+		return $matches[1];
 	}
 
 	/**
@@ -233,7 +258,7 @@ class UpdateHelper
 	}
 
 	/**
-	 * Returns the relevant lines from the update manifest file starting with the current local version/build.
+	 * Returns the relevant lines from the update manifest file starting with the current local version.
 	 *
 	 * @param $manifestDataPath
 	 * @param $handle
@@ -268,7 +293,7 @@ class UpdateHelper
 
 				if ($handle == 'craft')
 				{
-					$localVersion = $updateModel->app->localVersion.'.'.$updateModel->app->localBuild;
+					$localVersion = $updateModel->app->localVersion;
 				}
 				else
 				{

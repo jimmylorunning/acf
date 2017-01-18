@@ -28,8 +28,6 @@ class DeprecatedTag_TokenParser extends \Twig_TokenParser
 	 * Constructor
 	 *
 	 * @param string $tag
-	 *
-	 * @return DeprecatedTag_TokenParser
 	 */
 	public function __construct($tag)
 	{
@@ -41,7 +39,7 @@ class DeprecatedTag_TokenParser extends \Twig_TokenParser
 	 *
 	 * @param \Twig_Token $token
 	 *
-	 * @return DeprecatedTag_Node
+	 * @return \Twig_Node
 	 */
 	public function parse(\Twig_Token $token)
 	{

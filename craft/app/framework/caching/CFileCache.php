@@ -31,6 +31,13 @@ class CFileCache extends CCache
 	 */
 	public $cachePath;
 	/**
+	 * @var integer the permission to be set for directory to store cache files
+	 * This value will be used by PHP chmod function.
+	 * Defaults to 0777, meaning the directory can be read, written and executed by all users.
+	 * @since 1.1.16
+	 */
+	public $cachePathMode=0777;
+	/**
 	 * @var string cache file suffix. Defaults to '.bin'.
 	 */
 	public $cacheFileSuffix='.bin';
@@ -123,7 +130,7 @@ class CFileCache extends CCache
 	{
 		$cacheFile=$this->getCacheFile($key);
 		if(($time=$this->filemtime($cacheFile))>time())
-			return @file_get_contents($cacheFile,false,null,$this->embedExpiry ? 10 : -1);
+			return @file_get_contents($cacheFile,false,null,$this->embedExpiry ? 10 : null);
 		elseif($time>0)
 			@unlink($cacheFile);
 		return false;

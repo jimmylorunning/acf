@@ -1,11 +1,3 @@
-/**
- * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
- * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
- * @license   http://craftcms.com/license Craft License Agreement
- * @see       http://craftcms.com
- * @package   craft.app.resources
- */
-
 (function($) {
 
 
@@ -50,8 +42,9 @@ Craft.RecentEntriesWidget = Garnish.Base.extend(
 				'<td>' +
 					'<a href="'+entry.url+'">'+entry.title+'</a> ' +
 					'<span class="light">' +
-						entry.postDate +
-						(Craft.edition >= Craft.Client ? ', '+entry.username : '') +
+						(entry.dateCreated ? Craft.formatDate(entry.dateCreated) : '') +
+						(entry.dateCreated && entry.username && Craft.edition >= Craft.Client ? ', ' : '') +
+						(entry.username && Craft.edition >= Craft.Client ? entry.username : '') +
 					'</span>' +
 				'</td>' +
 			'</tr>'

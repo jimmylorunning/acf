@@ -130,6 +130,15 @@ class UtilsController extends BaseController
 					$value = array_slice($row, 2);
 				}
 
+				if (
+					in_array($row[1], array('HTTP_COOKIE', 'Cookie', 'Set-Cookie', '_SERVER["HTTP_COOKIE"]')) ||
+					strpos($row[1], '_COOKIE[') !== false ||
+					strpos($row[1], '_REQUEST[') !== false
+				)
+				{
+					continue;
+				}
+
 				$phpInfo[$heading][$row[1]] = $value;
 			}
 		}
@@ -159,12 +168,15 @@ class UtilsController extends BaseController
 			// Grab it all.
 			$logFolderContents = IOHelper::getFolderContents(craft()->path->getLogPath());
 
-			foreach ($logFolderContents as $logFolderContent)
+			if ($logFolderContents)
 			{
-				// Make sure it's a file.`
-				if (IOHelper::fileExists($logFolderContent))
+				foreach ($logFolderContents as $logFolderContent)
 				{
-					$logFileNames[] = IOHelper::getFileName($logFolderContent);
+					// Make sure it's a file.`
+					if (IOHelper::fileExists($logFolderContent))
+					{
+						$logFileNames[] = IOHelper::getFileName($logFolderContent);
+					}
 				}
 			}
 

@@ -494,6 +494,30 @@ class ConfigService extends BaseApplicationComponent
 	}
 
 	/**
+	 * Returns the configured elevated session duration in seconds.
+	 *
+	 * @return int|boolean The elevated session duration in seconds or false if it has been disabled.
+	 */
+	public function getElevatedSessionDuration()
+	{
+		$duration = craft()->config->get('elevatedSessionDuration');
+
+		// See if it has been disabled.
+		if ($duration === false)
+		{
+			return false;
+		}
+
+		if ($duration)
+		{
+			return DateTimeHelper::timeFormatToSeconds($duration);
+		}
+
+		// Default to 5 minutes
+		return 300;
+	}
+
+	/**
 	 * Returns the user login path based on the type of the current request.
 	 *
 	 * If it’s a front-end request, the [loginPath](http://craftcms.com/docs/config-settings#loginPath) config
@@ -729,18 +753,23 @@ class ConfigService extends BaseApplicationComponent
 			return $configVal;
 		}
 
+		// TODO: Remove in v3
 		if ($configVal === 'build-only')
 		{
-			// Return whether the version number has changed at all
-			return ($updateInfo->app->latestVersion === craft()->getVersion());
+			craft()->deprecator->log('allowAutoUpdates:build-only', 'The ‘allowAutoUpdates’ config setting should be set to “patch-only” instead of “build-only”.');
+			$configVal = 'patch-only';
+		}
+
+		if ($configVal === 'patch-only')
+		{
+			// Return true if the major and minor versions are still the same
+			return (AppHelper::getMajorMinorVersion($updateInfo->app->latestVersion) == AppHelper::getMajorMinorVersion(craft()->getVersion()));
 		}
 
 		if ($configVal === 'minor-only')
 		{
-			// Return whether the major version number has changed
-			$localMajorVersion = array_shift(explode('.', craft()->getVersion()));
-			$updateMajorVersion = array_shift(explode('.', $updateInfo->app->latestVersion));
-			return ($localMajorVersion === $updateMajorVersion);
+			// Return true if the major version is still the same
+			return (AppHelper::getMajorVersion($updateInfo->app->latestVersion) == AppHelper::getMajorVersion(craft()->getVersion()));
 		}
 
 		return false;

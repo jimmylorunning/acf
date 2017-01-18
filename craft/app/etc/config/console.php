@@ -9,7 +9,9 @@ return CMap::mergeArray($common, array(
 	// autoloading model and component classes
 	'import' => array(
 		'application.*',
+		'application.lib.*',
 		'application.migrations.*',
+		'application.framework.cli.commands.*'
 	),
 
 	'componentAliases' => array(

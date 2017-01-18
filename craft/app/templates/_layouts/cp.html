@@ -5,6 +5,7 @@
 	"(blank)",
 	"1 update available",
 	"Actions",
+	"Apply this to the {number} remaining conflicts?",
 	"An unknown error occurred.",
 	"Any changes will be lost if you leave this page.",
 	"Are you sure you want to delete “{name}”?",
@@ -31,6 +32,7 @@
 	"Display in a table",
 	"Done",
 	"Enter the name of the folder",
+	"Enter your password to continue.",
 	"Enter your password to log back in.",
 	"Failed task",
 	"Failed",
@@ -39,6 +41,7 @@
 	"Hide sidebar",
 	"hour",
 	"hours",
+	"Incorrect password.",
 	"Instructions",
 	"Keep me logged in",
 	"License transferred.",
@@ -79,6 +82,7 @@
 	"Sort by {attribute}",
 	"Source settings saved",
 	"Structure",
+	"Submit",
 	"Table Columns",
 	"This can be left blank if you just want an unlabeled separator.",
 	"Transfer it to:",
@@ -88,6 +92,7 @@
 	"week",
 	"weeks",
 	"What do you want to do with their content?",
+	"What do you want to do?",
 	"Your session has ended.",
 	"Your session will expire in {time}.",
 	"{ctrl}C to copy.",
@@ -125,12 +130,12 @@
 	<header id="global-sidebar">
 
 		{% if currentUser.admin and craft.config.devMode %}
-			<div id="devmode" title="{{ 'Craft is running in Dev Mode.'|t }}"></div>
+			<div id="devmode" title="{{ 'Craft CMS is running in Dev Mode.'|t }}"></div>
 		{% endif %}
 
 		<div class="topbar">
 
-			<a class="site-name" href="{{ siteUrl }}" title="{{ 'Site Homepage'|t }}" target="_blank">
+			<a class="site-name{% if CraftEdition >= CraftClient and craft.rebrand.isIconUploaded %} has-icon{% endif %}" href="{{ siteUrl }}" title="{{ 'Site Homepage'|t }}" target="_blank">
 
 				{% if CraftEdition >= CraftClient %}
 					{% if craft.rebrand.isIconUploaded %}
@@ -210,9 +215,6 @@
 
 					</li>
 				{% endfor %}
-
-				{#
-				#}
 			</ul>
 		</nav>
 
@@ -348,9 +350,27 @@
 		{% endif %}
 
 		<div id="footer">
+
+			{%- spaceless %}
+				{% set canUpgradeEdition = craft.app.canUpgradeEdition() %}
+				{% set licensedEdition = craft.app.getLicensedEdition() %}
+				{% set isTrial = licensedEdition is not sameas(null) and licensedEdition is not sameas(CraftEdition) %}
+
+				<div id="edition" {% if canUpgradeEdition %}class="hot" title="{{ 'Manage your Craft CMS edition'|t }}"{% else %}class="edition"{% endif %}>
+					<div id="edition-logo">
+						<div class="edition-name">{{ craft.app.getEditionName() }}</div>
+						{% if isTrial %}
+							<div class="edition-trial">{{ "Trial"|t }}</div>
+						{% endif %}
+					</div>
+					{% if canUpgradeEdition %}
+						<div class="icon settings"></div>
+					{% endif %}
+				</div>
+			{% endspaceless -%}
+
 			<ul>
-				<li>Craft {{ craft.app.getEditionName()}} {{ craft.app.getVersion() }}.{{ craft.app.getBuild() }}</li>
-				<li>{{ craft.app.releaseDate.localeDate }}</li>
+				<li>Craft CMS {{ craft.app.getVersion() }}</li>
 				<li>© Pixel &amp; Tonic</li>
 				{% if currentUser.can('performUpdates') %}
 					<li><a id="footer-updates" href="{{ url('updates') }}">{{ craft.app.isUpdateInfoCached() and totalUpdates is defined and totalUpdates ? updateText : "Check for updates"|t }}</a></li>
@@ -359,10 +379,6 @@
 					<li><a href="{{ url('utils/serverinfo') }}">{{ "Server Info"|t }}</a></li>
 				{% endif %}
 			</ul>
-
-			{% if (CraftEdition == CraftPersonal or craft.app.getLicensedEdition() is sameas(CraftPersonal) or craft.request.getPath == 'settings') and craft.app.canUpgradeEdition() %}
-				<p id="upgradepromo"><a>{{ "Upgrade Craft to take your site to the next level."|t }} <span class="go nowrap">{{ "Show me"|t }}</span></a></p>
-			{% endif %}
 		</div>
 
 	{% if not fullPageForm %}

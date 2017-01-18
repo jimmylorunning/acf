@@ -30,6 +30,12 @@ class ElementsController extends BaseElementsController
 		$elementType = $this->getElementType();
 		$context = $this->getContext();
 
+		$showLocaleMenu = craft()->request->getParam('showLocaleMenu', 'auto');
+
+		if ($showLocaleMenu !== 'auto') {
+			$showLocaleMenu = (bool) $showLocaleMenu;
+		}
+
 		if (is_array($sourceKeys))
 		{
 			$sources = array();
@@ -55,7 +61,8 @@ class ElementsController extends BaseElementsController
 			'context'     => $context,
 			'elementType' => $elementType,
 			'sources'     => $sources,
-			'showSidebar' => (count($sources) > 1 || ($sources && !empty($source['nested'])))
+			'showSidebar' => (count($sources) > 1 || ($sources && !empty($source['nested']))),
+			'showLocaleMenu' => $showLocaleMenu,
 		));
 	}
 
@@ -106,13 +113,31 @@ class ElementsController extends BaseElementsController
 
 		if ($elementType->saveElement($element, $params))
 		{
-			$this->returnJson(array(
+			$response = array(
 				'success'   => true,
 				'id'        => $element->id,
 				'locale'    => $element->locale,
 				'newTitle'  => (string) $element,
 				'cpEditUrl' => $element->getCpEditUrl(),
-			));
+			);
+
+			// Should we be including table attributes too?
+			$sourceKey = craft()->request->getPost('includeTableAttributesForSource');
+
+			if ($sourceKey)
+			{
+				$attributes = craft()->elementIndexes->getTableAttributes($elementType->getClassHandle(), $sourceKey);
+
+				// Drop the first one
+				array_shift($attributes);
+
+				foreach ($attributes as $attribute)
+				{
+					$response['tableAttributes'][$attribute[0]] = $elementType->getTableAttributeHtml($element, $attribute[0]);
+				}
+			}
+
+			$this->returnJson($response);
 		}
 		else
 		{

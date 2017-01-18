@@ -90,6 +90,12 @@ class DateTime extends \DateTime
 	 */
 	public static function createFromString($date, $timezone = null, $setToSystemTimeZone = true)
 	{
+		// Is this already a DateTime object?
+		if ($date instanceof \DateTime)
+		{
+			return $date;
+		}
+
 		// Was this a date/time-picker?
 		if (is_array($date) && (isset($date['date']) || isset($date['time'])))
 		{
@@ -445,6 +451,13 @@ class DateTime extends \DateTime
 		if ($interval instanceof \DateInterval)
 		{
 			$spec = 'P';
+
+			// The hour can be -1 if we just crossed DST.
+			if ($interval->h && $interval->h == '-1')
+			{
+				$interval->h = 23;
+				$interval->d--;
+			}
 
 			if ($interval->y) $spec .= $interval->y.'Y';
 			if ($interval->m) $spec .= $interval->m.'M';

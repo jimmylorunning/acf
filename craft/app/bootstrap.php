@@ -16,6 +16,8 @@ if (isset($appPath[0]) && isset($appPath[1]))
 }
 
 defined('CRAFT_APP_PATH') || define('CRAFT_APP_PATH', $appPath.'/');
+defined('CRAFT_VENDOR_PATH') || define('CRAFT_VENDOR_PATH', CRAFT_APP_PATH.'vendor/');
+defined('CRAFT_FRAMEWORK_PATH') || define('CRAFT_FRAMEWORK_PATH', CRAFT_APP_PATH.'framework/');;
 
 // The app/ folder goes inside craft/ by default, so work backwards from app/
 defined('CRAFT_BASE_PATH') || define('CRAFT_BASE_PATH', realpath(CRAFT_APP_PATH.'..').'/');
@@ -139,7 +141,7 @@ ini_set('error_log', CRAFT_STORAGE_PATH.'runtime/logs/phperrors.log');
 
 if ($devMode)
 {
-	error_reporting(E_ALL & ~E_STRICT);
+	error_reporting(E_ALL & ~E_STRICT & ~E_DEPRECATED);
 	ini_set('display_errors', 1);
 	defined('YII_DEBUG') || define('YII_DEBUG', true);
 	defined('YII_TRACE_LEVEL') || define('YII_TRACE_LEVEL', 3);
@@ -158,7 +160,7 @@ else
 // Load Yii, if it's not already
 if (!class_exists('Yii', false))
 {
-	require CRAFT_APP_PATH.'framework/yii.php';
+	require CRAFT_FRAMEWORK_PATH.'yii.php';
 }
 
 // Guzzle makes use of these PHP constants, but they aren't actually defined in some compilations of PHP
@@ -167,7 +169,7 @@ defined('CURLOPT_TIMEOUT_MS')        || define('CURLOPT_TIMEOUT_MS',        155)
 defined('CURLOPT_CONNECTTIMEOUT_MS') || define('CURLOPT_CONNECTTIMEOUT_MS', 156);
 
 // Load up Composer's files
-require CRAFT_APP_PATH.'vendor/autoload.php';
+require CRAFT_VENDOR_PATH.'autoload.php';
 
 // Disable the PHP include path
 Yii::$enableIncludePath = false;

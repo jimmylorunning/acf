@@ -1,15 +1,17 @@
 {% extends "_layouts/basecp" %}
-{% set title = "Craft Update"|t %}
+{% set title = "Craft CMS Update"|t %}
 {% includecssresource "css/update.css" %}
 {% includejsresource "js/update.js" %}
 
 {% includeTranslations
 	"Unable to determine what to update.",
-	"An unknown error occurred. Rolling back…",
+	"A fatal error has occurred:",
+	"Status:",
+	"Response:",
+	"Send for help",
 	"All done!",
-	"Craft was unable to install this update :(",
+	"Craft CMS was unable to install this update :(",
 	"The site has been restored to the state it was in before the attempted update.",
-	"An error has occurred.  Please contact {email}.",
 	"No files have been updated and the database has not been touched."
 %}
 
@@ -18,7 +20,11 @@
 	<div id="status">{{ "Preparing to update…"|t }}</div>
 {% endblock %}
 
+{% set data = {
+	handle: handle|hash,
+	manualUpdate: craft.request.getSegment(1) == 'manualupdate' ? 1 : 0
+} %}
 
 {% includejs %}
-	new Craft.Updater('{{ handle }}', {{ craft.request.getSegment(1) == 'manualupdate' ? 1 : 0 }});
+	new Craft.Updater({{ data|json_encode|raw }});
 {% endincludejs %}

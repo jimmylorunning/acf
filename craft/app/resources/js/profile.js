@@ -1,11 +1,3 @@
-/**
- * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
- * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
- * @license   http://craftcms.com/license Craft License Agreement
- * @see       http://craftcms.com
- * @package   craft.app.resources
- */
-
 (function($) {
 
 	var ImageUpload = null;
@@ -43,8 +35,10 @@
 	function refreshImage(response) {
 		if (typeof response.html != "undefined") {
 			$('.user-photo').replaceWith(response.html);
-			$('#user-photo > img').replaceWith($('#current-photo > img').clone());
-
+			if (typeof changeSidebarPicture != "undefined" && changeSidebarPicture)
+			{
+				$('#user-photo > img').replaceWith($('#current-photo > img').clone());
+			}
 			initImageUpload();
 		}
 

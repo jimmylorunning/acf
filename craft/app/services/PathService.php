@@ -15,14 +15,6 @@ namespace Craft;
  */
 class PathService extends BaseApplicationComponent
 {
-	// Properties
-	// =========================================================================
-
-	/**
-	 * @var
-	 */
-	private $_templatesPath;
-
 	// Public Methods
 	// =========================================================================
 
@@ -261,14 +253,24 @@ class PathService extends BaseApplicationComponent
 	}
 
 	/**
-	 * Returns the path to the craft/app/framework/ folder.
+     * Returns the path to the framework/ folder.
 	 *
-	 * @return string The path to the craft/app/framework/ folder.
+	 * @return string The path to the framework/ folder.
 	 */
 	public function getFrameworkPath()
 	{
-		return $this->getAppPath().'framework/';
+		return CRAFT_FRAMEWORK_PATH;
 	}
+
+    /**
+     * Returns the path to the vendor/ folder.
+     *
+     * @return string The path to the vendor/ folder.
+     */
+    public function getVendorPath()
+    {
+        return CRAFT_VENDOR_PATH;
+    }
 
 	/**
 	 * Returns the path to the craft/app/migrations/ folder, or the path to a plugin’s migrations/ folder.
@@ -312,32 +314,24 @@ class PathService extends BaseApplicationComponent
 	 * CP or Site request.
 	 *
 	 * @return string The templates path.
+	 *
+	 * @deprecated Deprecated in 2.6.2778. Use TemplatesService::getTemplatesPath() or TemplatesService::getTemplateMode() instead.
 	 */
 	public function getTemplatesPath()
 	{
-		if (!isset($this->_templatesPath))
-		{
-			if (craft()->request->isCpRequest())
-			{
-				$this->_templatesPath = $this->getCpTemplatesPath();
-			}
-			else
-			{
-				$this->_templatesPath = $this->getSiteTemplatesPath();
-			}
-		}
-
-		return $this->_templatesPath;
+		return craft()->templates->getTemplatesPath();
 	}
 
 	/**
 	 * Sets the current templates path.
 	 *
 	 * @param string $path The new templates path.
+	 *
+	 * @deprecated Deprecated in 2.6.2778. Use TemplatesService::setTemplatesPath() or TemplatesService::setTemplateMode() instead.
 	 */
 	public function setTemplatesPath($path)
 	{
-		$this->_templatesPath = $path;
+		craft()->templates->setTemplatesPath($path);
 	}
 
 	/**

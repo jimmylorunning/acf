@@ -1,11 +1,3 @@
-/**
- * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
- * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
- * @license   http://craftcms.com/license Craft License Agreement
- * @see       http://craftcms.com
- * @package   craft.app.resources
- */
-
 (function($) {
 
 
@@ -66,7 +58,7 @@ Craft.CP = Garnish.Base.extend(
 	trackTaskProgressTimeout: null,
 	taskProgressIcon: null,
 
-	$upgradePromo: null,
+	$edition: null,
 	upgradeModal: null,
 
 	checkingForUpdates: false,
@@ -98,7 +90,7 @@ Craft.CP = Garnish.Base.extend(
 		this.$main = $('#main');
 		this.$content = $('#content');
 		this.$collapsibleTables = $('table.collapsible');
-		this.$upgradePromo = $('#upgradepromo > a');
+		this.$edition = $('#edition');
 
 		// global sidebar
 		this.addListener(Garnish.$win, 'touchend', 'updateResponsiveGlobalSidebar');
@@ -139,7 +131,7 @@ Craft.CP = Garnish.Base.extend(
 
 		// sidebar
 
-		this.addListener($('ul', this.$sidebar), 'resize', 'updateResponsiveSidebar');
+		this.addListener(this.$sidebar.find('nav ul'), 'resize', 'updateResponsiveSidebar');
 
 		this.$sidebarLinks = $('nav a', this.$sidebar);
 		this.addListener(this.$sidebarLinks, 'click', 'selectSidebarItem');
@@ -247,13 +239,9 @@ Craft.CP = Garnish.Base.extend(
 			}
 		}, this));
 
-		this.addListener(this.$upgradePromo, 'click', 'showUpgradeModal');
-
-		var $wrongEditionModalContainer = $('#wrongedition-modal');
-
-		if ($wrongEditionModalContainer.length)
+		if (this.$edition.hasClass('hot'))
 		{
-			new Craft.WrongEditionModal($wrongEditionModalContainer);
+			this.addListener(this.$edition, 'click', 'showUpgradeModal');
 		}
 	},
 
@@ -448,41 +436,44 @@ Craft.CP = Garnish.Base.extend(
 			this.updateResponsiveTables._containerWidth = this.updateResponsiveTables._$table.parent().width();
 			this.updateResponsiveTables._check = false;
 
-			// Is this the first time we've checked this table?
-			if (typeof this.updateResponsiveTables._$table.data('lastContainerWidth') === typeof undefined)
+			if(this.updateResponsiveTables._containerWidth > 0)
 			{
-				this.updateResponsiveTables._check = true;
-			}
-			else
-			{
-				this.updateResponsiveTables._isCollapsed = this.updateResponsiveTables._$table.hasClass('collapsed');
-
-				// Getting wider?
-				if (this.updateResponsiveTables._containerWidth > this.updateResponsiveTables._$table.data('lastContainerWidth'))
-				{
-					if (this.updateResponsiveTables._isCollapsed)
-					{
-						this.updateResponsiveTables._$table.removeClass('collapsed');
-						this.updateResponsiveTables._check = true;
-					}
-				}
-				else if (!this.updateResponsiveTables._isCollapsed)
+				// Is this the first time we've checked this table?
+				if (typeof this.updateResponsiveTables._$table.data('lastContainerWidth') === typeof undefined)
 				{
 					this.updateResponsiveTables._check = true;
 				}
-			}
-
-			// Are we checking the table width?
-			if (this.updateResponsiveTables._check)
-			{
-				if (this.updateResponsiveTables._$table.width() > this.updateResponsiveTables._containerWidth)
+				else
 				{
-					this.updateResponsiveTables._$table.addClass('collapsed');
-				}
-			}
+					this.updateResponsiveTables._isCollapsed = this.updateResponsiveTables._$table.hasClass('collapsed');
 
-			// Remember the container width for next time
-			this.updateResponsiveTables._$table.data('lastContainerWidth', this.updateResponsiveTables._containerWidth);
+					// Getting wider?
+					if (this.updateResponsiveTables._containerWidth > this.updateResponsiveTables._$table.data('lastContainerWidth'))
+					{
+						if (this.updateResponsiveTables._isCollapsed)
+						{
+							this.updateResponsiveTables._$table.removeClass('collapsed');
+							this.updateResponsiveTables._check = true;
+						}
+					}
+					else if (!this.updateResponsiveTables._isCollapsed)
+					{
+						this.updateResponsiveTables._check = true;
+					}
+				}
+
+				// Are we checking the table width?
+				if (this.updateResponsiveTables._check)
+				{
+					if (this.updateResponsiveTables._$table.width() > this.updateResponsiveTables._containerWidth)
+					{
+						this.updateResponsiveTables._$table.addClass('collapsed');
+					}
+				}
+
+				// Remember the container width for next time
+				this.updateResponsiveTables._$table.data('lastContainerWidth', this.updateResponsiveTables._containerWidth);
+			}
 		}
 	},
 
@@ -772,13 +763,15 @@ Craft.CP = Garnish.Base.extend(
 
 		if (info.total)
 		{
+			var updateText;
+
 			if (info.total == 1)
 			{
-				var updateText = Craft.t('1 update available');
+				updateText = Craft.t('1 update available');
 			}
 			else
 			{
-				var updateText = Craft.t('{num} updates available', { num: info.total });
+				updateText = Craft.t('{num} updates available', { num: info.total });
 			}
 
 			// Topbar badge
@@ -1230,7 +1223,7 @@ var TaskProgressHUD = Garnish.HUD.extend(
 			{
 				this.showTaskInfo(taskInfo);
 			}
-		}, this))
+		}, this));
 	},
 
 	showTaskInfo: function(taskInfo)
@@ -1351,7 +1344,7 @@ TaskProgressHUD.Task = Garnish.Base.extend(
 		if (this.level != 0)
 		{
 			this.$container.css('padding-'+Craft.left, 24+(this.level*24));
-			$('<div class="indent" data-icon="'+(Craft.orientation == 'ltr' ? 'rarr' : 'larr')+'"/>').appendTo(this.$descriptionContainer);;
+			$('<div class="indent" data-icon="'+(Craft.orientation == 'ltr' ? 'rarr' : 'larr')+'"/>').appendTo(this.$descriptionContainer);
 		}
 
 		this.updateStatus(info);
@@ -1466,7 +1459,7 @@ TaskProgressHUD.Task = Garnish.Base.extend(
 							this.hud.updateTasks();
 						}
 					}
-				}, this))
+				}, this));
 			}
 		}
 	},

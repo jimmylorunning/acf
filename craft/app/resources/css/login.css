@@ -1,14 +1,13 @@
-@charset "UTF-8";
 /* Flexbox stuff */
 /* Other */
 /* RTL stuff */
 html, body { height: 100%; }
 
-#login-form { display: block; position: absolute; top: 50%; left: 50%; margin: -208px 0 0 -150px; width: 300px; background: no-repeat 0 0; }
+#login-form { display: block; position: absolute; top: 50%; left: 50%; margin: -208px 0 0 -150px; width: 300px; background: no-repeat center top; }
 
 #login-form.has-logo { padding-top: 116px; }
 
-#login-form h1 { text-align: center; font-size: 3em; color: #29323d; }
+#login-form h1 { text-align: center; font-size: 3em; color: #29323d; word-wrap: break-word; }
 
 #login-form .field { margin: 0; }
 
@@ -71,3 +70,5 @@ body.ltr .modal.email-sent .body:before { left: 24px; }
 body.rtl .modal.email-sent .body:before { right: 24px; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) { #login-form { background-size: 202px; } }
+
+/*# sourceMappingURL=login.css.map */
