@@ -1,0 +1,109 @@
+[
+  {
+    "version": "0.1.0",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-03-25T19:55:13.000000",
+    "notes": [
+      "[Added] Ability to add custom subject line from submited form"
+    ]
+  },
+  {
+    "version": "0.1.1",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-03-25T19:55:13.000000",
+    "notes": [
+      "[Added] You can now add custom From Name to your notifications (for form submitter)"
+    ]
+  },
+  {
+    "version": "2.0.2",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-08-02T17:47:13.000000",
+    "notes": [
+      "[Fixed] File uploads and email attachments"
+    ]
+  },
+  {
+    "version": "2.0.3",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-08-02T21:00:23+00:00",
+    "notes": [
+      "[Added] Ability to rename uploaded files on the entry page",
+      "[Added] Ability to use Sprout Fields within your forms"
+    ]
+  },
+  {
+    "version": "2.0.5",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-08-04T21:12:03+00:00",
+    "notes": [
+      "[Improved] Custom field templates",
+      "[Improved] Custom Routes",
+      "[Added] Submission data can now be passed to custom routes",
+      "[Fixed] richfield input can now display validation message if set to required",
+      "[Added] Ability to rename plugin name in sidebar",
+      "[Added] Ability to allow/disallow non-admin users to add/edit/delete forms and entries",
+      "[Added] File asset restrictions get validated"
+    ]
+  },
+  {
+    "version": "2.0.6",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-08-17T05:24:35+00:00",
+    "notes": [
+      "[Added] New functionality for adding notification templates for admins and submitter",
+      "[Improved] Notification settings for forms",
+      "[Improved] Email templates"
+    ]
+  },
+  {
+    "version": "2.0.7",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-08-24T17:08:53+00:00",
+    "notes": [
+      "[Fixed] datepicker field can no be used by non-admins",
+      "[Added] camelCase(string) twig filter"
+    ]
+  },
+  {
+    "version": "2.0.8",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-08-31T17:02:58+00:00",
+    "notes": [
+      "[Fixed] email template notifications now use the correct templates"
+    ]
+  },
+  {
+    "version": "2.0.9",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-09-06T16:55:43+00:00",
+    "notes": [
+      "[Fixed] email templates now respect html break lines in cp and email, needs db migration",
+      "[Added] you can now pick Reply To address for admin notifications"
+    ]
+  },
+  {
+    "version": "2.0.10",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-09-08T16:54:33+00:00",
+    "notes": [
+      "[Fixed] Email notifications work without Templates"
+    ]
+  },
+  {
+    "version": "2.0.11",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-09-22T18:42:24+00:00",
+    "notes": [
+      "[Added] DB schema version to the plugin"
+    ]
+  },
+  {
+    "version": "2.0.12",
+    "downloadUrl": "https://github.com/roundhouse/FormBuilder-2-Craft-CMS/archive/master.zip",
+    "date": "2016-11-16T17:18:44+00:00",
+    "notes": [
+      "[Fixed] Element select fields now have dynamic locale assigned to them"
+    ]
+  }
+]

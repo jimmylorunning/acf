@@ -1,0 +1,63 @@
+{% extends "_layouts/cp" %}
+{% hook 'formBuilder2.prepCpTemplate' %}
+
+{% set selectedSubnavItem = "templates" %}
+{% set bodyClass = 'formbuilder fb-templates' %}
+{% set page = 'Templates' %}
+
+{% block pageHeader %}
+  {% include 'formbuilder2/partials/header' %}
+{% endblock %}
+
+{% block main %}
+  
+  <section id="fb-content">
+    <header class="section-header">
+      <div id="page-title"><h1>{{ page|t }}</h1></div>
+      <div id="extra-headers"><div class="buttons right"><div class="btngroup"><a href="{{ url('formbuilder2/templates/new') }}" class="btn submit add icon"><span>{{ "Create a Template"|t }}</span></a></div></div></div>
+    </header>
+
+    {% if templates %}
+    <div class="templates">
+    <table class="data fullwidth collapsible" id="templates">
+        <thead>
+          <tr>
+            <th scope="col">{{ "ID"|t }}</th>
+            <th scope="col">{{ "Name"|t }}</th>
+            <th scope="col">{{ "Handle"|t }}</th>
+            <th scope="col">{{ "Action"|t }}</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {% for template in templates %}
+            <tr data-id="{{ template.id }}" data-name="{{ template.name }}">
+                <td data-title="{{ "ID"|t }}" class="id">{{ template.id }}</td>
+                <td data-title="{{ "Name"|t }}" class="name"><a href="{{ url('formbuilder2/templates/' ~ template.id ~ '/edit') }}">{{ template.name }}</a></td>
+                <td data-title="{{ "Handle"|t }}" class="handle">{{ template.handle }}</td>
+                <td data-title="{{ "Action"|t }}" class="action"><a href="#" class="delete-from delete" title="Delete {{ template.name }}" role="button" data-tooltip="Delete"><svg class="icon"><use xlink:href="#icon-trash" class="icon-trash"/></svg></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    {% else %}
+        <div class="no-templates" id="notemplates">
+            <p>{{ "There are no templates created."|t }}</p>
+        </div>
+    {% endif %}
+
+  </section>
+
+{% endblock %}
+{% set js %}
+    var adminTable = new Craft.AdminTable({
+      tableSelector: '#templates',
+      noObjectsSelector: '#notemplates',
+      deleteAction: 'formBuilder2/template/deleteTemplate',
+      confirmDeleteMessage: '{{ "Are you sure you want to delete “{name}” template?"|t }}'
+    });
+{% endset %}
+{% includeJs js %}
+

@@ -5,17 +5,17 @@ $(document).ready ->
   # AJAX Form Submit
   theForm.submit (e) ->
     notificationContainer.html ''
+    $(@).find('label > span').remove();
     e.preventDefault()
     url = '/actions/' + $(@).children('[name=action]').attr('value')
-    redirect = $(@).children('[name=formRedirect]').attr('data-custom-redirect')
-    redirectUrl = $(@).children('[name=formRedirect]').attr('value')
+    redirectUrl = $(@).children('[name=redirect]').attr('value')
     data = $(this).serialize()
 
     # Start Loading
     notificationContainer.html '<p>Sending...</p>'
     $.post url, data, (response) ->
       if response.success
-        if redirect == '1' 
+        if redirectUrl
           window.location.href = redirectUrl
         else
           notificationContainer.html '<p class="success-message">' + response.customSuccessMessage + '</p>'
@@ -24,7 +24,10 @@ $(document).ready ->
         notificationContainer.html '<p class="error-message">' + response.customErrorMessage + '</p>'
         errorsContainer = $('.notifications').append('<ul class="errors"></ul>').find('ul.errors')
         $.each response.validationErrors, (index, value) ->
-          errorsContainer.append '<li>'+value+'</li>'
+          label = $('label[for="' + $('[name="' + index + '"]').attr('id') + '"]');
 
-
-
+          if label.length
+            label.find('span').remove()
+            return label.append('<span>' + value + '</span>')
+          else
+            return errorsContainer.append('<li>' + value + '</li>');

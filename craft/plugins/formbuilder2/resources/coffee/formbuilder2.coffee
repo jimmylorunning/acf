@@ -1,6 +1,5 @@
 class App
   init: =>
-
     # Sidebar Navigation
     if $('.formbuilder').length > 0
       sidebar = $('#sidebar .primary')
@@ -22,15 +21,6 @@ class App
       # New Form Tabs
       newFormActiveTab = Cookies.get 'newform-active-tab'
       
-      # Email Notifications & Templates
-      $('.notification-tabs a').click (event) ->
-        event.preventDefault()
-        $(@).parent().addClass 'current'
-        $(@).parent().siblings().removeClass 'current'
-        tab = $(@).attr('href')
-        $('.email-tab-content').not(tab).css 'display', 'none'
-        $(tab).fadeIn()
-
       $('.menu-tabs a').click (event) ->
         event.preventDefault()
         $(@).parent().addClass 'current'
@@ -53,17 +43,6 @@ class App
       if $('.has-errors').length > 0
         $('.menu-tabs h2').removeClass 'current'
         $('.has-errors').first().addClass('current').find('a').trigger('click')
-
-      # Email Template Style
-      if $('#emailTemplateStyle2').is(':checked')
-        $('#html-template-extra').slideDown()
-        
-      $('#emailTemplateStyle-field input').on 'change', (e) ->
-        val = $(@).val()
-        if val == 'html'
-          $('#html-template-extra').slideDown()
-        else 
-          $('#html-template-extra').slideUp()
 
       # Save Submissions To Database
       if $('#saveSubmissionsToDatabase').is(':checked')
@@ -97,16 +76,27 @@ class App
         $('.method-notify .checkbox-toggle').addClass 'selected'
         $('.method-notify .checkbox-extra').show()
 
+      if $('#notifySubmitter').is(':checked')
+        $('.method-notify-submitter .checkbox-toggle').addClass 'selected'
+        $('.method-notify-submitter .checkbox-extra').show()
+
+      if $('#customSubject').is(':checked')
+        $('.method-customsubject .checkbox-toggle').addClass 'selected'
+        $('.method-customsubject .checkbox-extra').show()
+
       $('.checkbox-toggle').on 'click', ->
         toggle = $(@).data 'checkbox'
         $(@).toggleClass 'selected'
+        if toggle == 'customRedirect'
+          if !$(@).hasClass('selected')
+            $('#customRedirectUrl').val ''
+
         if $(@).hasClass('selected')
           $('#'+toggle).prop 'checked', true
           $(@).next('.checkbox-extra').stop().slideDown()
         else
           $('#'+toggle).prop 'checked', false
           $(@).next('.checkbox-extra').stop().slideUp()
-
 
 
 $(document).ready ->

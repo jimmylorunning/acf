@@ -40,42 +40,19 @@ class FormBuilder2_FormController extends BaseController
     if (!empty($variables['formId'])) {
       if (empty($variables['form'])) {
         $variables['form'] = craft()->formBuilder2_form->getFormById($variables['formId']);
-        // $variables['crumbs'] = array(
-        //   array('label' => Craft::t('FormBuilder 2'), 'url' => UrlHelper::getUrl('formbuilder2')),
-        //   array('label' => Craft::t('Forms'),   'url' => UrlHelper::getUrl('formbuilder2/forms')),
-        //   array('label' => $variables['formId'],  'url' => UrlHelper::getUrl('formbuilder2/forms/' . $variables['formId'] . '/edit')),
-        // );
 
         if (!$variables['form']) { 
           throw new HttpException(404);
         }
-        // Get Logo Asset
-        $customEmailLogo = $variables['form']->notificationSettings['templateSettings']['emailCustomLogo'];
-        if ($customEmailLogo) {
-          $criteria           = craft()->elements->getCriteria(ElementType::Asset);
-          $criteria->id       = $customEmailLogo[0];
-          $criteria->limit    = 1;
-          $elements           = $criteria->find();
-        } else {
-          $elements = [];
-        }
-        $variables['elements']  = $elements;
       }
       $variables['title'] = $variables['form']->name;
     } else {
       if (empty($variables['form'])) {
         $variables['form'] = new FormBuilder2_FormModel();
         $variables['brandNewForm'] = true;
-        // $variables['crumbs'] = array(
-        //   array('label' => Craft::t('FormBuilder 2'), 'url' => UrlHelper::getUrl('formbuilder2')),
-        //   array('label' => Craft::t('Forms'),   'url' => UrlHelper::getUrl('formbuilder2/forms')),
-        //   array('label' => Craft::t('New Form'),  'url' => UrlHelper::getUrl('formbuilder2/forms/new')),
-        // );
       }
       $variables['title'] = Craft::t('Create a new form');
     }
-
-    
 
     $this->renderTemplate('formbuilder2/forms/_edit', $variables);
   }

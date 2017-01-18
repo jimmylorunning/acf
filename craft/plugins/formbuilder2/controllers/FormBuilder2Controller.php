@@ -6,6 +6,23 @@ class FormBuilder2Controller extends BaseController
  
  	protected $allowAnonymous = true;
 
+  public function actionGetFormFields()
+  {
+    $formId = craft()->request->getPost('formId');
+    $form = craft()->formBuilder2_form->getFormById($formId);
+
+
+    if ($formId) {
+      $field = [];
+      $fields = $form->fieldLayout->getFieldLayout()->getFields();
+      foreach ($fields as $key => $value) {
+        $field[$key] = $value->getField();
+      }
+
+      $this->returnJson($field);
+    }
+  }
+
 	/**
 	 * Load Dashboard
 	 *
@@ -114,19 +131,19 @@ class FormBuilder2Controller extends BaseController
 	public function actionSavePluginSettings()
 	{
 	  $this->requirePostRequest();
-	  $pluginClass = craft()->request->getRequiredPost('pluginClass');
-	  $settings = craft()->request->getPost();
+    $settings = [];
+    $pluginName = craft()->request->getPost('pluginName');
+    $canDoActions = craft()->request->getPost('canDoActions');
+    $settings['pluginName'] = $pluginName;
+    $settings['canDoActions'] = $canDoActions;
 
-	  $plugin = craft()->plugins->getPlugin($pluginClass);
-	  if (!$plugin)
-	  {
-	    throw new Exception(Craft::t('No plugin exists with the class “{class}”', array('class' => $pluginClass)));
+    $plugin = craft()->plugins->getPlugin('FormBuilder2');
+	  if (!$plugin) {
+	    throw new Exception(Craft::t('No plugin exists with the class “{class}”', array('class' => $plugin)));
 	  }
 
-	  if (craft()->plugins->savePluginSettings($plugin, $settings))
-	  {
+	  if (craft()->plugins->savePluginSettings($plugin, $settings)) {
 	    craft()->userSession->setNotice(Craft::t('Plugin settings saved.'));
-
 	    $this->redirectToPostedUrl();
 	  }
 
