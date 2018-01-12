@@ -112,7 +112,7 @@ $hpimg5: 300px;
       line-height: 0px; 
     }
     padding-top: 120px;
-    width: 380px;
+    width: 480px;
   }
   a {
     color: $black;
@@ -253,6 +253,12 @@ $hpimg5: 300px;
     &.no5 div {
       padding-top: $hpimg5 / 2 - 30px;
     }
+  }
+}
+
+@media (max-width: 1200px) {
+  .featured .hometext {
+    width: 380px;
   }
 }
 

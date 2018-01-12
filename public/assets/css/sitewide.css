@@ -353,7 +353,7 @@ a.navbar-brand h1 {
   height: 950px; }
   .featured .hometext {
     padding-top: 120px;
-    width: 380px; }
+    width: 480px; }
     .featured .hometext::first-letter {
       font-weight: bold;
       font-size: 4rem;
@@ -462,6 +462,9 @@ a.navbar-brand h1 {
     .featured > a > div.no5 div {
       padding-top: 120px; }
 
+@media (max-width: 1200px) {
+  .featured .hometext {
+    width: 380px; } }
 /********* HOMEPAGE CAROUSEL ************/
 .featured-xs {
   padding-top: 50px;
