@@ -64,6 +64,22 @@ a.navbar-brand h1 {
   }
 }
 
+/*********** APPLESTORE **********/
+
+.featured {
+  .applestore {
+    position: absolute;
+    left: 43%;
+    top: 40px;
+  }
+}
+
+.applestore-xs {
+  position: absolute;
+  right: 13%;
+  top: 100px;
+}
+
 /*********** FEATURE **********/
 
 $hpimg0: 80px;
