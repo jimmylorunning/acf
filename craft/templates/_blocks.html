@@ -13,12 +13,7 @@
         {{ block.text }}
       {% endif %}
       {% if block.formHandle != "" %}
-        {% set form = craft.formBuilder2.getFormByHandle(block.formHandle) %}
-        {% set formSettings = form.formSettings %}
-        {% set spamProtectionSettings = form.spamProtectionSettings %}
-        {% set tabs = form.fieldLayout.getFieldLayout().getTabs() %}
-        {% set scripts = craft.formBuilder2.includeScripts(form) %}
-        {% include '_form.html' %}
+        {{ craft.freeform.form(block.formHandle).render() }}
       {% endif %}
     </div>
   </div>
