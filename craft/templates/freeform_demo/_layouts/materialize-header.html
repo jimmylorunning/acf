@@ -1,0 +1,28 @@
+{% if page is not defined %}
+    {% set page = "" %}
+{% endif %}
+
+<ul id="resources" class="dropdown-content">
+    <li><a href="https://solspace.com/craft/freeform/">Freeform</a></li>
+    <li><a href="https://solspace.com/craft/freeform/docs/">Documentation</a></li>
+    <li><a href="https://solspace.com/craft/freeform/support/">Support</a></li>
+</ul>
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="{{ siteUrl }}freeform_demo/materialize" class="brand-logo">Freeform Demo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="{{ page == "bootstrap" ? "active" }}"><a href="{{ siteUrl }}freeform_demo/bootstrap">Bootstrap</a></li>
+            <li class="{{ page == "foundation" ? "active" }}"><a href="{{ siteUrl }}freeform_demo/foundation">Foundation</a></li>
+            <li class="{{ page == "materialize" ? "active" }}"><a href="{{ siteUrl }}freeform_demo/materialize">Materialize</a></li>
+
+            <!-- Dropdown Trigger -->
+            <li>
+                <a class="dropdown-button" href="#!" data-activates="resources">
+                    Resources<i class="material-icons right">arrow_drop_down</i>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
