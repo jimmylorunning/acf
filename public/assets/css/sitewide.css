@@ -236,7 +236,9 @@
   text-transform: uppercase;
   font-size: 0.8em;
   font-weight: normal;
-  margin-bottom: 5px; }
+  margin-top: 12px;
+  margin-bottom: 5px;
+  display: block; }
   .formbuilder label.required::after {
     content: " *";
     color: red; }
@@ -260,8 +262,7 @@
 .formbuilder.white button[type=submit], .formbuilder.gray button[type=submit] {
   border: 1px solid black; }
 .formbuilder input[type="checkbox"] {
-  width: 20px !important;
-  display: inline-block; }
+  width: 20px !important; }
 .formbuilder input, .formbuilder textarea, .formbuilder select {
   width: 100%;
   background-color: transparent;
@@ -287,6 +288,15 @@
   text-transform: uppercase;
   border: none;
   border: 1px solid white; }
+
+.freeform-instructions {
+  font-size: 0.8em; }
+
+.freeform-form-has-errors {
+  color: red; }
+
+.freeform-row .freeform-column .freeform-errors > li {
+  color: red; }
 
 /********************************/
 /********** HOMEPAGE ************/
