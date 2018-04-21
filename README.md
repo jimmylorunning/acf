@@ -23,7 +23,7 @@
 - [Ashoomi Dholakia](http://www.ashoomid.com/) graphic design
 - [Carlos Quinones](https://www.linkedin.com/in/cquinones) mobile app
 - [Catherine Moore](http://www.catherineamoore.com/) manager/organizer/misc
+-[Brandon Sheats](https://sheatsb.com) web development
 
 ### Copyright
-
-This site and its code are copyright Atlanta Cycling Festival 2016.
+This site and its code are copyright Atlanta Cycling Festival 2018.
